@@ -7,8 +7,7 @@
 #include "cppMain.h"
 
 
-//#define _(psText)		#ifdef (_DEBUG) #pragma message ("msgid \"" || psText || "\"\nmsgstr: \"\"") #endif (clsLanguage::Get((psText)))
-#define _(psText)		(clsLanguage::Get((psText)))
+#define _(psText)		(clsLanguage::Get(((TCHAR *) psText)))
 
 
 // ---------------------------------------------------------------------------
