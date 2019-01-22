@@ -179,6 +179,7 @@ X.XX - YYYY
 - Updated libwebp to 1.0.2 RC1.
 - Updated ImageMagick to 7.0.8.23 with HDRI support.
 - Updated pingo to 0.98.48 x64 version.
+- Upgraded to C++ Builder Community Edition 10.3 Rio (26.0.32429.4364).
 - Upgraded distributions to 7-Zip 18.06.
 
 
