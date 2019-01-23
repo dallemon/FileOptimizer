@@ -2791,7 +2791,6 @@ int __fastcall TfrmMain::RunPlugin(unsigned int piCurrent, String psStatus, Stri
 // ---------------------------------------------------------------------------
 void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 {
-
 	TCHAR *acWide = new TCHAR[KI_BUFFER_SIZE];
 	TCHAR *acTemp = new TCHAR[KI_BUFFER_SIZE];
 	char *acPath = new char[KI_BUFFER_SIZE];
@@ -2881,18 +2880,15 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 		}
 		else if (!pbSilent)
 		{
-
 			String sCaption;
 			sCaption.printf(_(_T("You already have latest %s? version.")), Application->Name.c_str());
 			clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Check updates")), MB_OK|MB_ICONINFORMATION);
 		}
 	}
-
 	else if (!pbSilent)
 	{
 		clsUtil::MsgBox(Handle, _(_T("Error checking for updates.")), _(_T("Check updates")), MB_OK | MB_ICONERROR);
 	}
-
 	delete[] acTemp;
 	delete[] acWide;
 	delete[] acPath;
