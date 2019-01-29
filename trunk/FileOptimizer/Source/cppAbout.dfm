@@ -259,6 +259,7 @@ object frmAbout: TfrmAbout
       44F21B58CD6DAD957352B3FBA7EC23F1D6917B7EBE1AF4FEC23DB3FFD9}
     ShowHint = True
     Stretch = True
+    OnDblClick = imgAboutDblClick
     ExplicitWidth = 425
   end
   object lblProduct: TLabel

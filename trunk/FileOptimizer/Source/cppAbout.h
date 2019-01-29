@@ -29,11 +29,14 @@ __published:	// IDE-managed Components
 	void __fastcall lblCopyrightClick(TObject *Sender);
 	void __fastcall FormKeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall imgAboutDblClick(TObject *Sender);
 private:	// User declarations
 	int __fastcall GetFileVersionField(const TCHAR *fn, const TCHAR *info, TCHAR *ret, int len);
 public:		// User declarations
 	__fastcall TfrmAbout(TComponent* Owner);
 	__fastcall ~TfrmAbout();
+    void __fastcall EasterTimer(TObject *Sender);
+	void __fastcall EasterClick(TObject *Sender);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfrmAbout *frmAbout;

@@ -8,6 +8,8 @@
 
 // ---------------------------------------------------------------------------
 TfrmAbout *frmAbout;
+TImage *imgEaster = NULL;
+TTimer *tmrEaster = NULL;
 
 
 //---------------------------------------------------------------------------
@@ -289,6 +291,92 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 }
 
 
+//---------------------------------------------------------------------------
+void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
+{
+	//Initialize
+
+	if (!imgEaster)
+	{
+		imgEaster = new TImage(this);
+		tmrEaster = new TTimer(this);
+
+		imgEaster->Parent = this;
+		butClose->Hide();
+		mmoLicense->Hide();
+		imgEaster->BringToFront();
+		imgEaster->Top = 0;
+		imgEaster->Left = 0;
+		imgEaster->Width = Width;
+		imgEaster->Height = Height;
+
+		tmrEaster->Interval = 50;
+		tmrEaster->OnTimer = EasterTimer;
+
+		//Background
+		imgEaster->Canvas->Brush->Color = clBlack;
+		imgEaster->Canvas->FillRect(ClientRect);
+
+		//Screeen
+		imgEaster->Canvas->Brush->Color = clWhite;
+		imgEaster->Canvas->FillRect(Rect(32, 32, ClientWidth - 32, ClientHeight - 32));
+		imgEaster->OnClick = EasterClick;
+
+		imgEaster->Canvas->TextOut(32, 32, "PROGRAM: " + Application->Title);
+	}
+
+	for (unsigned int iLine = 0; iLine < ClientHeight; iLine++)
+	{
+		unsigned int iRnd = random(2);
+
+
+		if (iRnd == 0)
+		{
+			imgEaster->Canvas->Pen->Color = clBlue;
+		}
+		else
+		{
+			imgEaster->Canvas->Pen->Color = clYellow;
+		}
+
+		if ((iLine < 32) || (iLine > (ClientHeight - 32)))
+		{
+			imgEaster->Canvas->MoveTo(0, iLine);
+			imgEaster->Canvas->LineTo(imgEaster->Width, iLine);
+		}
+		else
+		{
+			imgEaster->Canvas->MoveTo(0, iLine);
+			imgEaster->Canvas->LineTo(32, iLine);
+			imgEaster->Canvas->MoveTo(ClientWidth - 32, iLine);
+			imgEaster->Canvas->LineTo(ClientWidth, iLine);
+		}
+	}
+	//Application->ProcessMessages();
+}
+
+
+
+//---------------------------------------------------------------------------
+void __fastcall TfrmAbout::EasterClick(TObject *Sender)
+{
+	delete imgEaster;
+	imgEaster = NULL;
+	delete tmrEaster;
+	butClose->Show();
+    mmoLicense->Show();
+}
+
+
+
+//---------------------------------------------------------------------------
+void __fastcall TfrmAbout::imgAboutDblClick(TObject *Sender)
+{
+	EasterTimer(NULL);
+}
+
+
+
 
 //---------------------------------------------------------------------------
 void __fastcall TfrmAbout::butCloseClick(TObject *Sender)
@@ -325,5 +413,7 @@ void __fastcall TfrmAbout::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	clsUtil::SaveForm(this);
 }
+
+
 //---------------------------------------------------------------------------
 
