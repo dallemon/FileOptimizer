@@ -302,16 +302,22 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		tmrEaster = new TTimer(this);
 
 		imgEaster->Parent = this;
-		butClose->Hide();
-		mmoLicense->Hide();
 		imgEaster->BringToFront();
 		imgEaster->Top = 0;
 		imgEaster->Left = 0;
 		imgEaster->Width = Width;
 		imgEaster->Height = Height;
 
+		//ToDo: Should not be needed
+		butClose->Hide();
+		mmoLicense->Hide();
+		
+		//ToDo: We should handle window resizing or prevent it while in easter egg
+
 		tmrEaster->Interval = 50;
 		tmrEaster->OnTimer = EasterTimer;
+
+		//ToDo: Optimize having a Canvas Pointer
 
 		//Background
 		imgEaster->Canvas->Brush->Color = clBlack;
@@ -320,7 +326,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		//Screeen
 		imgEaster->Canvas->Brush->Color = clWhite;
 		imgEaster->Canvas->FillRect(Rect(32, 32, ClientWidth - 32, ClientHeight - 32));
-		imgEaster->OnClick = EasterClick;
+		imgEaster->OnDblClick = EasterClick;
 
 		imgEaster->Canvas->TextOut(32, 32, "PROGRAM: " + Application->Title);
 	}
@@ -352,7 +358,6 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 			imgEaster->Canvas->LineTo(ClientWidth, iLine);
 		}
 	}
-	//Application->ProcessMessages();
 }
 
 
@@ -363,8 +368,9 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 	delete imgEaster;
 	imgEaster = NULL;
 	delete tmrEaster;
+	//ToDo: Should not be needed
 	butClose->Show();
-    mmoLicense->Show();
+	mmoLicense->Show();
 }
 
 
