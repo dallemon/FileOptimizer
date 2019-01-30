@@ -294,10 +294,12 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 //---------------------------------------------------------------------------
 void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 {
-	//Initialize
-
+	TCanvas *oCanvas;
+	
+	
 	if (!imgEaster)
 	{
+		//Initialize
 		imgEaster = new TImage(this);
 		tmrEaster = new TTimer(this);
 
@@ -311,26 +313,33 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		//ToDo: Should not be needed
 		butClose->Hide();
 		mmoLicense->Hide();
+		BorderStyle = bsSingle;
 		
 		//ToDo: We should handle window resizing or prevent it while in easter egg
 
-		tmrEaster->Interval = 50;
+		tmrEaster->Interval = 25;
 		tmrEaster->OnTimer = EasterTimer;
 
-		//ToDo: Optimize having a Canvas Pointer
-
-		//Background
-		imgEaster->Canvas->Brush->Color = clBlack;
-		imgEaster->Canvas->FillRect(ClientRect);
+		oCanvas = imgEaster->Canvas;
 
 		//Screeen
-		imgEaster->Canvas->Brush->Color = clWhite;
-		imgEaster->Canvas->FillRect(Rect(32, 32, ClientWidth - 32, ClientHeight - 32));
+		oCanvas->Brush->Color = clWhite;
+		oCanvas->FillRect(Rect(32, 32, ClientWidth - 32, ClientHeight - 32));
 		imgEaster->OnDblClick = EasterClick;
 
-		imgEaster->Canvas->TextOut(32, 32, "PROGRAM: " + Application->Title);
+
+		oCanvas->TextOut(32, 32, "Program: " + Application->Title);
+		oCanvas->TextOut(32, 48, "Bytes:   Version " + (String) clsUtil::ExeVersion(Application->ExeName.c_str()));
+		TCHAR acName[256];
+		clsUtil::GetFileVersionField(Application->ExeName.c_str(), (TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
+		oCanvas->TextOut(32, 64, "Bytes:   " + (String) acName);
+	}
+	else
+	{
+		oCanvas = imgEaster->Canvas;
 	}
 
+	//Draw lines
 	for (unsigned int iLine = 0; iLine < ClientHeight; iLine++)
 	{
 		unsigned int iRnd = random(2);
@@ -338,24 +347,24 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 
 		if (iRnd == 0)
 		{
-			imgEaster->Canvas->Pen->Color = clBlue;
+			oCanvas->Pen->Color = clBlue;
 		}
 		else
 		{
-			imgEaster->Canvas->Pen->Color = clYellow;
+			oCanvas->Pen->Color = clYellow;
 		}
 
 		if ((iLine < 32) || (iLine > (ClientHeight - 32)))
 		{
-			imgEaster->Canvas->MoveTo(0, iLine);
-			imgEaster->Canvas->LineTo(imgEaster->Width, iLine);
+			oCanvas->MoveTo(0, iLine);
+			oCanvas->LineTo(imgEaster->Width, iLine);
 		}
 		else
 		{
-			imgEaster->Canvas->MoveTo(0, iLine);
-			imgEaster->Canvas->LineTo(32, iLine);
-			imgEaster->Canvas->MoveTo(ClientWidth - 32, iLine);
-			imgEaster->Canvas->LineTo(ClientWidth, iLine);
+			oCanvas->MoveTo(0, iLine);
+			oCanvas->LineTo(32, iLine);
+			oCanvas->MoveTo(ClientWidth - 32, iLine);
+			oCanvas->LineTo(ClientWidth, iLine);
 		}
 	}
 }
@@ -371,6 +380,7 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 	//ToDo: Should not be needed
 	butClose->Show();
 	mmoLicense->Show();
+    BorderStyle = bsSizeable;
 }
 
 
