@@ -7,7 +7,7 @@
 #include "cppMain.h"
 
 
-#define _(psText)		(clsLanguage::Get(((TCHAR *) psText)))
+#define _(psText)		(clsLanguage::Get((psText)))
 
 
 // ---------------------------------------------------------------------------

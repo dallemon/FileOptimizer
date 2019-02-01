@@ -268,8 +268,8 @@ void __fastcall TfrmOptions::butOKClick(TObject *Sender)
 	if ((txtDonator->Text.Length() < 1) && (chkHideAds->Checked) && (chkHideAds->Enabled))
 	{
 		String sCaption;
-		sCaption.printf(_(_T("Do you want to contribute %s development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.")), Application->Name.c_str());			
-		chkHideAds->Checked = !(clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Support")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
+		sCaption.printf(_((TCHAR *) _T("Do you want to contribute %s development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.")), Application->Name.c_str());
+		chkHideAds->Checked = !(clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Support")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
 	}
 
 	Hide();
@@ -428,8 +428,8 @@ void __fastcall TfrmOptions::butOKClick(TObject *Sender)
 	if (iOldLanguage != gudtOptions.iLanguage)
 	{
 			String sCaption;
-			sCaption.printf(_(_T("Some changed settings require %s to be restarted.\nDo you want to restart it now?")), Application->Name.c_str());
-			if (clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Restart")), MB_YESNO | MB_ICONQUESTION) == ID_YES)
+			sCaption.printf(_((TCHAR *) _T("Some changed settings require %s to be restarted.\nDo you want to restart it now?")), Application->Name.c_str());
+			if (clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Restart")), MB_YESNO | MB_ICONQUESTION) == ID_YES)
 			{
 				ShellExecute(NULL, _T("open"), Application->ExeName.c_str(), _T("/AllowMultipleInstances=true"), _T(""), SW_SHOWNORMAL);
 				Application->Terminate();

@@ -156,8 +156,8 @@ void __fastcall TfrmMain::LoadOptions(void)
 		if ((acPath[0] == NULL) && (gudtOptions.acDonator[0] == NULL))
 		{
 			String sCaption;
-			sCaption.printf(_(_T("This is the first time you run %s.\n\nDo you want to support its development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.\n\nYou can change this option at any time from the Options menu.")), Application->Name.c_str());
-			gudtOptions.bHideAds = !(clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Support")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
+			sCaption.printf(_((TCHAR *) _T("This is the first time you run %s.\n\nDo you want to support its development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.\n\nYou can change this option at any time from the Options menu.")), Application->Name.c_str());
+			gudtOptions.bHideAds = !(clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Support")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
 		}
 		//Disable ads in XP
 		else
@@ -330,8 +330,8 @@ void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 		}
 
 		String sCaption;
-		sCaption.printf(_(_T("Optimization is still running. Do you want to stop and exit %s?")), Application->Name.c_str());
-		if ((bRunning) && (clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Exit")), MB_YESNO | MB_ICONQUESTION) == ID_NO))
+		sCaption.printf(_((TCHAR *) _T("Optimization is still running. Do you want to stop and exit %s?")), Application->Name.c_str());
+		if ((bRunning) && (clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Exit")), MB_YESNO | MB_ICONQUESTION) == ID_NO))
 		{
 			CanClose = false;
 			return;
@@ -839,7 +839,7 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 		TCHAR acTime[64];
 		StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) iEndTicks - iStartTicks, sizeof(acTime) - 1);
 		
-		sCaption.printf(_(_T("%s files processed. %s bytes saved (%s%%). Elapsed time %s")), FormatNumberThousand(iCount - 1).c_str(), FormatNumberThousand(lSavedBytes).c_str(), FormatNumberThousand(iPercentBytes).c_str(), acTime);
+		sCaption.printf(_((TCHAR *) _T("%s files processed. %s bytes saved (%s%%). Elapsed time %s")), FormatNumberThousand(iCount - 1).c_str(), FormatNumberThousand(lSavedBytes).c_str(), FormatNumberThousand(iPercentBytes).c_str(), acTime);
 		stbMain->Panels->Items[0]->Text = sCaption;
 
 		stbMain->Hint = stbMain->Panels->Items[0]->Text;
@@ -850,7 +850,7 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 
 	if (gudtOptions.bBeepWhenDone)
 	{	
-		clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Done")), MB_ICONINFORMATION | MB_OK);
+		clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Done")), MB_ICONINFORMATION | MB_OK);
 		FlashWindow(Handle, false);
 		MessageBeep(0xFFFFFFFF);
 	}
@@ -859,7 +859,7 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 	{
 		if (!clsUtil::ShutdownWindows(0))
 		{
-			clsUtil::MsgBox(Handle, _(_T("Error trying to automatically shutdown the system.")), _(_T("Shutdown")), MB_OK | MB_ICONERROR);
+			clsUtil::MsgBox(Handle, _((TCHAR *) _T("Error trying to automatically shutdown the system.")), _((TCHAR *) _T("Shutdown")), MB_OK | MB_ICONERROR);
 		}
 	}
 	
@@ -974,14 +974,14 @@ void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 		}
 		else
 		{
-			sText.cat_printf(_(_T("and %s file formats among many others.")), sExtension.c_str());
+			sText.cat_printf(_((TCHAR *) _T("and %s file formats among many others.")), sExtension.c_str());
 		}
 	}
 	delete lstTemp;
 	
 	sText = Application->Name + _(" is an advanced file optimizer featuring a lossless (no quality loss) file size reduction that supports: ") + sText;
 
-	sText.cat_printf(_(_T("\n\nDONATOR INFORMATION\n")));
+	sText.cat_printf(_((TCHAR *) _T("\n\nDONATOR INFORMATION\n")));
 	if (gudtOptions.acDonation[0] != NULL)
 	{
 		sText += (String) gudtOptions.acDonation;
@@ -989,14 +989,14 @@ void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 	}
 	else
 	{
-		sText.cat_printf(_(_T("Have not donated yet!")));
+		sText.cat_printf(_((TCHAR *) _T("Have not donated yet!")));
 
 	}
-	sText.cat_printf(_(_T("\nUser since %s %s")), Application->Name.c_str(), gudtOptions.acVersion);
+	sText.cat_printf(_((TCHAR *) _T("\nUser since %s %s")), Application->Name.c_str(), gudtOptions.acVersion);
 
 
 	StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) gudtOptions.lStatTime * 1000, sizeof(acTime) - 1);
-	sText.cat_printf(_(_T("\n\nUSAGE STATISTICS\n"
+	sText.cat_printf(_((TCHAR *) _T("\n\nUSAGE STATISTICS\n"
 		"- Time: %s\n"
 		"- Opens: %s\n"
 		"- Files: %s\n"
@@ -1008,7 +1008,7 @@ void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 		FormatNumberThousandUnit(gudtOptions.lStatTotalBytes).c_str(),
 		FormatNumberThousandUnit(gudtOptions.lStatSavedBytes).c_str());
 
-	clsUtil::MsgBox(Handle, sText.c_str(), _(_T("Information")), MB_ICONINFORMATION | MB_OK);
+	clsUtil::MsgBox(Handle, sText.c_str(), _((TCHAR *) _T("Information")), MB_ICONINFORMATION | MB_OK);
 }
 
 
@@ -1115,7 +1115,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 
 	//Required indirection
 	String sCaption;
-	sCaption.printf(_(_T("Processing %s...")), sInputFile.c_str());
+	sCaption.printf(_((TCHAR *) _T("Processing %s...")), sInputFile.c_str());
 	stbMain->Panels->Items[0]->Text = sCaption;
 
 	stbMain->Hint = stbMain->Panels->Items[0]->Text;
@@ -2373,7 +2373,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		TCHAR acTime[64];
 		StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) iEndTicks - iStartTicks, sizeof(acTime) - 1);
 		
-		sCaption.printf(_(_T("Done (%3u%%) in %s")), iPercentBytes, acTime);
+		sCaption.printf(_((TCHAR *) _T("Done (%3u%%) in %s")), iPercentBytes, acTime);
 		grdFiles->Cells[KI_GRID_STATUS][iCount] = sCaption;
 
 		//Update cache
@@ -2408,8 +2408,8 @@ void __fastcall TfrmMain::tmrMainTimer(TObject *Sender)
 		if (gudtOptions.iCheckForUpdates < 0)
 		{
 			String sCaption;
-			sCaption.printf(_(_T("Do you want %s to automatically check for updates?")), Application->Name.c_str());
-			gudtOptions.iCheckForUpdates = (clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Check for updates")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
+			sCaption.printf(_((TCHAR *) _T("Do you want %s to automatically check for updates?")), Application->Name.c_str());
+			gudtOptions.iCheckForUpdates = (clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Check for updates")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
 		}
 		else if (gudtOptions.iCheckForUpdates == 1)
 		{
@@ -2701,7 +2701,7 @@ int __fastcall TfrmMain::RunPlugin(unsigned int piCurrent, String psStatus, Stri
 
 	//Required indirection
 	String sCaption;
-	sCaption.printf(_(_T("Running %s...")), psStatus.c_str());
+	sCaption.printf(_((TCHAR *) _T("Running %s...")), psStatus.c_str());
 	grdFiles->Cells[KI_GRID_STATUS][(int) piCurrent] = sCaption;
 
 	unsigned long long lSize = clsUtil::SizeFile(sInputFile.c_str());
@@ -2830,7 +2830,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 			{
 				if (!pbSilent)
 				{
-					clsUtil::MsgBox(Handle, _(_T("Error checking for updates.")), _(_T("Check updates")), MB_OK | MB_ICONERROR);
+					clsUtil::MsgBox(Handle, _((TCHAR *) _T("Error checking for updates.")), _((TCHAR *) _T("Check updates")), MB_OK | MB_ICONERROR);
 				}
 				delete[] acTemp;
 				delete[] acWide;
@@ -2863,7 +2863,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
             if ((gudtOptions.iStatOpens > 10) && (clsUtil::Random(0, 50) == 5))
 			{
 				String sCaption;
-				sCaption.printf(_(_T("Thank you for using my program!\n\nYou have used it %s times and have optimized %s files.\n\nYou can continue using it free of charge.\n\nIf you are happy, please contribute to the active development by donating via Paypal. It is secure, safe and convenient.\n\nDonators will receive priority support and consultancy, while those cannot be guaranteed to non-donors.")), FormatNumberThousand(gudtOptions.iStatOpens).c_str(), FormatNumberThousand(gudtOptions.iStatFiles).c_str());
+				sCaption.printf(_((TCHAR *) _T("Thank you for using my program!\n\nYou have used it %s times and have optimized %s files.\n\nYou can continue using it free of charge.\n\nIf you are happy, please contribute to the active development by donating via Paypal. It is secure, safe and convenient.\n\nDonators will receive priority support and consultancy, while those cannot be guaranteed to non-donors.")), FormatNumberThousand(gudtOptions.iStatOpens).c_str(), FormatNumberThousand(gudtOptions.iStatFiles).c_str());
 				clsUtil::MsgBox(Handle, sCaption.c_str(), (_("Thank you for using ") + Application->Name).c_str(), MB_OK|MB_ICONEXCLAMATION, 60000);
 				actDonateExecute(NULL);
 			}
@@ -2872,8 +2872,8 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 		if (_tcsncmp(acWide, (TCHAR *) acBuffer, 10) > 0)
 		{
 			String sCaption;
-			sCaption.printf(_(_T("%s version %s is available.\r\nDo you want to download it now?")), Application->Name.c_str(), Trim(acWide).c_str());
-			if (clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Check updates")), MB_YESNO | MB_ICONQUESTION) == ID_YES)
+			sCaption.printf(_((TCHAR *) _T("%s version %s is available.\r\nDo you want to download it now?")), Application->Name.c_str(), Trim(acWide).c_str());
+			if (clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Check updates")), MB_YESNO | MB_ICONQUESTION) == ID_YES)
 			{
 				ShellExecute(Handle, _T("open"), KS_APP_URL, _T(""), _T(""), SW_SHOWNORMAL);
 			}
@@ -2881,13 +2881,13 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 		else if (!pbSilent)
 		{
 			String sCaption;
-			sCaption.printf(_(_T("You already have latest %s? version.")), Application->Name.c_str());
-			clsUtil::MsgBox(Handle, sCaption.c_str(), _(_T("Check updates")), MB_OK|MB_ICONINFORMATION);
+			sCaption.printf(_((TCHAR *) _T("You already have latest %s? version.")), Application->Name.c_str());
+			clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Check updates")), MB_OK|MB_ICONINFORMATION);
 		}
 	}
 	else if (!pbSilent)
 	{
-		clsUtil::MsgBox(Handle, _(_T("Error checking for updates.")), _(_T("Check updates")), MB_OK | MB_ICONERROR);
+		clsUtil::MsgBox(Handle, _((TCHAR *) _T("Error checking for updates.")), _((TCHAR *) _T("Check updates")), MB_OK | MB_ICONERROR);
 	}
 	delete[] acTemp;
 	delete[] acWide;
@@ -3595,7 +3595,7 @@ void __fastcall TfrmMain::RefreshStatus(bool pbUpdateStatusBar, unsigned int piC
 
 		//Required indirection
 		String sCaption;
-		sCaption.printf(_(_T("%s / %s files. %s bytes saved (%s%%)")), FormatNumberThousand(piCurrent).c_str(), FormatNumberThousand((unsigned long long) grdFiles->RowCount - 1).c_str(), FormatNumberThousand(plSavedBytes).c_str(), FormatNumberThousand(iPercentBytes).c_str());
+		sCaption.printf(_((TCHAR *) _T("%s / %s files. %s bytes saved (%s%%)")), FormatNumberThousand(piCurrent).c_str(), FormatNumberThousand((unsigned long long) grdFiles->RowCount - 1).c_str(), FormatNumberThousand(plSavedBytes).c_str(), FormatNumberThousand(iPercentBytes).c_str());
 		stbMain->Panels->Items[0]->Text = sCaption;
 
 		stbMain->Hint = stbMain->Panels->Items[0]->Text;
@@ -3635,7 +3635,7 @@ void __fastcall TfrmMain::RefreshStatus(bool pbUpdateStatusBar, unsigned int piC
 			{
 				//Required indirection
 				String sCaption;
-				sCaption.printf(_(_T("0 / %s files")), FormatNumberThousand((unsigned long long) grdFiles->RowCount - 1).c_str());
+				sCaption.printf(_((TCHAR *) _T("0 / %s files")), FormatNumberThousand((unsigned long long) grdFiles->RowCount - 1).c_str());
 				stbMain->Panels->Items[0]->Text = sCaption;
 
 				stbMain->Hint = stbMain->Panels->Items[0]->Text;
