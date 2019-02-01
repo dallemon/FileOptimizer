@@ -302,31 +302,28 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		//Initialize
 		imgEaster = new TImage(this);
 		tmrEaster = new TTimer(this);
-
 		imgEaster->Parent = this;
-		imgEaster->BringToFront();
 		imgEaster->Top = 0;
 		imgEaster->Left = 0;
-		imgEaster->Width = Width;
-		imgEaster->Height = Height;
+		imgEaster->Width = ClientWidth;
+		imgEaster->Height = ClientHeight;
 
 		//ToDo: Should not be needed
 		butClose->Hide();
 		mmoLicense->Hide();
-		BorderStyle = bsSingle;
-		
+
 		//ToDo: We should handle window resizing or prevent it while in easter egg
+		BorderStyle = bsSingle;
+		BorderIcons = BorderIcons << biMaximize;
 
 		tmrEaster->Interval = 25;
 		tmrEaster->OnTimer = EasterTimer;
-
 		oCanvas = imgEaster->Canvas;
 
 		//Screeen
 		oCanvas->Brush->Color = clWhite;
 		oCanvas->FillRect(Rect(32, 32, ClientWidth - 32, ClientHeight - 32));
 		imgEaster->OnDblClick = EasterClick;
-
 
 		oCanvas->TextOut(32, 32, "Program: " + Application->Title);
 		oCanvas->TextOut(32, 48, "Bytes:   Version " + (String) clsUtil::ExeVersion(Application->ExeName.c_str()));
@@ -377,10 +374,12 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 	delete imgEaster;
 	imgEaster = NULL;
 	delete tmrEaster;
+
 	//ToDo: Should not be needed
 	butClose->Show();
 	mmoLicense->Show();
-    BorderStyle = bsSizeable;
+	BorderStyle = bsSizeable;
+	BorderIcons = BorderIcons >> biMaximize;
 }
 
 
