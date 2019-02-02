@@ -172,6 +172,7 @@ ndo
 
 
 X.XX - YYYY
+- Added hyperlinks compatibility when using Ghostcript (George Ionescu).
 - Rewritten log format (FatBit).
 - Updated russian translation (thanks Max).
 - Updated Leanify to 0.4.3.227 daily binaries.
