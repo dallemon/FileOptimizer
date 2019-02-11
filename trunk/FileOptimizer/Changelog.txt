@@ -161,7 +161,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.26.0 - http://www.sqlite.org
+- SQLite 3.27.0 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -175,6 +175,7 @@ X.XX - YYYY
 - Added hyperlinks compatibility when using Ghostcript (George Ionescu).
 - Rewritten log format (FatBit).
 - Updated russian translation (thanks Max).
+- Updated SQLite to 3.27.0 x86 and x64 Visual C++ 2017 custom builds.
 - Updated Leanify to 0.4.3.227 daily binaries.
 - Updated to jHead 3.03.
 - Updated libwebp to 1.0.2.
