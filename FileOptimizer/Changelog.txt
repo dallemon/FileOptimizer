@@ -173,6 +173,7 @@ ndo
 
 X.XX - YYYY
 - Added hyperlinks compatibility when using Ghostcript (George Ionescu).
+- Added XLSB extension to the ZIP toolchain (Konstantin Pozdnyakov).
 - Rewritten log format (FatBit).
 - Updated russian translation (thanks Max).
 - Updated SQLite to 3.27.0 x86 and x64 Visual C++ 2017 custom builds.
