@@ -174,7 +174,7 @@ ndo
 X.XX - YYYY
 - Updated pingo to 0.98.55 x64 version.
 - Upgraded to C++ Builder Community Edition 10.3.1 Rio (26.0.33219.4899).
-
+- Upgraded distributions to 7-Zip 19.00.
 
 
 13.60 - 2019/02/13
