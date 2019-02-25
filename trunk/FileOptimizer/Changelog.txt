@@ -175,8 +175,9 @@ X.XX - YYYY
 - Added pingo for WEBP toolchain (lossless and lossy).
 - New INI setting WEBPAllowLossy=false option to allow WEBP lossy optimizations.
 - Updated pingo to 0.99 beta 2 x64 version.
-- Updated ImageMagick to 7.0.8.28 with HDRI support.
 - Updated ffmpeg to 4.1.1.
+- Updated strip to 2.31.1 x64 version.
+- Updated ImageMagick to 7.0.8.28 with HDRI support.
 - Upgraded to C++ Builder Community Edition 10.3.1 Rio (26.0.33219.4899).
 - Upgraded distributions to 7-Zip 19.00.
 
