@@ -122,6 +122,7 @@ void __fastcall TfrmMain::LoadOptions(void)
 	gudtOptions.bTIFFCopyMetadata = GetOption(_T("Options"), _T("TIFFCopyMetadata"), false);
 	gudtOptions.bWAVCopyMetadata = GetOption(_T("Options"), _T("WAVCopyMetadata"), false);
 	gudtOptions.bWAVStripSilence = GetOption(_T("Options"), _T("WAVStripSilence"), false);
+	gudtOptions.bWEBPAllowLossy = GetOption(_T("Options"), _T("WEBPAllowLossy"), false);
 	gudtOptions.bXMLEnableLeanify = GetOption(_T("Options"), _T("XMLEnableLeanify"), false);
 	gudtOptions.bZIPCopyMetadata = GetOption(_T("Options"), _T("ZIPCopyMetadata"), false);
 	gudtOptions.bZIPRecurse = GetOption(_T("Options"), _T("ZIPRecurse"), false);
@@ -243,6 +244,7 @@ void __fastcall TfrmMain::SaveOptions(void)
 	clsUtil::SetIni(_T("Options"), _T("TIFFCopyMetadata"), gudtOptions.bTIFFCopyMetadata, _T("Boolean. Default: false. Copy file metadata. Else strip all unneeded information."));
 	clsUtil::SetIni(_T("Options"), _T("WAVCopyMetadata"), gudtOptions.bWAVCopyMetadata, _T("Boolean. Default: false. Copy file metadata. Else strip all unneeded information."));
 	clsUtil::SetIni(_T("Options"), _T("WAVStripSilence"), gudtOptions.bWAVStripSilence, _T("Boolean. Default: false. Strip start and end silences if any."));
+	clsUtil::SetIni(_T("Options"), _T("WEBPAllowLossy"), gudtOptions.bWEBPAllowLossy, _T("Boolean. Default: false. Allowing lossy optimizations will get higher files reduction at the cost of some quality loss, even if visually unnoticeable or not."));
 	clsUtil::SetIni(_T("Options"), _T("XMLEnableLeanify"), gudtOptions.bXMLEnableLeanify, _T("Boolean. Default: false. Enable Leanify. Results in smaller files, but can happen they are not editable anymore."));
 	clsUtil::SetIni(_T("Options"), _T("ZIPCopyMetadata"), gudtOptions.bZIPCopyMetadata, _T("Boolean. Default: false. Copy file metadata. Else strip all unneeded information."));
 	clsUtil::SetIni(_T("Options"), _T("ZIPRecurse"), gudtOptions.bZIPRecurse, _T("Boolean. Default: false. Enable optimization inside archives (recursive optimization)."));
@@ -2217,9 +2219,18 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
-		// WEBP: dwebp + cwebp, ImageWorsener
+		// WEBP: pingo, dwebp + cwebp, ImageWorsener
 		if (PosEx(sExtensionByContent, KS_EXTENSION_WEBP) > 0)
 		{
+			sFlags = "";
+			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
+			sFlags += "-s" + (String) iLevel + " ";
+			if (gudtOptions.bWEBPAllowLossy)
+			{
+				sFlags += "-auto ";
+			}
+			RunPlugin((unsigned int) iCount, "pingo (1/3)", (sPluginsDirectory + "pingo.exe " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+					
 			sFlags = "";
 			iLevel = min(gudtOptions.iLevel * 5 / 9, 5) + 1;
 			sFlags += "-m " + (String) iLevel + " ";
@@ -2229,9 +2240,9 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			_tcscat(acTmpFileWebp, _T(".png"));
 			_tcsncpy(acTmpFileWebp, clsUtil::GetShortName(acTmpFileWebp).c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 1);
 
-			if (RunPlugin((unsigned int) iCount, "dwebp (1/2)", (sPluginsDirectory + "dwebp.exe -mt \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0) == 0)
+			if (RunPlugin((unsigned int) iCount, "dwebp (2/3)", (sPluginsDirectory + "dwebp.exe -mt \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0) == 0)
 			{
-				RunPlugin((unsigned int) iCount, "cwebp (2/2)", (sPluginsDirectory + "cwebp.exe -mt -quiet -lossless " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet -lossless " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
 				if (clsUtil::SizeFile(acTmpFileWebp) < clsUtil::SizeFile(sInputFile.c_str()))
 				{
 					clsUtil::CopyFile(acTmpFileWebp, sInputFile.c_str());

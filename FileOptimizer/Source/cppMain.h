@@ -114,6 +114,7 @@ struct udtOptions
 	bool bTIFFCopyMetadata;
 	bool bWAVCopyMetadata;
 	bool bWAVStripSilence;
+	bool bWEBPAllowLossy;
 	bool bXMLEnableLeanify;
 	bool bZIPCopyMetadata;
 	bool bZIPRecurse;
