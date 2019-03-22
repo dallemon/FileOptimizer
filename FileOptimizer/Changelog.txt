@@ -172,6 +172,9 @@ ndo
 
 
 X.XX - YYYY
+
+
+13.70 - 2019/03/22
 - Added pingo for WEBP toolchain (lossless and lossy).
 - New INI setting WEBPAllowLossy=false option to allow WEBP lossy optimizations.
 - Updated SQLite to 3.27.2 x86 and x64 Visual C++ 2017 custom builds.
@@ -181,7 +184,6 @@ X.XX - YYYY
 - Updated ImageMagick to 7.0.8.33 with HDRI support.
 - Upgraded to C++ Builder Community Edition 10.3.1 Rio (26.0.33219.4899).
 - Upgraded distributions to 7-Zip 19.00.
-
 
 13.60 - 2019/02/13
 - Added hyperlinks compatibility when using Ghostcript (George Ionescu).
