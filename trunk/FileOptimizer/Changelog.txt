@@ -172,6 +172,7 @@ ndo
 
 
 X.XX - YYYY
+- Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
 - Updated Leanify to 0.4.3.229 daily binaries.
 
 
