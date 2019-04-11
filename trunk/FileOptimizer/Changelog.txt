@@ -1,3 +1,7 @@
+- Make CHM links open in target blank to use default browser (dado023).
+- Calculate cache hashes by content instead of paths (Alexander).
+
+
 Restore archive FileAttribute not working (Roger, #46).
 
 2. Allow for an option to specify a custom log location. Devedse 
@@ -150,7 +154,7 @@ ndo
 - mkclean 0.8.10 - http://www.matroska.org/downloads/mkclean.html
 - mozjpeg 3.3.1-3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
-- mp4v2 4.0.1 - https://github.com/TechSmith/mp4v2
+- mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
 - mutool 1.14 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
@@ -173,6 +177,7 @@ ndo
 
 X.XX - YYYY
 - Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
+- Updated mp4v2 x86 and x64 to 4.1.0 Visual C++ 2019 custom builds.
 - Updated ImageMagick to 7.0.8.37 with HDRI support.
 - Updated pingo to 0.99 beta 30 x64 version.
 - Updated libdeflate to 1.2.
