@@ -1,20 +1,20 @@
 # "Language ID: 10 (0x0A)"
 # "Language Name: Español"
-# "Project-Id-Version: FileOptimizer 12.00.2132"
-# "POT-Creation-Date: Nov 29 2017"
+# "Project-Id-Version: FileOptimizer 13.70.2479"
+# "POT-Creation-Date: Apr 16 2019"
 # "MIME-Version: 1.0
 # "Content-Type: text/plain; charset=ISO-8859-1"
 # "Content-Transfer-Encoding: 8bit"
 # "Language: en_US"
-# "Last-Translator: Javier Gutiérrez Chamorro"
+# "Last-Translator: Edson Pacompía Ortiz"
 # "Language-Team: Javier Gutiérrez Chamorro"
 # "Plural-Forms: nplurals=2; plural=(n != 1);"
 
 msgid "&About..."
-msgstr "&Sobre"
+msgstr "&Acerca de..."
 
 msgid "Open the about window with internal and legal information"
-msgstr "Abra la ventana de acercamiento con información interna y legal"
+msgstr "Abrir ventana acerca de la información interna y legal"
 
 msgid "-"
 msgstr "-"
@@ -41,16 +41,16 @@ msgid "&Options..."
 msgstr "Opciones"
 
 msgid "Open configuration options window"
-msgstr "Abra la ventana de opciones de configuración"
+msgstr "Abrir la ventana de opciones de configuración"
 
 msgid "&Stop"
 msgstr "&Detener"
 
 msgid "Stop in-progress optimizations"
-msgstr "Detenga las optimizaciones en progreso"
+msgstr "Detener las optimizaciones en progreso"
 
 msgid "&Optimize all files"
-msgstr "&Optimiza todos los archivos"
+msgstr "&Optimizar todos los archivos"
 
 msgid "Optimize files in the optimization list"
 msgstr "Optimizar archivos en la lista de optimización"
@@ -59,34 +59,34 @@ msgid "&Optimize"
 msgstr "&Optimizar"
 
 msgid "E&xit..."
-msgstr "&Salida..."
+msgstr "&Salir..."
 
 msgid "Exit the program"
-msgstr "Salga del programa"
+msgstr "Salir del programa"
 
 msgid "Open &containing folder..."
-msgstr "&Carpeta que contiene abierto..."
+msgstr "Abrir ubi&cación del archivo..."
 
 msgid "&Open selected file"
 msgstr "&Abrir el archivo seleccionado"
 
 msgid "&Clear all files"
-msgstr "&Borrar todos los archivos"
+msgstr "&Quitar de la lista todos los archivos"
 
 msgid "Empty all files in the optimization list"
-msgstr "Vacíe todos los archivos en la lista de optimización"
+msgstr "Quita todos los archivos de la lista de optimización"
 
 msgid "&Remove selected files"
-msgstr "&Eliminar archivos seleccionados"
+msgstr "&Quitar de la lista el archivo seleccionado"
 
 msgid "Remove selected files from the optimization list"
-msgstr "Eliminar los archivos seleccionados de la lista de optimización"
+msgstr "Quita el archivo selecionado de la lista de optimización"
 
 msgid "A&dd folder..."
 msgstr "&Agregar carpeta..."
 
 msgid "Add folder contents recursively from your computer to the optimization list"
-msgstr "Agregue contenido de la carpeta recursivamente desde su computadora a la lista de optimización"
+msgstr "Agrega el contenido de la carpeta recursivamente desde su computadora a la lista de optimización"
 
 msgid "&Add files..."
 msgstr "&Agregar archivos..."
@@ -101,7 +101,7 @@ msgid "File"
 msgstr "Archivo"
 
 msgid "Extension (Type)"
-msgstr "Clase de extensión"
+msgstr "Extensión (Tipo)"
 
 msgid "Original size"
 msgstr "Tamaño Original"
@@ -113,7 +113,7 @@ msgid "Status"
 msgstr "Estado"
 
 msgid "Drag on the list below files you want to optimize, and when ready, click on the right button context menu to proceed. All processed files are copied to Recycle Bin, so you can easily restore them. You can disable moving to Recycle Bin if you like. Double click an item to preview it."
-msgstr "Arrastre en la lista a continuación los archivos que desea optimizar, y cuando esté listo, haga clic en el menú contextual del botón derecho para continuar. Todos los archivos procesados ​​se copian a la Papelera de reciclaje, por lo que puede restaurarlos fácilmente. Puede deshabilitar el movimiento a la Papelera de reciclaje si lo desea. Haga doble clic en un elemento para obtener una vista previa."
+msgstr "Arrastre a la lista los archivos que desea optimizar, y cuando esté listo haga clic en el menú contextual del botón derecho para continuar. Todos los archivos procesados ​​se copian a la Papelera de reciclaje, por lo que puede restaurarlos fácilmente. Puede deshabilitar el movimiento a la Papelera de reciclaje si lo desea. Haga doble clic en un elemento para obtener una vista previa."
 
 msgid "Add folder"
 msgstr "Añadir carpeta"
@@ -125,61 +125,61 @@ msgid "&Cancel"
 msgstr "&Cancelar"
 
 msgid "Discard any changes made to options."
-msgstr "Deseche cualquier cambio realizado en las opciones."
+msgstr "Descartar todos lo cambios."
 
 msgid "&OK"
 msgstr "&Aceptar"
 
 msgid "Accept and apply all changes made to options."
-msgstr "Acepte y aplique todos los cambios realizados a las opciones."
+msgstr "Aplicar y aceptar todos los cambios."
 
 msgid "&Restore defaults"
-msgstr "&Restaurar defecto"
+msgstr "&Restaurar a las opciones predeterminadas"
 
 msgid "Restore all options to its factory settings values."
-msgstr "Restaure todas las opciones a sus valores de configuración de fábrica."
+msgstr "Restaure todas las opciones a sus valores de configuración por defecto."
 
 msgid "&Recurse"
-msgstr "&Recurse"
+msgstr "&Recursivo"
 
 msgid "Enable optimization inside archives (recursive optimization)."
 msgstr "Habilite la optimización dentro de los archivos (optimización recursiva)."
 
 msgid "&Copy metadata"
-msgstr "&Copiar metadatos"
+msgstr "&Mantener metadatos"
 
 msgid "Copy file metadata. Else strip all unneeded information."
-msgstr "Copiar metadatos de archivos De lo contrario, quite toda la información innecesaria."
+msgstr "Mantener metadatos de archivo. De lo contrario quitar toda la información innecesaria."
 
 msgid "&ZIP"
-msgstr "&CREMALLERA"
+msgstr "&ZIP"
 
 msgid "&Enable Leanify"
 msgstr "&Habilitar Leanify"
 
 msgid "Enable Leanify. Results in smaller files, but can happen they are not editable anymore."
-msgstr "Habilite Leanify. Resultados en archivos más pequeños, pero puede suceder que ya no se pueden editar."
+msgstr "Habilite Leanify. Resulta en archivos más pequeños, pero puede dificultar su edición."
 
 msgid "&XML"
 msgstr "&XML"
 
 msgid "&TIFF"
-msgstr "&PELEA"
+msgstr "&TIFF"
 
 msgid "&TGA"
 msgstr "&TGA"
 
 msgid "&Allow lossy optimizations"
-msgstr "&Permitir optimizaciones con pérdida"
+msgstr "&Permitir optimizaciones con pérdida (Lossy)"
 
 msgid "Allowing lossy optimizations will get higher files reduction at the cost of some quality loss, even if visually unnoticeable or not"
-msgstr "Al permitir optimizaciones con pérdidas, se obtiene una mayor reducción de archivos a costa de alguna pérdida de calidad, incluso si no se nota visualmente o no"
+msgstr "Al permitir optimizaciones con pérdidas, se obtiene una mayor reducción en los archivos a costa de pérdida de calidad, incluso si no se nota visualmente"
 
 msgid "&PNG"
 msgstr "&PNG"
 
 msgid "&Skip layered"
-msgstr "&Saltar en capas"
+msgstr "&Omitir capas"
 
 msgid "Skip processing of PDF files containing layered objects. Results in more compatible files with higher size."
 msgstr "Omite el procesamiento de archivos PDF que contienen objetos en capas. Resultados en más archivos compatibles con mayor tamaño."
@@ -206,7 +206,7 @@ msgid "Screen: 72 dpi"
 msgstr "Pantalla: 72 ppp"
 
 msgid "None: No downsampling (Default)"
-msgstr "Ninguno: sin disminución de muestreo (Defecto)"
+msgstr "Ninguno: sin disminución de muestreo (Predeterminado)"
 
 msgid "&Custom DPI"
 msgstr "&DPI personalizado"
@@ -233,13 +233,13 @@ msgid "&LUA"
 msgstr "&LUA"
 
 msgid "Add extra extensions to be threated as JS/JSON."
-msgstr "Agregue extensiones adicionales para amenazarlas como JS / JSON."
+msgstr "Agregue extensiones adicionales como JS/JSON."
 
 msgid "&Enable JSMin"
-msgstr "&habilite JSMin"
+msgstr "&Habilitar JSMin"
 
 msgid "Enable jsmin. Results in smaller files, but can happen they are not editable anymore."
-msgstr "Habilita jsmin. Resultados en archivos más pequeños, pero puede suceder que ya no se pueden editar."
+msgstr "Habilita jsmin. Resulta en archivos más pequeños, pero puede dificultar la edición."
 
 msgid "&Additional Extensions"
 msgstr "&Extensiones adicionales"
@@ -257,10 +257,10 @@ msgid "&JPEG"
 msgstr "&JPEG"
 
 msgid "&Enable Tidy"
-msgstr "&Habilitar ordenado"
+msgstr "&Habilitar Tidy"
 
 msgid "Enable Tidy. Results in smaller files, but can happen they are not editable anymore. Note that this applies to both SVG and HTML file types"
-msgstr "Habilitar Tidy. Resultados en archivos más pequeños, pero puede suceder que ya no se pueden editar. Tenga en cuenta que esto se aplica a ambos tipos de archivos SVG y HTML"
+msgstr "Habilitar Tidy. Resulta en archivos más pequeños, pero puede dificultar la edición. Tenga en cuenta que esto se aplica a ambos tipos de archivos SVG y HTML"
 
 msgid "&HTML"
 msgstr "&HTML"
@@ -281,7 +281,7 @@ msgid "&Disable PETrim"
 msgstr "&Deshabilitar PETrim"
 
 msgid "Disable PETrim. When enabled, PETrim will not be used, resulting in less EXE corruption at the cost of larger file size."
-msgstr "Desactivar PETrim. Cuando está habilitado, PETrim no se utilizará, lo que resulta en menos corrupción de EXE a costa de un tamaño de archivo mayor."
+msgstr "Desactivar PETrim. Cuando está marcado, PETrim no se utilizará, lo que resulta en menos corrupción de EXE a costa de un tamaño de archivo mayor."
 
 msgid "&EXE"
 msgstr "&EXE"
@@ -299,10 +299,10 @@ msgid "Low (Default)"
 msgstr "Bajo (Defecto)"
 
 msgid "Enable tidy. Results in smaller files, but can happen they are not editable anymore."
-msgstr "Habilitar ordenado. Resultados en archivos más pequeños, pero puede suceder que ya no se pueden editar."
+msgstr "Habilitar ordenado. Resultados en archivos más pequeños, pero puede dificultar la edición."
 
 msgid "&Template"
-msgstr "&Modelo"
+msgstr "&Plantilla"
 
 msgid "&CSS"
 msgstr "&CSS"
@@ -332,7 +332,7 @@ msgid "Full path and Filename (Default)"
 msgstr "Ruta completa y nombre de archivo (Defecto)"
 
 msgid "&Always on top"
-msgstr "&Siempre en la cima"
+msgstr "&Mostrar siempre"
 
 msgid "Show main window always on top."
 msgstr "Mostrar ventana principal siempre en la parte superior."
@@ -350,7 +350,7 @@ msgid "&Filename format"
 msgstr "&Formato de nombre de archivo"
 
 msgid "&Donator"
-msgstr "&Donatario"
+msgstr "&Donador"
 
 msgid "&Appearance"
 msgstr "&Apariencia"
@@ -362,7 +362,7 @@ msgid "Enable cache of already optimized files to automatically skip them."
 msgstr "Habilite la memoria caché de archivos ya optimizados para omitirlos automáticamente."
 
 msgid "If specified, number of trial iterations in all Leanify executions will use this vaule. If not, iterations are calculated depending on the Optimization level."
-msgstr "Si se especifica, el número de iteraciones de prueba en todas las ejecuciones de Leanify usará este vaule. De lo contrario, las iteraciones se calculan según el nivel de Optimización."
+msgstr "Si se especifica, el número de iteraciones de prueba en todas las ejecuciones de Leanify usará este valor. De lo contrario, las iteraciones se calculan según el nivel de Optimización."
 
 msgid "&Allow duplicates"
 msgstr "&Permitir duplicados"
@@ -383,7 +383,7 @@ msgid "Shutdown computer when optimization completes."
 msgstr "Apagar la computadora cuando finaliza la optimización."
 
 msgid "&Beep when done"
-msgstr "&Beep cuando termine"
+msgstr "&Alertar cuando termine"
 
 msgid "Beep the speaker when optimization completes."
 msgstr "Pite el altavoz cuando finaliza la optimización."
@@ -392,10 +392,10 @@ msgid "&Leanify iterations"
 msgstr "&Leanify iteraciones"
 
 msgid "&Disable plugin mask"
-msgstr "&Deshabilitar máscara de complemento"
+msgstr "&Deshabilitar plugins por máscara"
 
 msgid "General &2"
-msgstr "General y 2"
+msgstr "General &2"
 
 msgid "If not empty specified directory will be used for temporary storage instead of system's %TEMP%."
 msgstr "Si no está vacío, el directorio especificado se usará para el almacenamiento temporal en lugar del% TEMP% del sistema."
@@ -413,7 +413,7 @@ msgid "Files containing this mask (substring) on name or path will be excluded f
 msgstr "Los archivos que contienen esta máscara (subcadena) en el nombre o la ruta se excluirán de la optimización. Puede usar punto y coma (;) para especificar más de una subcadena que se excluye."
 
 msgid "&Do not use recycle bin"
-msgstr "&No use la papelera de reciclaje"
+msgstr "&No usar la papelera de reciclaje"
 
 msgid "When checked original files will not be backed up in the system trashcan."
 msgstr "Cuando se revisen, los archivos originales no se copiarán en la papelera del sistema."
@@ -437,16 +437,16 @@ msgid "0: None (Default)"
 msgstr "0: Ninguno (Defecto)"
 
 msgid "Automatically check for program updates."
-msgstr "Verifica automáticamente las actualizaciones del programa."
+msgstr "Buscar actualizaciones automáticamente."
 
 msgid "Never"
 msgstr "Nunca"
 
 msgid "Automatically (Default)"
-msgstr "Automáticamente (Defecto)"
+msgstr "Automáticamente (Predeterminado)"
 
 msgid "Ask"
-msgstr "Pregunte"
+msgstr "Preguntar"
 
 msgid "Process priority from most conservative to best performance."
 msgstr "Prioridad de proceso del más conservador al mejor rendimiento."
@@ -458,16 +458,16 @@ msgid "Above normal"
 msgstr "Por encima de lo normal"
 
 msgid "Normal (Default)"
-msgstr "Normal (por defecto)"
+msgstr "Normal (Predeterminado)"
 
 msgid "Below normal"
 msgstr "Debajo de lo normal"
 
 msgid "Idle"
-msgstr "Idle"
+msgstr "Baja"
 
 msgid "Optimization level from best speed to best compression."
-msgstr "Nivel de optimización desde la mejor velocidad hasta la mejor compresión."
+msgstr "Nivel de optimización desde el más rápido hasta la mejor compresión."
 
 msgid "9: Best"
 msgstr "9: El mejor"
@@ -503,16 +503,16 @@ msgid "&Keep file attributes"
 msgstr "&Conservar atributos de archivo"
 
 msgid "Keep original readonly, system, hidden and archive attributes as well as creation and modification timestamps."
-msgstr "Mantenga los atributos originales de solo lectura, sistema, oculto y de archivo, así como los sellos de tiempo de creación y modificación."
+msgstr "Mantener los atributos originales de solo lectura, sistema, oculto y de archivo, así como las fechas y horas de creación y modificación."
 
 msgid "&Temp directory"
-msgstr "&Directorio Temp"
+msgstr "&Carpeta temporal"
 
 msgid "&Include mask"
-msgstr "&Incluir máscara"
+msgstr "&Máscara de inclusión"
 
 msgid "&Exclude mask"
-msgstr "&Excluir máscara"
+msgstr "&Máscara de exclusión"
 
 msgid "&Log level"
 msgstr "&Nivel de registro"
@@ -530,7 +530,7 @@ msgid "General &1"
 msgstr "General &1"
 
 msgid "Configure the appearance and behaviour of FileOptimizer"
-msgstr "Configurar el aspecto y el comportamiento de FileOptimizer"
+msgstr "Configurar la apariencia y el comportamiento de FileOptimizer"
 
 msgid "General program options affecting all extensions (1/2)"
 msgstr "Opciones generales del programa que afectan a todas las extensiones (1/2)"
@@ -545,7 +545,7 @@ msgid "and %s file formats among many others."
 msgstr "y %s formatos de archivo entre muchos otros."
 
 msgid " is an advanced file optimizer featuring a lossless (no quality loss) file size reduction that supports: "
-msgstr " es un optimizador de archivos avanzado que ofrece una reducción de tamaño de archivo sin pérdida (sin pérdida de calidad) que admite: "
+msgstr " es un optimizador de archivos avanzado que ofrece una reducción de tamaño de archivo sin pérdida de calidad (lossless) que admite: "
 
 msgid "\n\nDONATOR INFORMATION\n"
 msgstr "\n\nDATOS DEL DONADOR\n"
@@ -563,7 +563,7 @@ msgid "Information"
 msgstr "Información"
 
 msgid "About"
-msgstr "Sobre "
+msgstr "Acerca de... "
 
 msgid "Except where otherwise noted, all of the documentation and software \r\nincluded in the package is copyrighted by Javier Gutiérrez Chamorro (Guti).\r\n\r\nCopyright © 2012- Javier Gutiérrez Chamorro (Guti). All rights reserved.\r\n\r\nThis software is provided \"as-is,\" without any express or implied warranty.\r\nIn no event shall the author be held liable for any damages arising from the\r\nuse of this software.\r\n\r\nPermission is granted to anyone to use this software for any purpose,\r\nincluding commercial applications, and to alter and redistribute it,\r\nprovided that the following conditions are met:\r\n\r\n1. All redistributions of source code files must retain all copyright\r\n   notices that are currently in place, and this list of conditions without\r\n   modification.\r\n\r\n2. All redistributions in binary form must retain all occurrences of the\r\n   above copyright notice and web site addresses that are currently in\r\n   place (for example, in the About boxes).\r\n\r\n3. The origin of this software must not be misrepresented; you must not\r\n   claim that you wrote the original software. If you use this software to\r\n   distribute a product, an acknowledgment in the product documentation\r\n   would be appreciated but is not required.\r\n\r\n4. Modified versions in source or binary form must be plainly marked as\r\n   such, and must not be misrepresented as being the original software.\r\n"
 msgstr "Salvo que se indique lo contrario, toda la documentación y el software incluidos en el paquete son propiedad de Javier Gutiérrez Chamorro (Guti).\r\n\r\nCopyright © 2012- Javier Gutiérrez Chamorro (Guti). Todos los derechos reservados.\r\n\r\nEste software se proporciona \"tal cual, \" sin ninguna garantía expresa o implícita.\n\nEn ningún caso se hará responsable al autor de los daños que surjan de la\r\n\nuse de este software.\r\n\r\nSe otorga autorización a cualquier persona para usar este software para cualquier fin,\r\nincluyendo aplicaciones comerciales, y para alterarlo y redistribuirlo\r\n, siempre que se cumplan las siguientes condiciones :\r\n\r\n1. Todas las redistribuciones de los archivos de código fuente deben conservar todos los avisos de copyright\r\n que estén actualmente en su lugar, y esta lista de condiciones sin\r\n modificación.\r\n\r\n2. Todas las redistribuciones en forma binaria deben conservar todas las apariciones del\r\n aviso de copyright anterior y las direcciones del sitio web que están actualmente en\r\n lugar (por ejemplo, en los cuadros Acerca de).\r\n\r\n3. El origen de este software no debe ser tergiversado; no debe\r\n reclamar que escribió el software original. Si utiliza este software para\r\n distribuir un producto, se agradecerá un acuse de recibo en la documentación del producto\r\n, pero no es obligatorio.\r\n\r\n4. Las versiones modificadas en formato fuente o binario deben estar claramente marcadas como\r\n tales, y no deben tergiversarse como el software original.\r\n"
@@ -590,7 +590,7 @@ msgid "Running %s..."
 msgstr "Ejecutando %s..."
 
 msgid "Optimized"
-msgstr "Optomizado"
+msgstr "Optimizado"
 
 msgid "Done (%3u%%)."
 msgstr "Hecho (%3u%%)."
@@ -599,5 +599,5 @@ msgid "%s files processed. %s bytes saved (%s%%)"
 msgstr "%s archivos procesados. %s bytes guardados (%s%%)"
 
 msgid "Optimization is still running. Do you want to stop and exit %s?"
-msgstr "La optimización aún se está ejecutando. ¿Quieres parar y salir de %s?"
+msgstr "La optimización aún se está ejecutando. ¿Desea detener y salir de %s?"
 
