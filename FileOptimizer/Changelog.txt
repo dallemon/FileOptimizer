@@ -176,6 +176,7 @@ ndo
 
 
 X.XX - YYYY
+- Updated spanish translation (Thanks Edson Pacompía Ortiz).
 - Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
 - Updated mp4v2 x86 and x64 to 4.1.0 Visual C++ 2019 custom builds.
 - Updated ImageMagick to 7.0.8.37 with HDRI support.
