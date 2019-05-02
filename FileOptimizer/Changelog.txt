@@ -135,7 +135,7 @@ ndo
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
 - flexiGIF 2018.11a - https://create.stephan-brumme.com/flexigif-lossless-gif-lzw-optimization/
-- Gifsicle 1.91 - http://www.lcdf.org/gifsicle/
+- Gifsicle 1.92 - http://www.lcdf.org/gifsicle/
 - Gifsicle Lossy 1.91 - https://kornel.ski/lossygif
 - Ghostscript 9.27 - http://www.ghostscript.com
 - GNU Strip 2.30 - https://sourceforge.net/projects/mingw-w64/
@@ -178,6 +178,7 @@ ndo
 X.XX - YYYY
 - Updated spanish translation (Thanks Edson Pacompía Ortiz).
 - Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
+- Updated gifsicle to 1.92.
 - Updated mp4v2 x86 and x64 to 4.1.0 Visual C++ 2019 custom builds.
 - Updated ImageMagick to 7.0.8.37 with HDRI support.
 - Updated pingo to 0.99 beta 30 x64 version.
