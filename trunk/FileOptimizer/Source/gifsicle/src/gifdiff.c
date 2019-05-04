@@ -1,5 +1,5 @@
 /* gifdiff.c - Gifdiff compares GIF images for identical appearance.
-   Copyright (C) 1998-2018 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1998-2019 Eddie Kohler, ekohler@gmail.com
    This file is part of gifdiff, in the gifsicle package.
 
    Gifdiff is free software. It is distributed under the GNU Public License,
@@ -61,9 +61,8 @@ static Clp_Parser* clp;
 static void
 combine_colormaps(Gif_Colormap *gfcm, Gif_Colormap *newcm)
 {
-  int i;
-  if (!gfcm) return;
-  for (i = 0; i < gfcm->ncol; i++) {
+  int i, gfcm_ncol = gfcm ? gfcm->ncol : 0;
+  for (i = 0; i < gfcm_ncol; i++) {
     Gif_Color *c = &gfcm->col[i];
     c->pixel = Gif_AddColor(newcm, c, 1);
   }
@@ -116,11 +115,12 @@ apply_image(int is_second, Gif_Stream *gfs, int imageno, uint16_t background)
   uint16_t *data = gdata[is_second];
   uint16_t *last = glast[is_second];
   Gif_Colormap *gfcm = gfi->local ? gfi->local : gfs->global;
+  int gfcm_ncol = gfcm ? gfcm->ncol : 0;
 
   /* set up colormap */
-  for (i = 0; i < gfcm->ncol; ++i)
+  for (i = 0; i < gfcm_ncol; ++i)
     map[i] = gfcm->col[i].pixel;
-  for (i = gfcm->ncol; i < 256; ++i)
+  for (i = gfcm_ncol; i < 256; ++i)
     map[i] = 1;
   if (gfi->transparent >= 0 && gfi->transparent < 256)
     map[gfi->transparent] = TRANSP;
@@ -560,7 +560,7 @@ main(int argc, char *argv[])
 
      case VERSION_OPT:
       printf("gifdiff (LCDF Gifsicle) %s\n", VERSION);
-      printf("Copyright (C) 1998-2018 Eddie Kohler\n\
+      printf("Copyright (C) 1998-2019 Eddie Kohler\n\
 This is free software; see the source for copying conditions.\n\
 There is NO warranty, not even for merchantability or fitness for a\n\
 particular purpose.\n");
