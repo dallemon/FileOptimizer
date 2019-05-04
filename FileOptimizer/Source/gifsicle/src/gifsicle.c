@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 2 -*- */
 /* gifsicle.c - gifsicle's main loop.
-   Copyright (C) 1997-2018 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1997-2019 Eddie Kohler, ekohler@gmail.com
    This file is part of gifsicle.
 
    Gifsicle is free software. It is distributed under the GNU Public License,
@@ -17,8 +17,6 @@
 #include <ctype.h>
 #include <assert.h>
 #include <errno.h>
-#include <fcntl.h>
-#include "win32cfg.h"
 #if HAVE_UNISTD_H
 # include <unistd.h>
 #endif
@@ -203,6 +201,7 @@ static const char *output_option_types[] = {
 #define RESIZE_TOUCH_OPT        377
 #define RESIZE_TOUCH_WIDTH_OPT  378
 #define RESIZE_TOUCH_HEIGHT_OPT 379
+#define LOSSY_OPT               380
 
 #define LOOP_TYPE               (Clp_ValFirstUser)
 #define DISPOSAL_TYPE           (Clp_ValFirstUser + 1)
@@ -270,6 +269,7 @@ const Clp_Option options[] = {
 
   { "logical-screen", 'S', LOGICAL_SCREEN_OPT, DIMENSIONS_TYPE, Clp_Negate },
   { "loopcount", 'l', 'l', LOOP_TYPE, Clp_Optional | Clp_Negate },
+  { "lossy", 0, LOSSY_OPT, Clp_ValInt, Clp_Optional },
 
   { "merge", 'm', 'm', 0, 0 },
   { "method", 0, COLORMAP_ALGORITHM_OPT, COLORMAP_ALG_TYPE, 0 },
@@ -1454,7 +1454,7 @@ main(int argc, char *argv[])
      32-bit Windows and Makefile.w64 for 64-bit Windows. */
   static_assert(sizeof(unsigned int) == SIZEOF_UNSIGNED_INT, "unsigned int has the wrong size.");
   static_assert(sizeof(unsigned long) == SIZEOF_UNSIGNED_LONG, "unsigned long has the wrong size.");
-  //static_assert(sizeof(void*) == SIZEOF_VOID_P, "void* has the wrong size.");
+  static_assert(sizeof(void*) == SIZEOF_VOID_P, "void* has the wrong size.");
 
   clp = Clp_NewParser(argc, (const char * const *)argv, sizeof(options) / sizeof(options[0]), options);
 
@@ -2075,6 +2075,13 @@ main(int argc, char *argv[])
       }
       break;
 
+    case LOSSY_OPT:
+      if (clp->have_val)
+        gif_write_info.loss = clp->val.i;
+      else
+        gif_write_info.loss = 20;
+      break;
+
       /* RANDOM OPTIONS */
 
      case NO_WARNINGS_OPT:
@@ -2118,7 +2125,7 @@ main(int argc, char *argv[])
 #else
       printf("LCDF Gifsicle %s\n", VERSION);
 #endif
-      printf("Copyright (C) 1997-2018 Eddie Kohler\n\
+      printf("Copyright (C) 1997-2019 Eddie Kohler\n\
 This is free software; see the source for copying conditions.\n\
 There is NO warranty, not even for merchantability or fitness for a\n\
 particular purpose.\n");

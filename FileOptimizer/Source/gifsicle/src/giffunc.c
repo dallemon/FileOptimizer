@@ -1,5 +1,5 @@
 /* giffunc.c - General functions for the GIF library.
-   Copyright (C) 1997-2018 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1997-2019 Eddie Kohler, ekohler@gmail.com
    This file is part of the LCDF GIF library.
 
    The LCDF GIF library is free software. It is distributed under the GNU
@@ -821,6 +821,7 @@ void
 Gif_InitCompressInfo(Gif_CompressInfo *gcinfo)
 {
     gcinfo->flags = 0;
+    gcinfo->loss = 0;
 }
 
 

@@ -1,5 +1,5 @@
 /* support.c - Support functions for gifsicle.
-   Copyright (C) 1997-2018 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1997-2019 Eddie Kohler, ekohler@gmail.com
    This file is part of gifsicle.
 
    Gifsicle is free software. It is distributed under the GNU Public License,
@@ -220,6 +220,8 @@ Whole-GIF options: Also --no-OPTION.\n\
       --gamma G                 Set gamma for color reduction [2.2].\n");
 #endif
   printf("\
+      --lossy[=LOSSINESS]       Alter image colors to shrink output file size\n\
+                                at the cost of artifacts and noise.\n\
       --resize WxH              Resize the output GIF to WxH.\n\
       --resize-width W          Resize to width W and proportional height.\n\
       --resize-height H         Resize to height H and proportional width.\n\
@@ -1586,8 +1588,6 @@ merge_frame_interval(Gt_Frameset *fset, int f1, int f2,
       Gif_UncompressImage(fr->stream, srci);
     }
 
-    /* It was pretty stupid to remove this code, which I did between 1.2b6 and
-       1.2 */
     old_transp = apply_frame_transparent(srci, fr);
 
     /* Is it ok to use the old image's compressed version? */
