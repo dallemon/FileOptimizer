@@ -1381,7 +1381,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				RunPlugin((unsigned int) iCount, "FLACOut (4/4)", (sPluginsDirectory + "flacout.exe /q /y \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
-		// GIF: ImageMagick, gifsicle-lossy, gifsicle, flexiGIF
+		// GIF: ImageMagick, gifsicle, flexiGIF
 		if (PosEx(sExtensionByContent, KS_EXTENSION_GIF) > 0)
 		{
 			sFlags = "";
@@ -1390,20 +1390,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strip ";
 			}
 			//RunPlugin((unsigned int) iCount, "ImageMagick", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -layers optimize -compress LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			RunPlugin((unsigned int) iCount, "ImageMagick (1/4)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -set dispose background -layers optimize -compress -loop 0 LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			
-			if (gudtOptions.bGIFAllowLossy)
-			{
-				sFlags = "";
-				//iLevel = min(gudtOptions.iLevel * 3 / 9, 3);
-				iLevel = 3;
-				sFlags += "-O" + (String) iLevel + " ";
-				if (!gudtOptions.bGIFCopyMetadata)
-				{
-					sFlags += "--no-comments --no-extensions --no-names ";
-				}
-				RunPlugin((unsigned int) iCount, "gifsicle-lossy (2/4)", (sPluginsDirectory + "gifsicle-lossy.exe --lossy=85 -w -j --no-conserve-memory -o \"%TMPOUTPUTFILE%\" " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			}
+			RunPlugin((unsigned int) iCount, "ImageMagick (1/2)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -set dispose background -layers optimize -compress -loop 0 LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			
 			sFlags = "";
 			//iLevel = min(gudtOptions.iLevel * 3 / 9, 3);
@@ -1413,7 +1400,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--no-comments --no-extensions --no-names ";
 			}
-			RunPlugin((unsigned int) iCount, "gifsicle (3/4)", (sPluginsDirectory + "gifsicle.exe -w -j --no-conserve-memory -o \"%TMPOUTPUTFILE%\" " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			if (gudtOptions.bGIFAllowLossy)
+			{
+				sFlags += "--lossy=85 ";
+			}
+			RunPlugin((unsigned int) iCount, "gifsicle (2/2)", (sPluginsDirectory + "gifsicle.exe -w -j --no-conserve-memory -o \"%TMPOUTPUTFILE%\" " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			
 			if (!gudtOptions.bGIFCopyMetadata)
