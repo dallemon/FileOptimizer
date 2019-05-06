@@ -164,7 +164,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.27.2 - http://www.sqlite.org
+- SQLite 3.28.0 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -177,6 +177,7 @@ ndo
 X.XX - YYYY
 - Updated spanish translation (Thanks Edson Pacompía Ortiz).
 - Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
+- Updated SQLite to 3.28.0 x86 and x64 Visual C++ 2019 custom builds.
 - Updated gifsicle to 1.92.
 - Removed gifsicle-lossy management because it is now integrated in gifsicle.
 - Updated to mutool 1.15 RC1.
