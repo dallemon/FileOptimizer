@@ -175,6 +175,9 @@ ndo
 
 
 X.XX - YYYY
+
+
+13.80 - 2019/05/23
 - Updated spanish translation (Thanks Edson Pacompía Ortiz).
 - Updated all custom built plugins to Visual C++ 2019: gifsicle, gifsicle-lossy, jpegoptim, jsmin, mp4v2 and sqlite.
 - Updated SQLite to 3.28.0 x86 and x64 Visual C++ 2019 custom builds.
@@ -188,7 +191,6 @@ X.XX - YYYY
 - Updated Ghostscript to 9.27.
 - Updated Leanify to 0.4.3.231 daily binaries.
 - Updated EXE compatibility to PatchPE 1.31.
-
 
 13.70 - 2019/03/22
 - Added pingo for WEBP toolchain (lossless and lossy).
