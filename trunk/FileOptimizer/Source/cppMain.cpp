@@ -327,7 +327,7 @@ void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 					break;
 				}
 			}
-			while (FindNextFile(hFindFile, &udtFindFileData) != false);
+			while ((bool) FindNextFile(hFindFile, &udtFindFileData) != false);
 			FindClose(hFindFile);
 		}
 
@@ -2563,7 +2563,7 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 						AddFiles((((String) pacFile) + "\\" + udtFindFileData.cFileName).c_str());
 					}
 				}
-				while (FindNextFile(hFindFile, &udtFindFileData) != false);
+				while ((bool) FindNextFile(hFindFile, &udtFindFileData) != false);
 				FindClose(hFindFile);
 				RefreshStatus();
 			}
