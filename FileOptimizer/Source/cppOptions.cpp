@@ -246,7 +246,7 @@ void __fastcall TfrmOptions::FormCreate(TObject *Sender)
 				}
 			}
 		}
-		while (FindNextFile(hFindFile, &udtFindFileData) != false);
+		while ((bool) FindNextFile(hFindFile, &udtFindFileData) != false);
 		FindClose(hFindFile);
 	}
 	if (gudtOptions.iLanguage == 0)

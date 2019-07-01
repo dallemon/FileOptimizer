@@ -177,6 +177,9 @@ ndo
 X.XX - YYYY
 - Updated Leanify to 0.4.3.232 daily binaries.
 - Updated pingo to 0.99 beta 33 x64 version.
+- Updated to cppcheck 1.88.
+- Some minor optimizations and code cleanup.
+
 
 
 13.80 - 2019/05/23
