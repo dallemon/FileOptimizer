@@ -1204,7 +1204,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		int iLevel;
 		//Each extension can correspond to more than one engine, so use if instead of else if
 		// BMP: ImageMagick, ImageWorsener
-		String sExtensionByContent = " " + GetExtensionByContent(sInputFile) + " ";		
+		String sExtensionByContent = " " + GetExtensionByContent(sInputFile) + " ";
 		if (PosEx(sExtensionByContent, KS_EXTENSION_BMP) > 0)
 		{
 			sFlags = "";
@@ -1900,18 +1900,22 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					RunPlugin((unsigned int) iCount, "TruePNG (4/16)", (sPluginsDirectory + "truepng.exe " + sFlags + "/i0 /nc /tz /quiet /y /out \"%TMPOUTPUTFILE%\" \"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				}
 
-				sFlags = "";
-				if (gudtOptions.bPNGCopyMetadata)
+				//Skip PNGOut when it is a JPEG renamed to PNG
+				if (PosEx(" " + GetExtensionByContent(sInputFile, true) + " ", KS_EXTENSION_JPG) == 0)
 				{
-					sFlags += "/k1 ";
+					sFlags = "";
+					if (gudtOptions.bPNGCopyMetadata)
+					{
+						sFlags += "/k1 ";
+					}
+					else
+					{
+						sFlags += "/kacTL,fcTL,fdAT ";
+					}
+					iLevel = max((gudtOptions.iLevel * 3 / 9) - 3, 0);
+					sFlags += "/s" + (String) iLevel + " ";
+					RunPlugin((unsigned int) iCount, "PNGOut (5/16)", (sPluginsDirectory + "pngout.exe /q /y /r /d0 /mincodes0 " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				}
-				else
-				{
-					sFlags += "/kacTL,fcTL,fdAT ";
-				}
-				iLevel = max((gudtOptions.iLevel * 3 / 9) - 3, 0);
-				sFlags += "/s" + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "PNGOut (5/16)", (sPluginsDirectory + "pngout.exe /q /y /r /d0 /mincodes0 " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			
 			sFlags = "";
@@ -2901,7 +2905,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 
 
 //---------------------------------------------------------------------------
-String __fastcall TfrmMain::GetExtensionByContent (String psFilename)
+String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbForce)
 {
 	String sRes;
 	unsigned char acBuffer[512 * 2];
@@ -2910,7 +2914,7 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename)
 	sRes = ExtractFileExt(psFilename).LowerCase();
 
 	//If file extension is not known, get it by analyzing file contents
-	if (PosEx(" " + sRes + " ", KS_EXTENSION_ALL + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") == 0)
+	if ((PosEx(" " + sRes + " ", KS_EXTENSION_ALL + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") == 0) || (pbForce))
 	{
 		unsigned int iSize;
 		memset(acBuffer, 0, sizeof(acBuffer));
