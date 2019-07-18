@@ -52,7 +52,7 @@
 #include <IniFiles.hpp>
 #include <SHDocVw.hpp>
 #include <VersionHelpers.h>
-#include <Tlhelp32.h>
+#include <tlhelp32.h>
 
 #pragma hdrstop
 

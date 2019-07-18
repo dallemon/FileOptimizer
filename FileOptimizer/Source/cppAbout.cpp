@@ -47,7 +47,7 @@ void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 	#endif
 	lblDetail->Caption = __DATE__;
 
-	clsUtil::GetFileVersionField(Application->ExeName.c_str(), (TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
+	clsUtil::GetFileVersionField(Application->ExeName.c_str(), (const TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
 	lblCopyright->Caption = acName;
 	lblCopyright->Hint = KS_APP_URL;
 
@@ -328,7 +328,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		oCanvas->TextOut(32, 32, "Program: " + Application->Title);
 		oCanvas->TextOut(32, 48, "Bytes:   Version " + (String) clsUtil::ExeVersion(Application->ExeName.c_str()));
 		TCHAR acName[256];
-		clsUtil::GetFileVersionField(Application->ExeName.c_str(), (TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
+		clsUtil::GetFileVersionField(Application->ExeName.c_str(), (const TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
 		oCanvas->TextOut(32, 64, "Bytes:   " + (String) acName);
 	}
 	else

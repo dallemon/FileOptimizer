@@ -42,7 +42,7 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
 	Icon = Application->Icon;
 	lblCopyright->Hint = KS_APP_URL;
 
-	clsUtil::GetFileVersionField(Application->ExeName.c_str(), (TCHAR *) _T("LegalCopyright"), acPath, (sizeof(acPath) / sizeof(TCHAR)) - 1);
+	clsUtil::GetFileVersionField(Application->ExeName.c_str(), (const TCHAR *) _T("LegalCopyright"), acPath, (sizeof(acPath) / sizeof(TCHAR)) - 1);
 	lblCopyright->Caption = acPath;
 
 	pgbProgress->Parent = stbMain;

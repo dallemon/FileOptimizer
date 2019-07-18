@@ -1003,7 +1003,7 @@ bool __fastcall clsUtil::SetRegistry(HKEY phKey, const TCHAR *pacSubkey, const T
 	{
 		if (pacValue)
 		{
-			bRes = (RegSetValueEx(hKey, pacName, NULL, REG_SZ, (BYTE *) pacValue, _tcslen(pacValue) + 1) == ERROR_SUCCESS);
+			bRes = (RegSetValueEx(hKey, pacName, NULL, REG_SZ, (const BYTE *) pacValue, _tcslen(pacValue) + 1) == ERROR_SUCCESS);
 		}
 		else
 		{
