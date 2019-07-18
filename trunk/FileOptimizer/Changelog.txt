@@ -182,6 +182,7 @@ X.XX - YYYY
 - Updated Leanify to 0.4.3.232 daily binaries.
 - Updated pingo to 0.99 beta 33 x64 version.
 - Updated to cppcheck 1.88.
+- Upgraded to C++ Builder Community Edition 10.3.2 (26.0.34749.6593).
 - Some minor optimizations and code cleanup.
 
 
