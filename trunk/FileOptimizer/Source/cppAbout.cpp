@@ -26,7 +26,6 @@ __fastcall TfrmAbout::~TfrmAbout()
 
 
 
-
 //---------------------------------------------------------------------------
 void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 {
@@ -91,7 +90,7 @@ void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 	#endif
 
 
-	char acRtf[] = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang3082\\deflangfe3082{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Tahoma;}{\\f1\\fnil\\fcharset0 Calibri;}{\\f2\\fnil\\fcharset2 Symbol;}}\
+	static const char acRtf[] = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang3082\\deflangfe3082{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Tahoma;}{\\f1\\fnil\\fcharset0 Calibri;}{\\f2\\fnil\\fcharset2 Symbol;}}\
 {\\colortbl ;\\red51\\green51\\blue51;\\red34\\green34\\blue34;\\red0\\green0\\blue255;\\red255\\green255\\blue255;}\
 {\\*\\generator Riched20 10.0.17134}{\\*\\mmathPr\\mdispDef1\\mwrapIndent1440 }\\viewkind4\\uc1 \
 \\pard\\cbpat4\\widctlpar\\sb288\\sa192\\qc\\cf1\\b\\f0\\fs36 GNU AFFERO GENERAL PUBLIC LICENSE\\par\
@@ -266,7 +265,7 @@ To do so, attach the following notices to the program. It is safest to attach th
 \\par\
     This program is distributed in the hope that it will be useful,\\par\
     but WITHOUT ANY WARRANTY; without even the implied warranty of\\par\
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\\par\
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\\par\
     GNU Affero General Public License for more details.\\par\
 \\par\
     You should have received a copy of the GNU Affero General Public License\\par\
@@ -284,10 +283,13 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 
 	TMemoryStream *oMememoryStream;
 	oMememoryStream = new TMemoryStream();
-	oMememoryStream->Write(acRtf, sizeof(acRtf));
-	oMememoryStream->Position = 0;
-	mmoLicense->Lines->LoadFromStream(oMememoryStream, TEncoding::UTF8);
-	delete oMememoryStream;
+	if (oMememoryStream)
+	{
+		oMememoryStream->Write(acRtf, sizeof(acRtf) - 1);
+		oMememoryStream->Position = 0;
+		mmoLicense->Lines->LoadFromStream(oMememoryStream, TEncoding::UTF8);
+		delete oMememoryStream;
+	}
 }
 
 
@@ -295,9 +297,9 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 {
 	TCanvas *oCanvas;
-	
-	
-	if (!imgEaster)
+
+
+	if ((!imgEaster) && (!tmrEaster))
 	{
 		//Initialize
 		imgEaster = new TImage(this);
@@ -371,9 +373,16 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 {
-	delete imgEaster;
-	imgEaster = NULL;
-	delete tmrEaster;
+	if (imgEaster)
+	{
+		delete imgEaster;
+		imgEaster = NULL;
+	}
+	if (tmrEaster)
+	{
+		delete tmrEaster;
+		tmrEaster = NULL;
+    }
 
 	//ToDo: Should not be needed
 	butClose->Show();
