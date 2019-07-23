@@ -157,7 +157,7 @@ ndo
 - mutool 1.15 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 beta 33 - http://css-ig.net/pingo
+- pingo 0.99 beta 44 - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -180,7 +180,7 @@ X.XX - YYYY
 - Updated libwebp to 1.0.3 RC1.
 - Updated ImageMagick to 7.0.8.53 with HDRI support.
 - Updated Leanify to 0.4.3.232 daily binaries.
-- Updated pingo to 0.99 beta 33 x64 version.
+- Updated pingo to 0.99 beta 44 x64 version.
 - Updated to cppcheck 1.88.
 - Upgraded to C++ Builder Community Edition 10.3.2 (26.0.34749.6593).
 - Some minor optimizations and code cleanup.
