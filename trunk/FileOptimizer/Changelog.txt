@@ -154,7 +154,7 @@ ndo
 - mozjpeg 3.3.1-3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
 - mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
-- mutool 1.16 RC1 - http://mupdf.com/downloads/
+- mutool 1.16 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
 - pingo 0.99 beta 44 - http://css-ig.net/pingo
@@ -175,6 +175,8 @@ ndo
 
 
 X.XX - YYYY
+- Updated to mutool 1.16.
+
 
 
 13.90 - 2019/07/27
