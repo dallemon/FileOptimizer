@@ -1201,7 +1201,7 @@ int __fastcall clsUtil::Random(int piMin, int piMax)
 
 	
 	iSeed = (214013 * iSeed + 2531011);
-	return ((int) iSeed  % (piMax - piMin) + piMin);
+	return ((int) iSeed  % (piMax - piMin + 1) + piMin);
 }
 
 
