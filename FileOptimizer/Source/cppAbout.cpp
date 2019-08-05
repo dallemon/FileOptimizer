@@ -301,6 +301,14 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 
 	if ((!imgEaster) && (!tmrEaster))
 	{
+		//ToDo: Should not be needed
+		butClose->Hide();
+		mmoLicense->Hide();
+
+		//ToDo: We should handle window resizing or prevent it while in easter egg
+		BorderStyle = bsSingle;
+		BorderIcons = BorderIcons << biMaximize;
+	
 		//Initialize
 		imgEaster = new TImage(this);
 		tmrEaster = new TTimer(this);
@@ -310,15 +318,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		imgEaster->Width = ClientWidth;
 		imgEaster->Height = ClientHeight;
 
-		//ToDo: Should not be needed
-		butClose->Hide();
-		mmoLicense->Hide();
-
-		//ToDo: We should handle window resizing or prevent it while in easter egg
-		BorderStyle = bsSingle;
-		BorderIcons = BorderIcons << biMaximize;
-
-		tmrEaster->Interval = 25;
+		tmrEaster->Interval = 15;
 		tmrEaster->OnTimer = EasterTimer;
 		oCanvas = imgEaster->Canvas;
 
@@ -341,6 +341,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 	//Draw lines
 	for (unsigned int iLine = 0; iLine < ClientHeight; iLine++)
 	{
+		//int iRnd = clsUtil::Random(0, 1);
 		unsigned int iRnd = random(2);
 
 
@@ -366,6 +367,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 			oCanvas->LineTo(ClientWidth, iLine);
 		}
 	}
+	//Beep(830, 100);
 }
 
 
