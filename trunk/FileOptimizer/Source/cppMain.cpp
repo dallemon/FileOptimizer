@@ -2470,7 +2470,7 @@ void __fastcall TfrmMain::lblCopyrightClick(TObject *Sender)
 
 
 // ---------------------------------------------------------------------------
-void __fastcall TfrmMain::WMDropFiles(TWMDropFiles &udtMessage)
+void __fastcall TfrmMain::WMDropFiles(const TWMDropFiles &udtMessage)
 {
 	HDROP hDrop = (HDROP) udtMessage.Drop;
 	if (hDrop)

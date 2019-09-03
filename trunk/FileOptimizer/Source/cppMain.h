@@ -297,7 +297,7 @@ private: // User declarations
 	unsigned long long __inline ParseNumberThousand (String psNumber);
 	int __fastcall RunPlugin(unsigned int piCurrent, String psStatus, String psCommandLine, String psInputFile, String psOutputFile, int piErrorMin = INT_MIN, int piErrorMax = INT_MAX);
 	unsigned long __fastcall RunProcess(const TCHAR *pacProcess, TCHAR *pacOutput, unsigned int piOutputLen, bool pbWait);
-	void __fastcall WMDropFiles(TWMDropFiles &udtMessage);
+	void __fastcall WMDropFiles(const TWMDropFiles &udtMessage);
 	void __fastcall AddFilesInitializeExist(void);
 	bool __fastcall AddFilesExist(String psFile);
 	void __fastcall AddFiles(const TCHAR *pacFile);
