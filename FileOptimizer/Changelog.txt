@@ -181,6 +181,7 @@ X.XX - YYYY
 - Updated pingo to 0.99 beta 51 x64 version.
 - Updated strip to 2.32.
 - Updated to mutool 1.16.
+- Some minor optimizations and code cleanup.
 
 
 
