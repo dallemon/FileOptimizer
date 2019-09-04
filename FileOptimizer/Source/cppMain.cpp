@@ -1770,7 +1770,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		// Microsoft OLE Compound Files: Document Press
 		if (PosEx(sExtensionByContent, KS_EXTENSION_OLE) > 0)
 		{
-			RunPlugin((unsigned int) iCount, "Document Press (1/1)", (sPluginsDirectory + "docprc.exe -opt \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Document Press (1/2)", (sPluginsDirectory + "docprc.exe -opt \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Best CFBF (2/2)", (sPluginsDirectory + "bestcfbf.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\" -v4").c_str(), sInputFile, "", 0, 0);
 		}
 		// PCX: ImageMagick
 		if (PosEx(sExtensionByContent, KS_EXTENSION_PCX) > 0)

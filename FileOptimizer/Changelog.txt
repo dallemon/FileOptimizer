@@ -124,6 +124,7 @@ ndo
 
 - AdvanceCOMP 2.10 - https://github.com/amadvance/advancecomp
 - APNG Optimizer 1.4 - http://sourceforge.net/projects/apng/
+- Best CFBF Optimizer May 11th 2019 - https://papas-best.com/cfbf_en
 - Coherent PDF Command Line Tools (cpdf) 2.2 Patchlevel 1 - http://community.coherentpdf.com
 - CSSTidy 1.3 - http://csstidy.sourceforge.net/download.php
 - DeflOpt 2.07 - http://www.walbeehm.com/download/
@@ -175,6 +176,7 @@ ndo
 
 
 X.XX - YYYY
+- Added Best CFBF Optimizer to the OLE toolchain.
 - Updated ffmpeg to 4.1.4.
 - Updated ImageMagick to 7.0.8.58 with HDRI support.
 - Updated libwebp to 1.0.3.
