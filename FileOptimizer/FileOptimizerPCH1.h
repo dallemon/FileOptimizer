@@ -56,4 +56,9 @@
 
 #pragma hdrstop
 
+
+#ifndef nullptr
+    #define nullptr NULL
+#endif
+
 //#endif

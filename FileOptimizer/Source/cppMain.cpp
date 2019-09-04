@@ -9,7 +9,7 @@
 
 
 // ---------------------------------------------------------------------------
-TfrmMain *frmMain = NULL;
+TfrmMain *frmMain = nullptr;
 struct udtOptions gudtOptions  = {};
 //SYSTEM_INFO gudtSystemInfo = {};
 bool gbProcess = false;
@@ -76,7 +76,7 @@ void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 	if (webAds)
 	{
 		delete webAds;
-		webAds = NULL;
+		webAds = nullptr;
 	}
 }
 
@@ -187,7 +187,7 @@ void __fastcall TfrmMain::LoadOptions(void)
 	gudtOptions.iPNGWolfIterations = GetOption(_T("Options"), _T("PNGWolfIterations"), -1);
 	_tcsncpy(gudtOptions.acTempDirectory, GetOption(_T("Options"), _T("TempDirectory"), _T("")), (sizeof(gudtOptions.acTempDirectory) / sizeof(TCHAR)) - 1);
 
-	if (GetModuleFileName(NULL, acPath, (sizeof(acPath) / sizeof(TCHAR)) - 1) != 0)
+	if (GetModuleFileName(nullptr, acPath, (sizeof(acPath) / sizeof(TCHAR)) - 1) != 0)
 	{
 		_tcsncpy(acPath, clsUtil::ExeVersion(acPath), (sizeof(acPath) / sizeof(TCHAR)) - 1);
 		_tcsncpy(gudtOptions.acVersion, GetOption(_T("Options"), _T("Version"), acPath), (sizeof(gudtOptions.acVersion) / sizeof(TCHAR)) - 1);
@@ -1767,7 +1767,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			
 			RunPlugin((unsigned int) iCount, "rehuff_theora (2/2)", (sPluginsDirectory + "rehuff_theora.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
-		// Microsoft OLE Compound Files: Document Press
+		// Microsoft OLE Compound Files: Document Press, Best CFBF
 		if (PosEx(sExtensionByContent, KS_EXTENSION_OLE) > 0)
 		{
 			RunPlugin((unsigned int) iCount, "Document Press (1/2)", (sPluginsDirectory + "docprc.exe -opt \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
