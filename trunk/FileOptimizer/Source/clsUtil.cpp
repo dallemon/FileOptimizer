@@ -33,7 +33,7 @@ const void * __fastcall clsUtil::MemMem (const void *buf, size_t buf_len, const 
 	while (byte_sequence_len <= (buf_len - (p - bf)))
 	{
 		unsigned int b = *bs & 0xFF;
-		if ((p = (unsigned char *) memchr(p, b, buf_len - (p - bf))) != NULL)
+		if ((p = (unsigned char *) memchr(p, b, buf_len - (p - bf))) != nullptr)
 		{
 			if ((memcmp(p, byte_sequence, byte_sequence_len)) == 0)
 			{
@@ -49,7 +49,7 @@ const void * __fastcall clsUtil::MemMem (const void *buf, size_t buf_len, const 
 			break;
 		}
 	}
-	return (NULL);
+	return (nullptr);
 }
 
 
@@ -160,7 +160,7 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 			//else if ((piType & MB_ICONQUESTION) == MB_ICONQUESTION)
 			else
 			{
-				udtFlags.pszMainIcon = NULL;
+				udtFlags.pszMainIcon = nullptr;
 			}
 
 			udtFlags.pszWindowTitle = (TCHAR *) pacTitle;
@@ -173,7 +173,7 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 				udtFlags.pszMainInstruction = (TCHAR *) pacTitle;
 				udtFlags.pszContent = (TCHAR *) pacText;
 			}
-			(*TaskDialogIndirect)(&udtFlags, &iButton, NULL, NULL);
+			(*TaskDialogIndirect)(&udtFlags, &iButton, nullptr, nullptr);
 		}
 		FreeLibrary(hComCtl32);
 	}
@@ -215,7 +215,7 @@ HANDLE __fastcall clsUtil::FindProcess(const TCHAR *pacProcess)
 
 	udtEntry.dwSize = sizeof(PROCESSENTRY32);
 	bool bRes = Process32First(hSnapshot, &udtEntry);
-	HANDLE hProcess = NULL;
+	HANDLE hProcess = nullptr;
 	while (bRes)
 	{
 		if (_tcsicmp(GetShortName((String) udtEntry.szExeFile).c_str(), GetShortName((String) pacProcess).c_str()) == 0)
@@ -239,15 +239,15 @@ unsigned long __fastcall clsUtil::RunProcess(const TCHAR *pacProcess, const TCHA
 	STARTUPINFO udtSI;
 	PROCESS_INFORMATION udtPI = {};
 	SECURITY_ATTRIBUTES udtSA = {};
-	HANDLE hRead = NULL, hWrite = NULL;
+	HANDLE hRead = nullptr, hWrite = nullptr;
 
 
 	Screen->Cursor = crHourGlass;
-	if ((pacOutput != NULL) && (piOutputLen > 0))
+	if ((pacOutput != nullptr) && (piOutputLen > 0))
 	{
 		udtSA.nLength = sizeof(udtSA);
 		udtSA.bInheritHandle = true;
-		udtSA.lpSecurityDescriptor = NULL;
+		udtSA.lpSecurityDescriptor = nullptr;
 		CreatePipe(&hRead, &hWrite, &udtSA, 0);
 
 		udtSI.cb = sizeof(udtSI);
@@ -256,7 +256,7 @@ unsigned long __fastcall clsUtil::RunProcess(const TCHAR *pacProcess, const TCHA
 		udtSI.hStdOutput = hWrite;
 		udtSI.wShowWindow = SW_HIDE;
 
-		if (!CreateProcess(NULL, GetShortName((String) pacProcess).c_str(), &udtSA, &udtSA, false, NULL, NULL, GetShortName((String) pacDirectory).c_str(), &udtSI, &udtPI))
+		if (!CreateProcess(nullptr, GetShortName((String) pacProcess).c_str(), &udtSA, &udtSA, false, NULL, nullptr, GetShortName((String) pacDirectory).c_str(), &udtSI, &udtPI))
 		{
 			//_stprintf(acTmp, _T("Cannot launch %s"), pacProcess);
 			//MsgBox(NULL, acTmp, _T("Error"), MB_OK | MB_ICONASTERISK);
@@ -266,13 +266,13 @@ unsigned long __fastcall clsUtil::RunProcess(const TCHAR *pacProcess, const TCHA
 	{
 		udtSA.nLength = sizeof(udtSA);
 		udtSA.bInheritHandle = true;
-		udtSA.lpSecurityDescriptor = NULL;
+		udtSA.lpSecurityDescriptor = nullptr;
 
 		udtSI.cb = sizeof(udtSI);
 		udtSI.dwFlags = STARTF_USESHOWWINDOW;
 		udtSI.wShowWindow = SW_HIDE;
 
-		if (!CreateProcess(NULL, GetShortName((String) pacProcess).c_str(), &udtSA, &udtSA, false, NULL, NULL, GetShortName((String) pacDirectory).c_str(), &udtSI, &udtPI))
+		if (!CreateProcess(nullptr, GetShortName((String) pacProcess).c_str(), &udtSA, &udtSA, false, NULL, nullptr, GetShortName((String) pacDirectory).c_str(), &udtSI, &udtPI))
 		{
 			//_stprintf(acTmp, _T("Cannot launch %s"), pacProcess);
 			//MsgBox(NULL, acTmp, _T("Error"), MB_OK | MB_ICONASTERISK);
@@ -294,14 +294,14 @@ unsigned long __fastcall clsUtil::RunProcess(const TCHAR *pacProcess, const TCHA
 		GetExitCodeProcess(udtPI.hProcess, &lExitCode);
 	}
 
-	if ((pacOutput != NULL) && (piOutputLen > 0))
+	if ((pacOutput != nullptr) && (piOutputLen > 0))
 	{
 		memset(pacOutput, 0, piOutputLen);
 		unsigned long lRead;
-		PeekNamedPipe(hRead, NULL, NULL, NULL, &lRead, NULL);
+		PeekNamedPipe(hRead, nullptr, NULL, nullptr, &lRead, nullptr);
 		if (lRead > 0)
 		{
-			::ReadFile(hRead, pacOutput, piOutputLen, &lRead, NULL);
+			::ReadFile(hRead, pacOutput, piOutputLen, &lRead, nullptr);
 		}
 		CloseHandle(hRead);
 		CloseHandle(hWrite);
@@ -357,13 +357,13 @@ bool __fastcall clsUtil::ReadFile(const TCHAR *pacFile, void *pvData, unsigned i
 	bool bRes = false;
 
 
-	HANDLE hMapping = NULL;
-	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, NULL);
+	HANDLE hMapping = nullptr;
+	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, nullptr);
 	if (hFile != INVALID_HANDLE_VALUE)
 	{
 		if (*piSize == 0)
 		{
-			iSize = GetFileSize(hFile, NULL);
+			iSize = GetFileSize(hFile, nullptr);
 		}
 		else
 		{
@@ -372,11 +372,11 @@ bool __fastcall clsUtil::ReadFile(const TCHAR *pacFile, void *pvData, unsigned i
 		if (iSize > 0)
 		{
 			// Use file mapped IO
-			hMapping = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, iSize, NULL);
+			hMapping = CreateFileMapping(hFile, nullptr, PAGE_READONLY, 0, iSize, nullptr);
 			if (hMapping != INVALID_HANDLE_VALUE)
 			{
 				void *pacBuffer = MapViewOfFile(hMapping, FILE_MAP_READ, 0, 0, iSize);
-				if ((piOffset == 0) && (pacBuffer != NULL))
+				if ((piOffset == 0) && (pacBuffer != nullptr))
 				{
 					memcpy(pvData, pacBuffer, iSize);
 					bRes = UnmapViewOfFile(pacBuffer);
@@ -385,15 +385,15 @@ bool __fastcall clsUtil::ReadFile(const TCHAR *pacFile, void *pvData, unsigned i
 				else
 				{
 					//Cleanup
-					if (pacBuffer != NULL)
+					if (pacBuffer != nullptr)
 					{
 						UnmapViewOfFile(pacBuffer);
 					}
 					if (piOffset != 0)
 					{
-						SetFilePointer(hFile, (long) piOffset, NULL, FILE_BEGIN);
+						SetFilePointer(hFile, (long) piOffset, nullptr, FILE_BEGIN);
 					}
-					bRes = ::ReadFile(hFile, pvData, *piSize, (unsigned long *) &iSize, NULL);
+					bRes = ::ReadFile(hFile, pvData, *piSize, (unsigned long *) &iSize, nullptr);
 				}
 			}
 		}
@@ -412,16 +412,16 @@ bool __fastcall clsUtil::WriteFile(const TCHAR *pacFile, const void *pvData, uns
 	bool bRes = false;
 
 
-	HANDLE hMapping = NULL;
-	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS, FILE_FLAG_WRITE_THROUGH, NULL);
+	HANDLE hMapping = nullptr;
+	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS, FILE_FLAG_WRITE_THROUGH, nullptr);
 	if (hFile != INVALID_HANDLE_VALUE)
 	{
 		// Use file mapped IO
-		hMapping = CreateFileMapping(hFile, NULL, PAGE_READWRITE, 0, piSize, NULL);
+		hMapping = CreateFileMapping(hFile, nullptr, PAGE_READWRITE, 0, piSize, nullptr);
 		if (hMapping != INVALID_HANDLE_VALUE)
 		{
 			void *pacBuffer = MapViewOfFile(hMapping, FILE_MAP_WRITE, 0, 0, piSize);
-			if ((piOffset == 0) && (pacBuffer != NULL))
+			if ((piOffset == 0) && (pacBuffer != nullptr))
 			{
 				memcpy(pacBuffer, pvData, piSize);
 				bRes = UnmapViewOfFile(pacBuffer);
@@ -431,16 +431,16 @@ bool __fastcall clsUtil::WriteFile(const TCHAR *pacFile, const void *pvData, uns
 			else
 			{
 				//Cleanup
-				if (pacBuffer != NULL)
+				if (pacBuffer != nullptr)
 				{
 					UnmapViewOfFile(pacBuffer);
 				}
 				if (piOffset != 0)
 				{
-					SetFilePointer(hFile, (long) piOffset, NULL, FILE_BEGIN);
+					SetFilePointer(hFile, (long) piOffset, nullptr, FILE_BEGIN);
 				}
 				unsigned int iSize;
-				bRes = ::WriteFile(hFile, pvData, piSize, (unsigned long *) &iSize, NULL);
+				bRes = ::WriteFile(hFile, pvData, piSize, (unsigned long *) &iSize, nullptr);
 			}
 		}
 	}
@@ -457,7 +457,7 @@ bool __fastcall clsUtil::GetFileTimestamp(const TCHAR *pacFile, FILETIME *pudtCr
 	bool bRes = false;
 
 
-	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
 	if (hFile != INVALID_HANDLE_VALUE)
 	{
 		bRes = GetFileTime(hFile, pudtCreated, pudtAccessed, pudtModified);
@@ -474,7 +474,7 @@ bool __fastcall clsUtil::SetFileTimestamp(const TCHAR *pacFile, const FILETIME *
 	bool bRes = false;
 
 
-	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	HANDLE hFile = CreateFile(GetShortName((String) pacFile).c_str(), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
 	if (hFile != INVALID_HANDLE_VALUE)
 	{
 		bRes = SetFileTime(hFile, pudtCreated, pudtAccessed, pudtModified);
@@ -504,7 +504,7 @@ bool __fastcall clsUtil::DirectoryCreate(String psDirectory)
 		if (acDirectory[iCount] == '\\')
 		{
 			acDirectory[iCount] = NULL;
-			bRes = (CreateDirectory(GetShortName((String) acDirectory).c_str(), NULL) != 0);
+			bRes = (CreateDirectory(GetShortName((String) acDirectory).c_str(), nullptr) != 0);
 			acDirectory[iCount] = '\\';
 		}
 	}
@@ -519,15 +519,15 @@ bool __fastcall clsUtil::DownloadFile(const TCHAR *pacUrl, void *pvData, unsigne
 	bool bRes = false;
 
 
-	if (GetModuleFileName(NULL, (TCHAR *) pvData, piSize - 1) != 0)
+	if (GetModuleFileName(nullptr, (TCHAR *) pvData, piSize - 1) != 0)
 	{
 		_stprintf((TCHAR *) pvData, _T("%s/%s"), Application->Name.c_str(), ExeVersion((const TCHAR *) pvData));
 	}
-	HINTERNET hInternet = InternetOpen((const TCHAR *) pvData, INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, NULL);
-	if (hInternet != NULL)
+	HINTERNET hInternet = InternetOpen((const TCHAR *) pvData, INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, NULL);
+	if (hInternet != nullptr)
 	{
-		HINTERNET hHttp = InternetOpenUrl(hInternet, pacUrl, NULL, 0, INTERNET_FLAG_EXISTING_CONNECT | INTERNET_FLAG_HYPERLINK, NULL);
-		if (hHttp != NULL)
+		HINTERNET hHttp = InternetOpenUrl(hInternet, pacUrl, nullptr, 0, INTERNET_FLAG_EXISTING_CONNECT | INTERNET_FLAG_HYPERLINK, NULL);
+		if (hHttp != nullptr)
 		{
 			memset(pvData, 0, piSize);
 			unsigned long lRead;
@@ -551,11 +551,11 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 	
 
     //ToDo: Use UrlGetPart https://msdn.microsoft.com/en-us/library/windows/desktop/bb773781(v=vs.85).aspx
-	if (GetModuleFileName(NULL, (TCHAR *) pvData, piSize - 1) != 0)
+	if (GetModuleFileName(nullptr, (TCHAR *) pvData, piSize - 1) != 0)
 	{
 		_stprintf((TCHAR *) pvData, _T("%s/%s"), Application->Name.c_str(), ExeVersion((const TCHAR *) pvData));
 	}
-	HINTERNET hInternet = InternetOpen((const TCHAR *) pvData, INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, NULL);
+	HINTERNET hInternet = InternetOpen((const TCHAR *) pvData, INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, NULL);
 	if (hInternet)
 	{
 		
@@ -564,7 +564,7 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 		{
 			iFlags = INTERNET_DEFAULT_HTTPS_PORT;
 		}
-		HINTERNET hConnect = InternetConnect(hInternet, pacServer, iFlags, NULL, NULL, INTERNET_SERVICE_HTTP, 0, 1);
+		HINTERNET hConnect = InternetConnect(hInternet, pacServer, iFlags, nullptr, nullptr, INTERNET_SERVICE_HTTP, 0, 1);
 		if (hConnect)
 		{
 			iFlags = INTERNET_FLAG_RELOAD | INTERNET_FLAG_IGNORE_CERT_CN_INVALID | INTERNET_FLAG_IGNORE_CERT_DATE_INVALID | INTERNET_FLAG_NO_CACHE_WRITE | INTERNET_FLAG_NO_UI;
@@ -572,7 +572,7 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 			{
 				iFlags |= INTERNET_FLAG_SECURE;
 			}
-			HINTERNET hRequest = HttpOpenRequest(hConnect, _T("POST"), pacPage, HTTP_VERSION, _T(""), NULL, iFlags, 0);
+			HINTERNET hRequest = HttpOpenRequest(hConnect, _T("POST"), pacPage, HTTP_VERSION, _T(""), nullptr, iFlags, 0);
 			if (hRequest)
 			{
 				if (pbHttps)
@@ -582,7 +582,7 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 				}
 				
 				TCHAR acHeaders[] = _T("Content-Type: application/x-www-form-urlencoded");
-				if (HttpSendRequest(hRequest, acHeaders, _tcslen(acHeaders), (void *) pacParameters, strlen((char *) pacParameters)))
+				if (HttpSendRequest(hRequest, acHeaders, _tcslen(acHeaders), (void *) pacParameters, strlen((const char *) pacParameters)))
 				{
 					memset(pvData, 0, piSize);
 					unsigned long lRead;
@@ -612,7 +612,7 @@ bool __fastcall clsUtil::CopyFile(const TCHAR *pacSource, const TCHAR *pacDestin
 	DeleteFile(pacDestination);
 
 	//Try copying file with faster no buffering only available in Windows XP
-	bRes = (CopyFileEx(GetShortName((String) pacSource).c_str(), GetShortName((String) pacDestination).c_str(), NULL, NULL, NULL, COPY_FILE_ALLOW_DECRYPTED_DESTINATION | COPY_FILE_NO_BUFFERING) != 0);
+	bRes = (CopyFileEx(GetShortName((String) pacSource).c_str(), GetShortName((String) pacDestination).c_str(), nullptr, nullptr, nullptr, COPY_FILE_ALLOW_DECRYPTED_DESTINATION | COPY_FILE_NO_BUFFERING) != 0);
 	if (!bRes)
 	{
 		//Try copying file with buffering
@@ -636,7 +636,7 @@ const TCHAR * __fastcall clsUtil::ExeVersion(const TCHAR *pacFile)
 	static TCHAR acRes[2048];
 
 	memset(acRes, 0, sizeof(acRes));	
-	iVersionSize = GetFileVersionInfoSize(pacFile, 0);
+	iVersionSize = GetFileVersionInfoSize(pacFile, nullptr);
 	pacVersionData = new TCHAR[iVersionSize];
 	if (pacVersionData)
 	{
@@ -697,7 +697,7 @@ int __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, 
 		return(0);
 	}
 	int vlen = _tcsclen(ver);
-	if (ret != NULL)
+	if (ret != nullptr)
 	{
 		int clen = vlen+1;
 		if (clen >= len-1)
@@ -727,14 +727,14 @@ const TCHAR * __fastcall clsUtil::GetIniPath(bool pbAllUsers)
 	{
 		TCHAR acTmp[2048];
 		
-		if (GetModuleFileName(NULL, acTmp, (sizeof(acTmp) / sizeof(TCHAR)) - 1) != 0)
+		if (GetModuleFileName(nullptr, acTmp, (sizeof(acTmp) / sizeof(TCHAR)) - 1) != 0)
 		{
 			*_tcsrchr(acTmp, '.') = NULL;
 		}
 		_tcscat(acTmp, _T(".ini"));
 
 		// Check if we can write to that location
-		HANDLE hFile = CreateFile(acTmp, GENERIC_WRITE, FILE_SHARE_WRITE, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+		HANDLE hFile = CreateFile(acTmp, GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
 		if (hFile == INVALID_HANDLE_VALUE)
 		{
 			_stprintf(acPath, _T("%s\\%s"), _tgetenv(_T("USERPROFILE")), (Application->Name + ".ini").c_str());
@@ -953,7 +953,7 @@ bool __fastcall clsUtil::SetIni(const TCHAR *pacSection, const TCHAR *pacKey, do
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bool __fastcall clsUtil::DeleteIni(const TCHAR *pacSection, const TCHAR *pacKey)
 {
-	return (WritePrivateProfileString(pacSection, pacKey, NULL, GetIniPath()));
+	return (WritePrivateProfileString(pacSection, pacKey, nullptr, GetIniPath()));
 }
 
 
@@ -984,7 +984,7 @@ const TCHAR * __fastcall clsUtil::GetRegistry(HKEY phKey, const TCHAR *pacSubkey
 	if (RegOpenKeyEx(phKey, pacSubkey, NULL, KEY_QUERY_VALUE, &hKey) == ERROR_SUCCESS)
 	{
 		unsigned int iSize = sizeof(acRes);
-		RegQueryValueEx(hKey, pacName, NULL, NULL, (BYTE *) acRes, (LPDWORD) &iSize);
+		RegQueryValueEx(hKey, pacName, nullptr, nullptr, (BYTE *) acRes, (LPDWORD) &iSize);
 		RegCloseKey(hKey);
     }
 	return (acRes);
@@ -1184,7 +1184,7 @@ unsigned int __fastcall clsUtil::Crc32 (const void *pacBuffer, unsigned int piLe
 	iCrc = piOldCrc;
 	for (iCont = 0; iCont < piLen; iCont++)
 	{
-		unsigned char cByte = (unsigned char) iCrc ^ ((unsigned char *) pacBuffer)[iCont];
+		unsigned char cByte = (unsigned char) iCrc ^ ((const unsigned char *) pacBuffer)[iCont];
 		iCrc = (iCrc >> 8) ^ aiTable[cByte];
 	}
 	return (iCrc ^ 0xFFFFFFFF);
@@ -1217,13 +1217,13 @@ const TCHAR * __fastcall clsUtil::GetLogPath(void)
 	{
 		TCHAR acTmp[2048];
 		
-		if (GetModuleFileName(NULL, acTmp, (sizeof(acTmp) / sizeof(TCHAR)) - 1) != 0)
+		if (GetModuleFileName(nullptr, acTmp, (sizeof(acTmp) / sizeof(TCHAR)) - 1) != 0)
 		{
 			*_tcsrchr(acTmp, '.') = NULL;
 		}
 		_tcscat(acTmp, _T(".log"));
 		// Check if we can write to that location
-		HANDLE hFile = CreateFile(acTmp, GENERIC_WRITE, FILE_SHARE_WRITE, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+		HANDLE hFile = CreateFile(acTmp, GENERIC_WRITE, FILE_SHARE_WRITE, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
 		if (hFile == INVALID_HANDLE_VALUE)
 		{
 			_stprintf(acPath, _T("%s\\%s"), _tgetenv(_T("USERPROFILE")), (Application->Name + ".log").c_str());
@@ -1295,7 +1295,7 @@ bool __fastcall clsUtil::LoadForm(TForm *pfrmForm)
 	}
 	pfrmForm->WindowState = (TWindowState) iWindowState;
 	pfrmForm->DefaultMonitor = (TDefaultMonitor) GetIni(pfrmForm->Name.c_str(), _T("DefaultMonitor"), pfrmForm->DefaultMonitor);
-	pfrmForm->MakeFullyVisible(NULL);
+	pfrmForm->MakeFullyVisible(nullptr);
 	return (true);
 }
 
@@ -1360,13 +1360,13 @@ bool __fastcall clsUtil::CopyToRecycleBin(const TCHAR *pacSource)
 // ---------------------------------------------------------------------------
 bool __fastcall clsUtil::SetTaskListProgress(unsigned int piCompleted, unsigned int piTotal)
 {
-	ITaskbarList3 *pTaskList = NULL;
+	ITaskbarList3 *pTaskList = nullptr;
 
 
 	// In 7 or newer use new TaskDialog
 	if (GetWindowsVersion() >= 601)
 	{
-		HRESULT hRes = ::CoCreateInstance(CLSID_TaskbarList, NULL, CLSCTX_INPROC_SERVER, IID_ITaskbarList, (void **) &pTaskList);
+		HRESULT hRes = ::CoCreateInstance(CLSID_TaskbarList, nullptr, CLSCTX_INPROC_SERVER, IID_ITaskbarList, (void **) &pTaskList);
 		if (pTaskList)
 		{
 			if (SUCCEEDED(hRes))
@@ -1453,12 +1453,12 @@ bool __fastcall clsUtil::ShutdownWindows(unsigned int piMode)
 	if (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) 
 	{
 		//Get the LUID for the shutdown privilege.
-		LookupPrivilegeValue(NULL, SE_SHUTDOWN_NAME, &udtTokenPrivileges.Privileges[0].Luid); 
+		LookupPrivilegeValue(nullptr, SE_SHUTDOWN_NAME, &udtTokenPrivileges.Privileges[0].Luid);
 		udtTokenPrivileges.PrivilegeCount = 1;  //One privilege to set    
 		udtTokenPrivileges.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED; 
 
 		// Get the shutdown privilege for this process. 
-		AdjustTokenPrivileges(hToken, false, &udtTokenPrivileges, 0, (PTOKEN_PRIVILEGES) NULL, 0); 
+		AdjustTokenPrivileges(hToken, false, &udtTokenPrivileges, 0, (PTOKEN_PRIVILEGES) nullptr, nullptr);
 		if (GetLastError() == ERROR_SUCCESS) 
 		{
 			//Shut down the system and force all applications to close.

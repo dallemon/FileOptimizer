@@ -17,14 +17,14 @@ USEFORM("Source\cppOptions.cpp", frmOptions);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacCmdLine, int piShow)
 {
-	HANDLE hMutex = NULL;
+	HANDLE hMutex = nullptr;
 
 	try
 	{
 		//Simple command line help
 		if (_tcsnccmp(pacCmdLine, _T("/?"), 2) == 0)
 		{
-			clsUtil::MsgBox(NULL, _T(
+			clsUtil::MsgBox(nullptr, _T(
 				"FileOptimizer command line syntax is:\n"
 				"FileOptimizer.exe <Path|File> [/Options]\n\n"
 				"<Path|File>: Specifies a path to recursively process or a single file. You can specify as much Files/Paths as you want. Paths with extended characters, or spaces, should be double quoted. Such as *.JPG \"C:\\PROYECTOS\\\" C:\\TEST.PNG\n\n"
@@ -97,11 +97,11 @@ int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacC
 			hMutex = OpenMutex(MUTEX_ALL_ACCESS, false, Application->Name.c_str());
 			if (!hMutex)
 			{
-				hMutex = CreateMutex(NULL, false, Application->Name.c_str());
+				hMutex = CreateMutex(nullptr, false, Application->Name.c_str());
 			}
 			else
 			{
-				if (clsUtil::MsgBox(NULL, ("There is one instance of " + Application->Name + " still running.\r\n\r\nDo you want to open another?").c_str(), _T("Still running"), MB_YESNO | MB_ICONQUESTION) == IDNO)
+				if (clsUtil::MsgBox(nullptr, ("There is one instance of " + Application->Name + " still running.\r\n\r\nDo you want to open another?").c_str(), _T("Still running"), MB_YESNO | MB_ICONQUESTION) == IDNO)
 				{
 					ReleaseMutex(hMutex);
 					CloseHandle(hMutex);
@@ -110,13 +110,13 @@ int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacC
 			}
 		}
 
-		if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != NULL)
+		if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != nullptr)
 		{
 			Application->ShowMainForm = false;
 			Application->MainFormOnTaskBar = false;
 		}
 		Application->CreateForm(__classid(TfrmMain), &frmMain);
-		if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != NULL)
+		if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != nullptr)
 		{
             frmMain->Visible = false;
 		}

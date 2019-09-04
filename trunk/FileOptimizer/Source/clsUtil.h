@@ -51,8 +51,8 @@ class clsUtil
 		static unsigned long long __fastcall SizeFile(const TCHAR *pacFile);
 		static bool __fastcall ReadFile(const TCHAR *pacFile, void *pvData, unsigned int *piSize, unsigned int piOffset = 0);
 		static bool __fastcall WriteFile(const TCHAR *pacFile, const void *pvData, unsigned int piSize, unsigned int piOffset = 0);
-		static bool __fastcall GetFileTimestamp(const TCHAR *pacFile, FILETIME *pudtCreated = NULL, FILETIME *pudtAccessed  = NULL, FILETIME *pudtModified  = NULL);
-		static bool __fastcall SetFileTimestamp(const TCHAR *pacFile, const FILETIME *pudtCreated = NULL, const FILETIME *pudtAccessed = NULL, const FILETIME *pudtModified = NULL);
+		static bool __fastcall GetFileTimestamp(const TCHAR *pacFile, FILETIME *pudtCreated = nullptr, FILETIME *pudtAccessed  = nullptr, FILETIME *pudtModified  = nullptr);
+		static bool __fastcall SetFileTimestamp(const TCHAR *pacFile, const FILETIME *pudtCreated = nullptr, const FILETIME *pudtAccessed = nullptr, const FILETIME *pudtModified = nullptr);
 		static bool __fastcall DirectoryCreate(String psDirectory);
 		static bool __fastcall DownloadFile(const TCHAR *pacUrl, void *pvData, unsigned int piSize);
 		static bool __fastcall DownloadFilePost(const TCHAR *pacServer, const TCHAR *pacPage, const char *pacParameters, void *pvData, unsigned int piSize, bool pbHttps = false);
@@ -70,7 +70,7 @@ class clsUtil
 		static bool __fastcall SetIni(const TCHAR *pacSection, const TCHAR *pacKey, int piValue, const TCHAR *pacComment = _T(""));
 		static bool __fastcall SetIni(const TCHAR *pacSection, const TCHAR *pacKey, long long plValue, const TCHAR *pacComment = _T(""));
 		static bool __fastcall SetIni(const TCHAR *pacSection, const TCHAR *pacKey, double pdValue, const TCHAR *pacComment = _T(""));
-		static bool __fastcall DeleteIni(const TCHAR *pacSection, const TCHAR *pacKey = NULL);
+		static bool __fastcall DeleteIni(const TCHAR *pacSection, const TCHAR *pacKey = nullptr);
 		static unsigned int __fastcall Serialize (void *pacBuffer, unsigned int piSize);
 		static unsigned int __fastcall Unserialize (void *pacBuffer, unsigned int piSize);
 		static unsigned int __fastcall Crc32 (const void *pacBuffer, unsigned int piLen, unsigned int piOldCrc = 0xFFFFFFFF);

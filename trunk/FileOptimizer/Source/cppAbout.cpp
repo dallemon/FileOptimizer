@@ -8,8 +8,8 @@
 
 // ---------------------------------------------------------------------------
 TfrmAbout *frmAbout;
-TImage *imgEaster = NULL;
-TTimer *tmrEaster = NULL;
+TImage *imgEaster = nullptr;
+TTimer *tmrEaster = nullptr;
 
 
 //---------------------------------------------------------------------------
@@ -342,7 +342,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 	for (unsigned int iLine = 0; iLine < ClientHeight; iLine++)
 	{
 		//int iRnd = clsUtil::Random(0, 1);
-		unsigned int iRnd = random(2);
+		unsigned int iRnd = (unsigned int) random(2);
 
 
 		if (iRnd == 0)
@@ -356,15 +356,15 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 
 		if ((iLine < 32) || (iLine > (ClientHeight - 32)))
 		{
-			oCanvas->MoveTo(0, iLine);
-			oCanvas->LineTo(imgEaster->Width, iLine);
+			oCanvas->MoveTo(0, (int) iLine);
+			oCanvas->LineTo(imgEaster->Width, (int) iLine);
 		}
 		else
 		{
-			oCanvas->MoveTo(0, iLine);
-			oCanvas->LineTo(32, iLine);
-			oCanvas->MoveTo(ClientWidth - 32, iLine);
-			oCanvas->LineTo(ClientWidth, iLine);
+			oCanvas->MoveTo(0, (int) iLine);
+			oCanvas->LineTo(32, (int) iLine);
+			oCanvas->MoveTo(ClientWidth - 32, (int) iLine);
+			oCanvas->LineTo(ClientWidth, (int) iLine);
 		}
 	}
 	//Beep(830, 100);
@@ -378,12 +378,12 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 	if (imgEaster)
 	{
 		delete imgEaster;
-		imgEaster = NULL;
+		imgEaster = nullptr;
 	}
 	if (tmrEaster)
 	{
 		delete tmrEaster;
-		tmrEaster = NULL;
+		tmrEaster = nullptr;
     }
 
 	//ToDo: Should not be needed
@@ -398,7 +398,7 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfrmAbout::imgAboutDblClick(TObject *Sender)
 {
-	EasterTimer(NULL);
+	EasterTimer(nullptr);
 }
 
 
