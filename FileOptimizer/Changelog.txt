@@ -158,7 +158,7 @@ ndo
 - mutool 1.16 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 beta 51 - http://css-ig.net/pingo
+- pingo 0.99 beta 58 - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -180,9 +180,10 @@ X.XX - YYYY
 - Updated ffmpeg to 4.1.4.
 - Updated ImageMagick to 7.0.8.58 with HDRI support.
 - Updated libwebp to 1.0.3.
-- Updated pingo to 0.99 beta 51 x64 version.
+- Updated pingo to 0.99 beta 58 x64 version.
 - Updated strip to 2.32.
 - Updated to mutool 1.16.
+- Upgraded distributions to 7-Zip 19.02.
 - Some minor optimizations and code cleanup.
 
 
