@@ -3467,14 +3467,24 @@ void __fastcall TfrmMain::UpdateAds(void)
 			webAds->Height = 90;
 			webAds->Show();
 		}
+
 		#if defined (_DEBUG)
-			OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNoReadFromCache | Shdocvw::navNoWriteToCache | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
 			String sUrl = (String) KS_APP_ADS_URL + "?w=" + webAds->Width + "&h=" + webAds->Height + "&d=1&q=" + LeftStr(grdFiles->Cols[KI_GRID_FILE]->CommaText, 512);
 		#else
-			OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
 			String sUrl = (String) KS_APP_ADS_URL + "?w=" + webAds->Width + "&h=" + webAds->Height + "&d=0&q=" + LeftStr(grdFiles->Cols[KI_GRID_FILE]->CommaText, 512);
 		#endif
-		webAds->Navigate(sUrl, oFlags);
+		//Hack to prevent IE memory leak due to store all previous visited pages
+		if (sUrl == webAds->LocationURL)
+		{
+			webAds->Refresh();
+		}
+		else
+		{
+			OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNoReadFromCache | Shdocvw::navNoWriteToCache | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
+			webAds->Navigate(sUrl, oFlags);
+			//Trim memory working set
+			SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
+		}
 	}
 	else
 	{
@@ -3482,7 +3492,7 @@ void __fastcall TfrmMain::UpdateAds(void)
 		if (webAds->Height > 0)
 		{
 			webAds->Stop();
-			webAds->Navigate("about:blank");			
+			webAds->Navigate("about:blank");
 			webAds->Hide();
 			webAds->Height = 0;
 			webAds->Offline = true;

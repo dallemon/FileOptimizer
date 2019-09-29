@@ -176,6 +176,7 @@ ndo
 
 
 X.XX - YYYY
+- Workarrounded TWebControl to minimize the memory leak happening in Internet Explorer when ads are enabled. As a side effect, ads should load faster too (Tomas Cold #66).
 - Added Best CFBF Optimizer to the OLE toolchain.
 - Updated cpdf to 2.3.
 - Updated ffmpeg to 4.1.4.
