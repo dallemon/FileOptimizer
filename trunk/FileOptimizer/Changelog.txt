@@ -176,6 +176,8 @@ ndo
 
 
 X.XX - YYYY
+
+14.00 - 2019/09/30
 - Workarrounded TWebControl to minimize the memory leak happening in Internet Explorer when ads are enabled. As a side effect, ads should load faster too (Tomas Cold #66).
 - Added Best CFBF Optimizer to the OLE toolchain.
 - Updated cpdf to 2.3.
@@ -188,8 +190,6 @@ X.XX - YYYY
 - Upgraded distributions to 7-Zip 19.02.
 - Some minor optimizations and code cleanup.
 
-
-
 13.90 - 2019/07/27
 - Fixed PNGOut corrupting JPEG files that are named as PNG (Sergi).
 - Updated SQLite to 3.29.0 x86 and x64 Visual C++ 2019 custom builds.
@@ -201,7 +201,6 @@ X.XX - YYYY
 - Updated to cppcheck 1.88.
 - Upgraded to C++ Builder Community Edition 10.3.2 (26.0.34749.6593).
 - Some minor optimizations and code cleanup.
-
 
 13.80 - 2019/05/23
 - Updated spanish translation (Thanks Edson Pacompía Ortiz).
