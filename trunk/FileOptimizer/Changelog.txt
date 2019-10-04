@@ -176,6 +176,7 @@ ndo
 
 
 X.XX - YYYY
+- Fixed regression wrong elapsed time calculation (LeTiger #67).
 - Updated Leanify to 0.4.3.236 daily binaries.
 
 14.00 - 2019/09/30
