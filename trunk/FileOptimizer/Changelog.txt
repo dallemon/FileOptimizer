@@ -147,7 +147,7 @@ ndo
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
 - jsmin 2013-03-29 - http://www.crockford.com/javascript/jsmin.html
-- Leanify 0.4.3.236 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
+- Leanify 0.4.3.237 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.2 - https://github.com/ebiggers/libdeflate
 - libwebp 1.0.3 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.ru/threads/1201-m7zRepacker
@@ -178,7 +178,7 @@ ndo
 X.XX - YYYY
 - Fixed regression wrong elapsed time calculation (LeTiger #67).
 - Updated SQLite to 3.30.1 x86 and x64 Visual C++ 2019 custom builds.
-- Updated Leanify to 0.4.3.236 daily binaries.
+- Updated Leanify to 0.4.3.237 daily binaries.
 
 14.00 - 2019/09/30
 - Workarrounded TWebControl to minimize the memory leak happening in Internet Explorer when ads are enabled. As a side effect, ads should load faster too (Tomas Cold #66).
