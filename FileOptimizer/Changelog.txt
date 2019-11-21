@@ -124,23 +124,23 @@ ndo
 
 - AdvanceCOMP 2.10 - https://github.com/amadvance/advancecomp
 - APNG Optimizer 1.4 - http://sourceforge.net/projects/apng/
-- Best CFBF Optimizer May 11th 2019 - https://papas-best.com/cfbf_en
+- Best CFBF Optimizer Nov 1st 2019 - https://papas-best.com/cfbf_en
 - Coherent PDF Command Line Tools (cpdf) 2.3 - http://community.coherentpdf.com
 - CSSTidy 1.3 - http://csstidy.sourceforge.net/download.php
 - DeflOpt 2.07 - http://www.walbeehm.com/download/
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
 - Document Press Version 6.01 - http://encode.ru/threads/336-Document-Press-6-01
 - ECT 0.8.3.47 (g4a45c139e86) - https://github.com/fhanau/Efficient-Compression-Tool
-- ffmpeg 4.1.4 - http://ffmpeg.zeranoe.com/builds/
+- ffmpeg 4.2.1 - http://ffmpeg.zeranoe.com/builds/
 - FLAC 1.3.2 - https://xiph.org/flac/
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
 - flexiGIF 2018.11a - https://create.stephan-brumme.com/flexigif-lossless-gif-lzw-optimization/
 - Gifsicle 1.92 - http://www.lcdf.org/gifsicle/
-- Ghostscript 9.27 - http://www.ghostscript.com
+- Ghostscript 9.50 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
-- ImageMagick 7.0.8.58 - http://www.imagemagick.org
+- ImageMagick 7.0.9.5 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.03 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.1.1 - https://github.com/danielgtaylor/jpeg-archive
@@ -158,7 +158,7 @@ ndo
 - mutool 1.16 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 beta 58 - http://css-ig.net/pingo
+- pingo 0.99 beta 63 - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -178,6 +178,11 @@ ndo
 X.XX - YYYY
 - Fixed regression wrong elapsed time calculation (LeTiger #67).
 - Updated SQLite to 3.30.1 x86 and x64 Visual C++ 2019 custom builds.
+- Updated ffmpeg to 4.2.1.
+- Updated Ghostscript to 9.50.
+- Updated ImageMagick to 7.0.9.5 with HDRI support.
+- Updated pingo to 0.99 beta 63 x64 version.
+- Updated Best CFBF Optimizer to Nov 1st 2019.
 - Updated Leanify to 0.4.3.237 daily binaries.
 
 14.00 - 2019/09/30
