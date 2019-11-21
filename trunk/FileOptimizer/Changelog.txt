@@ -176,6 +176,10 @@ ndo
 
 
 X.XX - YYYY
+
+
+
+14.10 - 2019/11/21
 - Fixed regression wrong elapsed time calculation (LeTiger #67).
 - Updated SQLite to 3.30.1 x86 and x64 Visual C++ 2019 custom builds.
 - Updated ffmpeg to 4.2.1.
