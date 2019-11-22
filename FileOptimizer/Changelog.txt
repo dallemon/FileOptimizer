@@ -146,7 +146,7 @@ ndo
 - jpeg-archive 2.1.1 - https://github.com/danielgtaylor/jpeg-archive
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
-- jsmin 2013-03-29 - http://www.crockford.com/javascript/jsmin.html
+- jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
 - Leanify 0.4.3.237 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.2 - https://github.com/ebiggers/libdeflate
 - libwebp 1.0.3 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
@@ -177,6 +177,7 @@ ndo
 
 X.XX - YYYY
 - Swiched from cpdf to cpdfsqueeze which provides better results.
+- Updated JSMIn 2019-10-30 custom build.
 - Updated russian translation (thank you Max).
 
 
