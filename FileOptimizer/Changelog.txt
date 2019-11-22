@@ -177,6 +177,7 @@ ndo
 
 X.XX - YYYY
 - Swiched from cpdf to cpdfsqueeze which provides better results.
+- Updated russian translation (thank you Max).
 
 
 14.10 - 2019/11/21
