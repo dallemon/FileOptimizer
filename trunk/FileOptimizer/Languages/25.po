@@ -1,7 +1,7 @@
 # "Language ID: 25 (0x19)"
 # "Language Name: Russian"
-# "Project-Id-Version: FileOptimizer 13.50.2431"
-# "POT-Creation-Date: Dec 28 2018"
+# "Project-Id-Version: FileOptimizer 14.10.2534"
+# "POT-Creation-Date: Nov 22 2019"
 # "MIME-Version: 1.0"
 # "Content-Type: text/plain; charset=ISO-8859-1"
 # "Content-Transfer-Encoding: 8bit"
@@ -9,6 +9,9 @@
 # "Last-Translator: wvxwxvw"
 # "Language-Team: wvxwxvw - ru-board"
 # "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "FileOptimizer"
+msgstr ""
 
 msgid "&About..."
 msgstr "О программе..."
@@ -106,8 +109,11 @@ msgstr "Добавить файлы в список"
 msgid "&File"
 msgstr "Файл"
 
-msgid "© Copyright 2012-2018 by Javier Gutiérrez Chamorro (Guti)"
-msgstr "© Copyright 2012-2018 by Javier Gutiérrez Chamorro (Guti)"
+msgid "© Copyright 2012-2019 by Javier Gutiérrez Chamorro (Guti)"
+msgstr ""
+
+msgid "https://nikkhokkho.sourceforge.io/static.php?page=FileOptimizer"
+msgstr ""
 
 msgid "Drag on the list below files you want to optimize, and when ready, click on the right button context menu to proceed. All processed files are copied to Recycle Bin, so you can easily restore them. You can disable moving to Recycle Bin if you like. Double click an item to preview it."
 msgstr "Перетащите в список файлы, которые надо оптимизировать. В списке работает контекстное меню. Обработанные файлы копируются в корзину, их можно легко восстановить (можно отключить в настройках). Дважды щелкните элемент, чтобы просмотреть его."
@@ -127,8 +133,35 @@ msgstr "Оптим. размер"
 msgid "Status"
 msgstr "Статус"
 
-msgid "Add folder"
-msgstr "Добавить папку"
+msgid "Optimization is still running. Do you want to stop and exit %s?"
+msgstr "Идет оптимизация. Хотите остановить ее и выйти из %s?"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "&Close"
+msgstr "Закрыть"
+
+msgid "and %s file formats among many others."
+msgstr " %s форматы файлов, среди многих других."
+
+msgid " is an advanced file optimizer featuring a lossless (no quality loss) file size reduction that supports: "
+msgstr " это оптимизатор файлов, уменьшающий их размер без потери качества. Поддерживает: "
+
+msgid "\n\nDONATOR INFORMATION\n"
+msgstr "\n\nИНФО СПОНСОРА\n"
+
+msgid "Have not donated yet!"
+msgstr "Еще не спонсировали!"
+
+msgid "\nUser since %s %s"
+msgstr "\nВы пользуетесь %s с версии %s"
+
+msgid "\n\nUSAGE STATISTICS\n- Time: %s\n- Opens: %s\n- Files: %s\n- Total: %s\n- Saved: %s\n"
+msgstr "\n\nСТАТИСТИКА ИСПОЛЬЗОВАНИЯ\n- Время: %s\n- Открытий: %s\n- Файлов: %s\n- Всего: %s\n- Сохранено: %s\n"
+
+msgid "Information"
+msgstr "Информация"
 
 msgid "Options"
 msgstr "Настройки"
@@ -238,6 +271,12 @@ msgstr "MP4"
 msgid "&MP3"
 msgstr "MP3"
 
+msgid "&Disable"
+msgstr "Отключить"
+
+msgid "Disable processing of other file types. This could imply lossing some edit capabilities such as PSD/PSB where text layers will be rasterized."
+msgstr "Отключить обработку файлов других типов.\nЭто может означать потерю некоторых возможностей редактирования,\nнапример, в PSD/PSB текстовые слои будут растеризованы."
+
 msgid "&Miscellaneous"
 msgstr "Прочее"
 
@@ -288,9 +327,6 @@ msgstr "Включить UPX"
 
 msgid "Enable UPX executable compression. When enabled, UPX will be used, resulting EXE and DLL size reduction at the cost of runtime decompression."
 msgstr "Включить UPX сжатие.\nМеньший размер, но может увеличить время запуска."
-
-msgid "Allow excluding execution of certain plugins. It is case insensitive, and allows more than one item to be specified by using semicolon as separator."
-msgstr "Исключение выполнения плагинов.\nНечувствителен к регистру, через точку с запятой можно указать более одного элемента."
 
 msgid "&Disable PETrim"
 msgstr "Отключить PETrim"
@@ -376,6 +412,12 @@ msgstr "Донатор"
 msgid "&Appearance"
 msgstr "Внешний вид"
 
+msgid "&Allow multiple instances"
+msgstr "Разрешить несколько экземпляров"
+
+msgid "Allow having more than one FileOptimizer instance. If not, a warning will appear."
+msgstr "Разрешить несколько экземпляров FileOptimizer.\nЕсли нет, появится предупреждение."
+
 msgid "&Enable cache"
 msgstr "Включить кеш"
 
@@ -409,6 +451,9 @@ msgstr "Сигнал по завершению"
 msgid "Beep the speaker when optimization completes."
 msgstr "Звуковой сигнал по завершению оптимизации."
 
+msgid "Allow excluding execution of certain plugins. It is case insensitive, and allows more than one item to be specified by using semicolon as separator."
+msgstr "Исключение выполнения плагинов.\nНечувствителен к регистру, через точку с запятой можно указать более одного элемента."
+
 msgid "&Leanify iterations"
 msgstr "Итерации Leanify"
 
@@ -421,11 +466,11 @@ msgstr "Общее 2"
 msgid "If not empty specified directory will be used for temporary storage instead of system's %TEMP%."
 msgstr "Если не пусто, то вместо %TEMP% будет использоваться указанный временный каталог."
 
-msgid "&Allow multiple instances"
-msgstr "Разрешить несколько экземпляров"
+msgid "D&o not create backups"
+msgstr "Не создавать бекапы"
 
-msgid "Allow having more than one FileOptimizer instance. If not, a warning will appear."
-msgstr "Разрешить несколько экземпляров FileOptimizer.\nЕсли нет, появится предупреждение."
+msgid "When checked original files will not be backed up in the current folder as a .BAK files."
+msgstr "Исходные файлы не будут сохранены в текущей папке как .BAK-файлы."
 
 msgid "If not empty, only files containing this mask (substring) on name or path will be included from optimization. You can use semicolon to specify more than one substring being included."
 msgstr "Если не пусто, то в оптимизацию будут включены только файлы по маске (по имени или пути).\nМожно использовать точку с запятой, чтобы указать более одной маски."
@@ -436,11 +481,8 @@ msgstr "Файлы, по этой маске (по имени или пути), 
 msgid "&Do not use recycle bin"
 msgstr "Не использовать корзину"
 
-msgid "D&o not create backups"
-msgstr "Не создавать бекапы"
-
 msgid "When checked original files will not be backed up in the system trashcan."
-msgstr "Оптимизированные исходные файлы не будут сохранены в корзине."
+msgstr "Исходные файлы не будут сохранены в корзине."
 
 msgid "Debugging level to output on program log."
 msgstr "Уровень логирования в журнале программы."
@@ -565,35 +607,8 @@ msgstr "Общие параметры, влияющие на все расшир
 msgid "Extensions affected: "
 msgstr "Затрагиваемые расширения:\n"
 
-msgid "and %s file formats among many others."
-msgstr " %s форматы файлов, среди многих других."
-
-msgid " is an advanced file optimizer featuring a lossless (no quality loss) file size reduction that supports: "
-msgstr " это оптимизатор файлов, уменьшающий их размер без потери качества. Поддерживает: "
-
-msgid "\n\nDONATOR INFORMATION\n"
-msgstr "\n\nИНФО ДОНАТОРА\n"
-
-msgid "Have not donated yet!"
-msgstr "Еще не поддержали!"
-
-msgid "\nUser since %s %s"
-msgstr "\nВы пользуетесь %s с версии %s"
-
-msgid "\n\nUSAGE STATISTICS\n- Time: %s\n- Opens: %s\n- Files: %s\n- Total: %s\n- Saved: %s\n"
-msgstr "\n\nСТАТИСТИКА ИСПОЛЬЗОВАНИЯ\n- Время: %s\n- Открытий: %s\n- Файлов: %s\n- Всего: %s\n- Сохранено: %s\n"
-
-msgid "Information"
-msgstr "Информация"
-
-msgid "About"
-msgstr "О программе"
-
 msgid "Except where otherwise noted, all of the documentation and software \r\nincluded in the package is copyrighted by Javier Gutiérrez Chamorro (Guti).\r\n\r\nCopyright © 2012- Javier Gutiérrez Chamorro (Guti). All rights reserved.\r\n\r\nThis software is provided \"as-is,\" without any express or implied warranty. In \r\nno event shall the author be held liable for any damages arising from the use \r\nof this software.\r\n\r\nPermission is granted to anyone to use this software for any purpose, \r\nincluding commercial applications, and to alter and redistribute it, provided that \r\nthe following conditions are met:\r\n\r\n1. All redistributions of source code files must retain all copyright notices that \r\nare currently in place, and this list of conditions without modification.\r\n\r\n2. All redistributions in binary form must retain all occurrences of the above \r\ncopyright notice and web site addresses that are currently in place (for \r\nexample, in the About boxes).\r\n\r\n3. The origin of this software must not be misrepresented; you must not claim \r\nthat you wrote the original software. If you use this software to distribute a \r\nproduct, an acknowledgment in the product documentation would be \r\nappreciated but is not required.\r\n\r\n4. Modified versions in source or binary form must be plainly marked as such, \r\nand must not be misrepresented as being the original software.\r\n\r\nIncludes icons by icons8.com.\r\n"
-msgstr "Except where otherwise noted, all of the documentation and software \r\nincluded in the package is copyrighted by Javier Gutiérrez Chamorro (Guti).\r\n\r\nCopyright © 2012- Javier Gutiérrez Chamorro (Guti). All rights reserved.\r\n\r\nThis software is provided \"as-is,\" without any express or implied warranty. In \r\nno event shall the author be held liable for any damages arising from the use \r\nof this software.\r\n\r\nPermission is granted to anyone to use this software for any purpose, \r\nincluding commercial applications, and to alter and redistribute it, provided that \r\nthe following conditions are met:\r\n\r\n1. All redistributions of source code files must retain all copyright notices that \r\nare currently in place, and this list of conditions without modification.\r\n\r\n2. All redistributions in binary form must retain all occurrences of the above \r\ncopyright notice and web site addresses that are currently in place (for \r\nexample, in the About boxes).\r\n\r\n3. The origin of this software must not be misrepresented; you must not claim \r\nthat you wrote the original software. If you use this software to distribute a \r\nproduct, an acknowledgment in the product documentation would be \r\nappreciated but is not required.\r\n\r\n4. Modified versions in source or binary form must be plainly marked as such, \r\nand must not be misrepresented as being the original software.\r\n\r\nIncludes icons by icons8.com.\r\n"
-
-msgid "&Close"
-msgstr "Закрыть"
+msgstr ""
 
 msgid "Pending"
 msgstr "Ожидание"
@@ -621,9 +636,6 @@ msgstr "Готово (%3u%%)."
 
 msgid "%s files processed. %s bytes saved (%s%%)"
 msgstr "%s файлов обработано. %s байт сохранено (%s%%)"
-
-msgid "Optimization is still running. Do you want to stop and exit %s?"
-msgstr "Идет оптимизация. Хотите остановить ее и выйти из %s?"
 
 msgid "O&pen containing folder..."
 msgstr "Открыть содержащую папку..."
@@ -661,5 +673,4 @@ msgstr "Автоматически: по умолчанию"
 msgid "&Disable"
 msgstr "Отключить"
 
-msgid "Disable processing of other file types. This could imply lossing some edit capabilities such as PSD/PSB where text layers will be rasterized."
-msgstr "Отключить обработку файлов других типов.\nЭто может означать потерю некоторых возможностей редактирования,\nнапример, в PSD/PSB текстовые слои будут растеризованы."
+
