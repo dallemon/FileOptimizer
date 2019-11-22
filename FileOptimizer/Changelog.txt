@@ -125,7 +125,7 @@ ndo
 - AdvanceCOMP 2.10 - https://github.com/amadvance/advancecomp
 - APNG Optimizer 1.4 - http://sourceforge.net/projects/apng/
 - Best CFBF Optimizer Nov 1st 2019 - https://papas-best.com/cfbf_en
-- Coherent PDF Command Line Tools (cpdf) 2.3 - http://community.coherentpdf.com
+- Coherent PDF Command Line Tools (cpdfsqueeze) 2.3 - http://community.coherentpdf.com
 - CSSTidy 1.3 - http://csstidy.sourceforge.net/download.php
 - DeflOpt 2.07 - http://www.walbeehm.com/download/
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
@@ -176,7 +176,7 @@ ndo
 
 
 X.XX - YYYY
-
+- Swiched from cpdf to cpdfsqueeze which provides better results.
 
 
 14.10 - 2019/11/21
