@@ -180,6 +180,7 @@ X.XX - YYYY
 - Updated JSMIn 2019-10-30 custom build.
 - Updated to jHead 3.04.
 - Updated russian translation (thank you Max).
+- Updated to NSIS 3.05.
 
 
 14.10 - 2019/11/21
