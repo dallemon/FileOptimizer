@@ -169,7 +169,7 @@ ndo
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
-- UPX 3.95 - https://upx.github.io
+- UPX 3.96 - https://upx.github.io
 - ZLib 1.2.8 - http://www.zlib.net
 - zRecompress 2.12 - http://nikkhokkho.sourceforge.net/static.php?page=zRecompress
 
@@ -182,6 +182,7 @@ X.XX - YYYY
 - Updated to jHead 3.04.
 - Updated libwebp to 1.1.0 x64.
 - Updated to NSIS 3.05.
+- Updated UPX to 3.96.
 
 
 14.10 - 2019/11/21
