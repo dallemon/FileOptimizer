@@ -178,6 +178,7 @@ ndo
 X.XX - YYYY
 - Updated russian translation (thank you Max).
 - Swiched from cpdf to cpdfsqueeze which provides better results.
+- Fixed Gifsicle 64 bit plugin in Plugins32 folder (AcidBurn).
 - Updated JSMIn 2019-10-30 custom build.
 - Updated to jHead 3.04.
 - Updated libwebp to 1.1.0 x64.
