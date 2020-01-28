@@ -165,7 +165,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.30.1 - http://www.sqlite.org
+- SQLite 3.31.1 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -177,6 +177,7 @@ ndo
 
 X.XX - YYYY
 - Updated russian translation (thank you Max).
+- Updated SQLite to 3.31.1 x86 and x64 Visual C++ 2019 custom builds.
 - Swiched from cpdf to cpdfsqueeze which provides better results.
 - Fixed Gifsicle 64 bit plugin in Plugins32 folder (AcidBurn).
 - Updated JSMIn 2019-10-30 custom build.
