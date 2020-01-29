@@ -147,7 +147,7 @@ ndo
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
-- Leanify 0.4.3.237 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
+- Leanify 0.4.3.239 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.2 - https://github.com/ebiggers/libdeflate
 - libwebp 1.1.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.ru/threads/1201-m7zRepacker
@@ -181,6 +181,7 @@ X.XX - YYYY
 - Swiched from cpdf to cpdfsqueeze which provides better results.
 - Fixed Gifsicle 64 bit plugin in Plugins32 folder (AcidBurn).
 - Updated JSMIn 2019-10-30 custom build.
+- Updated Leanify to 0.4.3.239 daily binaries.
 - Updated to jHead 3.04.
 - Updated libwebp to 1.1.0 x64.
 - Updated to NSIS 3.05.
