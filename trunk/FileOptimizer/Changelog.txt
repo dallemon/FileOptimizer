@@ -157,7 +157,7 @@ ndo
 - mutool 1.16 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 beta 63 - http://css-ig.net/pingo
+- pingo 0.99 rc1 - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -179,6 +179,7 @@ X.XX - YYYY
 - Updated SQLite to 3.31.1 x86 and x64 Visual C++ 2019 custom builds.
 - Swiched from cpdf to cpdfsqueeze which provides better results.
 - Fixed Gifsicle 64 bit plugin in Plugins32 folder (AcidBurn).
+- Updated pingo to 0.99 rc1 x64 version.
 - Updated ffmpeg to 4.2.2.
 - Updated ImageMagick to 7.0.9.20 with HDRI support.
 - Updated JSMIn 2019-10-30 custom build.
