@@ -173,8 +173,10 @@ ndo
 - zRecompress 2.12 - http://nikkhokkho.sourceforge.net/static.php?page=zRecompress
 
 
+XX.XX - YYYY
 
-X.XX - YYYY
+
+14.20 - 2020/03/19
 - Updated russian translation (thank you Max).
 - Updated SQLite to 3.31.1 x86 and x64 Visual C++ 2019 custom builds.
 - Swiched from cpdf to cpdfsqueeze which provides better results.
@@ -189,7 +191,6 @@ X.XX - YYYY
 - Updated libwebp to 1.1.0 x64.
 - Updated to NSIS 3.05.
 - Updated UPX to 3.96.
-
 
 14.10 - 2019/11/21
 - Fixed regression wrong elapsed time calculation (LeTiger #67).
