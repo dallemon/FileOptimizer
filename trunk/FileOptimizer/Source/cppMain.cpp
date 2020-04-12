@@ -2614,6 +2614,7 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 
 					lstRow->Add(FormatNumberThousand(lSize)); //2: Original size
 					lstRow->Add(""); //3: Optimized size
+					lstRow->Add(_("Pending")); //4: Status
 
 					//Check if it was already optimized
 					if (gudtOptions.bEnableCache)
@@ -2625,10 +2626,6 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 						{
 							lstRow->Add(_("Optimized")); //4: Status
 						}
-					}
-					else
-					{
-						lstRow->Add(_("Pending")); //4: Status
 					}
 					grdFiles->Rows[(int) iRows] = lstRow;
 					delete lstRow;
