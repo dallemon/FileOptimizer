@@ -136,7 +136,7 @@ ndo
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
 - Gifsicle 1.92 - http://www.lcdf.org/gifsicle/
-- Ghostscript 9.50 - http://www.ghostscript.com
+- Ghostscript 9.52 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
 - ImageMagick 7.0.10.10 - http://www.imagemagick.org
@@ -154,7 +154,7 @@ ndo
 - mozjpeg 3.3.1-3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
 - mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
-- mutool 1.16 - http://mupdf.com/downloads/
+- mutool 1.17 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
 - pingo 0.99 rc2 (25) - http://css-ig.net/pingo
@@ -177,7 +177,8 @@ XX.XX - YYYY
 - Fixed status of files not being refreshed when using cache (JoeW).
 - Updated ImageMagick to 7.0.10.10 with HDRI support.
 - Updated pingo to 0.99 rc2 (25) x64 version.
-
+- Updated to mutool 1.17.
+- Updated Ghostscript to 9.52.
 
 14.20 - 2020/03/19
 - Updated russian translation (thank you Max).
