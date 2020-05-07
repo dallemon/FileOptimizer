@@ -139,7 +139,7 @@ ndo
 - Ghostscript 9.50 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
-- ImageMagick 7.0.9.20 - http://www.imagemagick.org
+- ImageMagick 7.0.10.10 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.1.1 - https://github.com/danielgtaylor/jpeg-archive
@@ -157,7 +157,7 @@ ndo
 - mutool 1.16 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc1 - http://css-ig.net/pingo
+- pingo 0.99 rc2 (25) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -175,6 +175,8 @@ ndo
 
 XX.XX - YYYY
 - Fixed status of files not being refreshed when using cache (JoeW).
+- Updated ImageMagick to 7.0.10.10 with HDRI support.
+- Updated pingo to 0.99 rc2 (25) x64 version.
 
 
 14.20 - 2020/03/19
