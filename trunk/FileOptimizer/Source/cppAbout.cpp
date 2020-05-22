@@ -75,7 +75,9 @@ void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 	#elif ((__BORLANDC__ >= 0x0740) && (__BORLANDC__ <= 0x0749))
 		imgAbout->Hint = "Embarcadero C++ Builder 10.3 Rio";
 	#elif ((__BORLANDC__ >= 0x0750) && (__BORLANDC__ <= 0x0759))
-		imgAbout->Hint = "Embarcadero C++ Builder 10.4";
+		imgAbout->Hint = "Embarcadero C++ Builder 10.4 Sydney";
+	#elif ((__BORLANDC__ >= 0x0760) && (__BORLANDC__ <= 0x0769))
+		imgAbout->Hint = "Embarcadero C++ Builder 10.5";
 	#else
 		imgAbout->Hint = "Borland/Inprise/CodeGear/Embarcadero C++ Builder";
 	#endif
