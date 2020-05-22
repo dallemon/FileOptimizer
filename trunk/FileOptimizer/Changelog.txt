@@ -179,6 +179,7 @@ XX.XX - YYYY
 - Updated pingo to 0.99 rc2 (25) x64 version.
 - Updated to mutool 1.17.
 - Updated Ghostscript to 9.52.
+- Updated to cppcheck 2.00.
 - Upgraded to C++ Builder 10.4.0 (27.0.37889.9797).
 
 
