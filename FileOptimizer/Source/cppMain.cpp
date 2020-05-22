@@ -3405,7 +3405,7 @@ bool __fastcall TfrmMain::IsEXEManagedNet(const TCHAR *pacFile)
 								break;
 							}
 						}
-						IMAGE_COR20_HEADER* udtNETHeader = (IMAGE_COR20_HEADER*) ((unsigned char*) udtDOSHeader + iActualAddressFromRVA);
+						IMAGE_COR20_HEADER *udtNETHeader = (IMAGE_COR20_HEADER*) ((unsigned char*) udtDOSHeader + iActualAddressFromRVA);
 						if (udtNETHeader)
 						{
 							//valid address obtained. Suffices to say , this is good enough to identify this as a
