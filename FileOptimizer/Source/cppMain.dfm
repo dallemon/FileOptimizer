@@ -260,6 +260,7 @@ object frmMain: TfrmMain
     Align = alBottom
     DragCursor = crNo
     TabOrder = 4
+    SelectedEngine = EdgeIfAvailable
     OnTitleChange = webAdsTitleChange
     ExplicitTop = 308
     ExplicitWidth = 814
