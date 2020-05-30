@@ -3477,8 +3477,18 @@ void __fastcall TfrmMain::UpdateAds(void)
 		}
 		else
 		{
-			OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNoReadFromCache | Shdocvw::navNoWriteToCache | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
-			webAds->Navigate(sUrl, oFlags);
+			webAds->Navigate(sUrl);
+			/*
+			if (webAds->ActiveEngine == TWebBrowser::TActiveEngine::Edge)
+			{
+				webAds->Navigate(sUrl);
+			}
+			else
+			{
+				OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNoReadFromCache | Shdocvw::navNoWriteToCache | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
+				webAds->Navigate(sUrl, oFlags);
+			}
+            */
 			//Trim memory working set
 			SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
 		}
