@@ -164,7 +164,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.31.1 - http://www.sqlite.org
+- SQLite 3.32.2 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -175,6 +175,7 @@ ndo
 
 XX.XX - YYYY
 - Fixed status of files not being refreshed when using cache (JoeW).
+- Updated SQLite to 3.32.2 x86 and x64 Visual C++ 2019 custom builds.
 - Updated ImageMagick to 7.0.10.10 with HDRI support.
 - Updated pingo to 0.99 rc2 (25) x64 version.
 - Updated to mutool 1.17.
