@@ -1,13 +1,13 @@
 # "Language ID: 7 (0x07)"
 # "Language Name: German"
-# "Project-Id-Version: FileOptimizer 12.40.2217"
-# "POT-Creation-Date: Feb 19 2018"
+# "Project-Id-Version: FileOptimizer 14.20.2553"
+# "POT-Creation-Date: Jul 3 2020"
 # "MIME-Version: 1.0"
 # "Content-Type: text/plain; charset=ISO-8859-1"
 # "Content-Transfer-Encoding: 8bit"
 # "Language: de_DE"
-# "Last-Translator: Oliver Hönow"
-# "Language-Team: Oliver Hönow"
+# "Last-Translator: Renard Voß"
+# "Language-Team: Oliver Hönow, Renard Voß"
 # "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 msgid "&About..."
 msgstr "&Über..."
@@ -19,7 +19,7 @@ msgid "-"
 msgstr "-"
 
 msgid "Donate..."
-msgstr "Spenden"
+msgstr "Spenden..."
 
 msgid "Support the development by easily and securely money donations"
 msgstr "Unterstützen Sie die Entwicklung durch einfache und sichere Geldspenden"
@@ -28,7 +28,7 @@ msgid "&Information..."
 msgstr "&Information..."
 
 msgid "Open information window with the list of currently supported file formats"
-msgstr "Öffnet das Informationsfenster mit der Liste der aktuell unterstützten Dateiformate"
+msgstr "Öffnet das Info-Fenster mit der Liste der aktuell unterstützten Dateiformate"
 
 msgid "Help topics..."
 msgstr "Hilfe-Themen..."
@@ -46,7 +46,7 @@ msgid "&Stop"
 msgstr "&Stop"
 
 msgid "Stop in-progress optimizations"
-msgstr "Stoppen der laufenden Optimierungen"
+msgstr "Laufende Optimierungen stoppen"
 
 msgid "&Optimize all files"
 msgstr "&Optimiere alle Dateien"
@@ -100,19 +100,19 @@ msgid "File"
 msgstr "Datei"
 
 msgid "Extension (Type)"
-msgstr "Erweiterung (Typ)"
+msgstr "Dateityp"
 
 msgid "Original size"
 msgstr "Originalgröße"
 
 msgid "Optimized size"
-msgstr "Optimierte Größe"
+msgstr "Opt. Größe"
 
 msgid "Status"
 msgstr "Status"
 
 msgid "Drag on the list below files you want to optimize, and when ready, click on the right button context menu to proceed. All processed files are copied to Recycle Bin, so you can easily restore them. You can disable moving to Recycle Bin if you like. Double click an item to preview it."
-msgstr "Ziehen Sie gewünschte Dateien, welche Sie optimieren möchten, unten in die Liste und klicken Sie dann auf den entsprechenden Button im Kontextmenü (rechte Maustaste), um fortzufahren. Alle verarbeiteten Dateien werden in den Papierkorb kopiert, sodass Sie sie problemlos wiederherstellen können. Sie können das Verschieben in den Papierkorb deaktivieren, wenn Sie möchten. Doppelklicken Sie auf ein Objekt, um eine Vorschau anzuzeigen."
+msgstr "Ziehen Sie Dateien, die Sie optimieren möchten, unten in die Liste und klicken Sie dann auf den entsprechenden Button im Kontextmenü (rechte Maustaste), um fortzufahren. Alle verarbeiteten Dateien werden in den Papierkorb kopiert, sodass Sie sie einfach wiederherstellen können. Sie können das Verschieben in den Papierkorb deaktivieren. Doppelklicken Sie auf ein Objekt, um eine Vorschau anzuzeigen."
 
 msgid "Add folder"
 msgstr "Ordner hinzufügen"
@@ -124,31 +124,31 @@ msgid "&Cancel"
 msgstr "&Abbrechen"
 
 msgid "Discard any changes made to options."
-msgstr "Verwerfen aller getätigten Änderungen an den Optionen."
+msgstr "Alle Änderungen an den Optionen verwerfen."
 
 msgid "&OK"
 msgstr "&OK"
 
 msgid "Accept and apply all changes made to options."
-msgstr "Übernehmen und alle Änderungen der Optionen anwenden."
+msgstr "Alle Änderungen der Optionen übernehmen."
 
 msgid "&Restore defaults"
-msgstr "&Standardeinstellungen wiederherstellen"
+msgstr "&Programm zurücksetzen"
 
 msgid "Restore all options to its factory settings values."
-msgstr "Alle Optionen auf Werkseinstellungen zurücksetzen."
+msgstr "Alle Optionen von FileOptimizer auf Werkseinstellungen zurücksetzen."
 
 msgid "&Recurse"
 msgstr "&Rekursiv"
 
 msgid "Enable optimization inside archives (recursive optimization)."
-msgstr "Aktivieren der Optimierung innerhalb von Archiven (rekursive Optimierung)."
+msgstr "Optimierung innerhalb von Archiven aktivieren (rekursive Optimierung)."
 
 msgid "&Copy metadata"
 msgstr "&Metadaten kopieren"
 
 msgid "Copy file metadata. Else strip all unneeded information."
-msgstr "Datei-Metadaten kopieren. Andernfalls entfernen Sie alle nicht benötigten Informationen."
+msgstr "Datei-Metadaten kopieren. Sonst entfallen alle nicht benötigten Informationen."
 
 msgid "&ZIP"
 msgstr "&ZIP"
@@ -157,7 +157,7 @@ msgid "&Enable Leanify"
 msgstr "&Leanify aktivieren"
 
 msgid "Enable Leanify. Results in smaller files, but can happen they are not editable anymore."
-msgstr "Aktiviert Leanify. Ergebnis sind kleinere Dateien, welche ggf. jedoch nicht mehr bearbeitet werden können."
+msgstr "Leanify aktivieren. Ergebnis sind kleinere Dateien, die jedoch ggf. nicht mehr bearbeitet werden können."
 
 msgid "&XML"
 msgstr "&XML"
@@ -169,7 +169,7 @@ msgid "&TGA"
 msgstr "&TGA"
 
 msgid "&Allow lossy optimizations"
-msgstr "&Ermögliche verlustreiche Optimierungen"
+msgstr "&Erlaube verlustreiche Optimierungen"
 
 msgid "Allowing lossy optimizations will get higher files reduction at the cost of some quality loss, even if visually unnoticeable or not"
 msgstr "Durch verlustbehaftete Optimierungen wird eine höhere Dateireduktion auf Kosten eines Qualitätsverlustes erreicht, selbst wenn dies visuell nicht wahrnehmbar ist oder nicht."
@@ -181,7 +181,7 @@ msgid "&Skip layered"
 msgstr "&Ebenen überspringen"
 
 msgid "Skip processing of PDF files containing layered objects. Results in more compatible files with higher size."
-msgstr "Überspringe die Verarbeitung von PDF-Dateien, welche Ebenen-Objekte enthalten. Dies ergibt kompatiblere Dateien mit höherer Dateigröße."
+msgstr "Überspringe die Verarbeitung von PDF-Dateien, die Ebenen-Objekte enthalten. Dies ergibt kompatiblere Dateien mit höherer Dateigröße."
 
 msgid "When custom profile is chosen, it allows you to specify a custom DPI for downsampling images"
 msgstr "Wenn ein benutzerdefiniertes Profil ausgewählt ist, können Sie eine benutzerdefinierte DPI für das Downsampling von Bildern festlegen"
@@ -193,13 +193,13 @@ msgid "Custom"
 msgstr "Benutzerdefiniert"
 
 msgid "Prepress: 300 dpi and color preserve"
-msgstr "Vordruck: 300 dpi und Farbkonservierung"
+msgstr "Druckvorstufe: 300 dpi und Farbkonservierung"
 
 msgid "Printer: 300 dpi"
 msgstr "Drucker: 300 dpi"
 
 msgid "Ebook: 150 dpi"
-msgstr "Ebook: 150 dpi"
+msgstr "E-Book: 150 dpi"
 
 msgid "Screen: 72 dpi"
 msgstr "Bildschirm: 72 dpi"
@@ -232,7 +232,7 @@ msgid "&LUA"
 msgstr "&LUA"
 
 msgid "Add extra extensions to be threated as JS/JSON."
-msgstr "Zusätzliche Erweiterungen hinzufügen, welche als JS / JSON behandelt werden sollen."
+msgstr "Zusätzliche Erweiterungen hinzufügen, welche als JS/JSON behandelt werden sollen."
 
 msgid "&Enable JSMin"
 msgstr "&JSMin aktivieren"
@@ -247,10 +247,10 @@ msgid "&JS"
 msgstr "&JS"
 
 msgid "&Use arithmetic encoding"
-msgstr "&Verwenden von arithmetischer Codierung"
+msgstr "Arithmetische Codierung &verwenden"
 
 msgid "Arithmetic encoding gives additional saving reductions, but is incompatible with most programs."
-msgstr "Die arithmetische Codierung bietet zusätzliche Einsparungen, ist jedoch mit den meisten Programmen inkompatibel."
+msgstr "Die arithmetische Codierung ermöglicht zusätzliche Einsparungen, ist jedoch mit den meisten Programmen inkompatibel."
 
 msgid "&JPEG"
 msgstr "&JPEG"
@@ -259,7 +259,7 @@ msgid "&Enable Tidy"
 msgstr "&Tidy aktivieren"
 
 msgid "Enable Tidy. Results in smaller files, but can happen they are not editable anymore. Note that this applies to both SVG and HTML file types"
-msgstr "Tidy aktivieren. Ergebnis sind kleineren Dateien, jedoch können diese ggf. nicht mehr bearbeitet werden. Beachten Sie, dass dies sowohl für SVG- als auch für HTML-Dateitypen gilt"
+msgstr "Tidy aktivieren. Ergebnis sind kleineren Dateien, die jedoch ggf. nicht mehr bearbeitet werden können. Dies gilt für SVG- und HTML-Dateitypen."
 
 msgid "&HTML"
 msgstr "&HTML"
@@ -274,19 +274,19 @@ msgid "&Enable UPX"
 msgstr "&UPX aktivieren"
 
 msgid "Allow excluding execution of certain plugins. It is case insensitive, and allows more than one item to be specified by using semicolon as separator."
-msgstr "Erlaube die Ausführung bestimmter Plugins auszuschließen. Es wird nicht zwischen Groß- und Kleinschreibung unterschieden, und es können mehr als ein Element angegeben werden, indem ein Semikolon als Trennzeichen verwendet wird."
+msgstr "Erlaube die Ausführung bestimmter Plugins auszuschließen. Es wird nicht zwischen Groß- und Kleinschreibung unterschieden, und es können mehrere Elemente angegeben werden, indem Semikola als Trennzeichen verwendet werden."
 
 msgid "&Disable PETrim"
 msgstr "&PETrim deaktivieren"
 
 msgid "Disable PETrim. When enabled, PETrim will not be used, resulting in less EXE corruption at the cost of larger file size."
-msgstr "Deaktivieren von PETrim. Wenn aktiviert, wird PETrim nicht verwendet, was zu weniger EXE-Beschädigung auf Kosten größerer Dateien führt."
+msgstr "PETrim deaktivieren. Wenn ausgewählt, wird PETrim nicht verwendet, was zu weniger EXE-Beschädigung auf Kosten größerer Dateien führt."
 
 msgid "&EXE"
 msgstr "&EXE"
 
 msgid "Compression template, from safer and worse compression, to highest compression"
-msgstr "Komprimierungsvorlage, von der sichereren und schlechteren Komprimierung bis hin zur höchsten Komprimierung"
+msgstr "Komprimierungsvorlage, von der sichereren und geringeren Komprimierung bis hin zur höchsten Komprimierung"
 
 msgid "Highest"
 msgstr "Höchste"
@@ -313,7 +313,7 @@ msgid "&Hide ads"
 msgstr "&Werbung ausblenden"
 
 msgid "Hide ads from being displayed."
-msgstr "Werbung ausblenden, damit sie nicht mehr angezeigt wird"
+msgstr "Werbung ausblenden."
 
 msgid "Specify the format to display filenames in the list."
 msgstr "Format angeben, welche Dateinamen in der Liste angezeigt werden sollen."
@@ -328,7 +328,7 @@ msgid "Filename only"
 msgstr "Nur Dateiname"
 
 msgid "Full path and Filename (Default)"
-msgstr "Vollständiger Pfad und Dateiname (Standard)"
+msgstr "Ganzer Pfad und Dateiname (Standard)"
 
 msgid "&Always on top"
 msgstr "&Immer im Vordergrund"
@@ -405,7 +405,7 @@ msgid "&Allow multiple instances"
 msgstr "&Erlaube mehrere Instanzen"
 
 msgid "Allow having more than one FileOptimizer instance. If not, a warning will appear."
-msgstr "Erlaube mehr als eine FileOptimizer-Instanz. Wenn nicht, wird eine Warnung angezeigt."
+msgstr "Erlaube mehr als eine FileOptimizer-Instanz. Anderenfalls wird eine Warnung angezeigt."
 
 msgid "If not empty, only files containing this mask (substring) on name or path will be included from optimization. You can use semicolon to specify more than one substring being included."
 msgstr "Wenn nicht leer, werden nur Dateien, die diese Maske (Teilzeichenfolge) für Name oder Pfad enthalten, in die Optimierung einbezogen. Sie können ein Semikolon verwenden, um mehr als einen enthaltenen Teilstring anzugeben."
@@ -414,10 +414,10 @@ msgid "Files containing this mask (substring) on name or path will be excluded f
 msgstr "Dateien, die diese Maske (Teilzeichenfolge) für Name oder Pfad enthalten, werden von der Optimierung ausgeschlossen. Sie können das Semikolon (;) verwenden, um mehr als einen Teilstring auszuschliessen.."
 
 msgid "&Do not use recycle bin"
-msgstr "&Keinen Papierkorb verwenden"
+msgstr "&Keinen Papierkorb nutzen"
 
 msgid "When checked original files will not be backed up in the system trashcan."
-msgstr "Wenn diese Option aktiviert ist, werden Originaldateien nicht im Papierkorb des Systems verschoben."
+msgstr "Wenn diese Option aktiviert ist, werden Originaldateien nicht in den Papierkorb des Systems kopiert."
 
 msgid "Debugging level to output on program log."
 msgstr "Debug-Level zur Ausgabe im Programmprotokoll."
@@ -462,13 +462,13 @@ msgid "Normal (Default)"
 msgstr "Normal (Standard)"
 
 msgid "Below normal"
-msgstr "Unter dem Normalwert"
+msgstr "Unter normal"
 
 msgid "Idle"
 msgstr "Leerlauf"
 
 msgid "Optimization level from best speed to best compression."
-msgstr "Optimierungsstufe von der besten Geschwindigkeit bis hin zur besten Komprimierung."
+msgstr "Optimierungsstufe von der schnellsten bis hin zur besten Komprimierung."
 
 msgid "9: Best"
 msgstr "9: Beste"
@@ -501,10 +501,10 @@ msgid "0: Fastest"
 msgstr "0: Schnellste"
 
 msgid "&Keep file attributes"
-msgstr "&Dateiattribute beibehalten"
+msgstr "&Dateieigenschaften erhalten"
 
 msgid "Keep original readonly, system, hidden and archive attributes as well as creation and modification timestamps."
-msgstr "Erhalten Sie die ursprünglichen Dateiattribute Nur-Lesen, System, versteckt und Archiv sowie den Zeitstempel der Erstellung und Änderung auf."
+msgstr "Erhalten Sie die ursprünglichen Dateieigenschaften Nur-Lesen, System, versteckt und Archiv sowie den Zeitstempel der Erstellung und Änderung auf."
 
 msgid "&Temp directory"
 msgstr "&Temp-Verzeichnis"
@@ -516,7 +516,7 @@ msgid "&Exclude mask"
 msgstr "&Maske ausschließen"
 
 msgid "&Log level"
-msgstr "&Loglevel"
+msgstr "&Log-Level"
 
 msgid "&Check for updates"
 msgstr "&Auf Updates prüfen"
@@ -534,10 +534,10 @@ msgid "Configure the appearance and behaviour of FileOptimizer"
 msgstr "Konfigurieren Sie das Aussehen und Verhalten von FileOptimizer"
 
 msgid "General program options affecting all extensions (1/2)"
-msgstr "Allgemeine Programmoptionen, welche alle Erweiterungen betreffen (1/2)"
+msgstr "Allgemeine Programmoptionen, die alle Erweiterungen betreffen (1/2)"
 
 msgid "General program options affecting all extensions (2/2)"
-msgstr "Allgemeine Programmoptionen, welche alle Erweiterungen betreffen (2/2)"
+msgstr "Allgemeine Programmoptionen, die alle Erweiterungen betreffen (2/2)"
 
 msgid "Extensions affected: "
 msgstr "Betroffene Erweiterungen: "
