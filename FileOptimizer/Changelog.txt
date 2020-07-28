@@ -131,7 +131,7 @@ ndo
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
 - Document Press Version 6.01 - http://encode.su/threads/336-Document-Press-6-01
 - ECT 0.8.3 - https://github.com/fhanau/Efficient-Compression-Tool
-- ffmpeg 4.2.2 - http://ffmpeg.zeranoe.com/builds/
+- ffmpeg 4.3 - http://ffmpeg.zeranoe.com/builds/
 - FLAC 1.3.2 - https://xiph.org/flac/
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
@@ -139,7 +139,7 @@ ndo
 - Ghostscript 9.52 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
-- ImageMagick 7.0.10.10 - http://www.imagemagick.org
+- ImageMagick 7.0.10.24 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.1.1 - https://github.com/danielgtaylor/jpeg-archive
@@ -157,7 +157,7 @@ ndo
 - mutool 1.17 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc2 (25) - http://css-ig.net/pingo
+- pingo 0.99 rc3 (02) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -177,8 +177,9 @@ XX.XX - YYYY
 - Fixed status of files not being refreshed when using cache (JoeW).
 - Updated german translation (thanks Renard Voﬂ).
 - Updated SQLite to 3.32.2 x86 and x64 Visual C++ 2019 custom builds.
-- Updated ImageMagick to 7.0.10.10 with HDRI support.
-- Updated pingo to 0.99 rc2 (25) x64 version.
+- Updated ImageMagick to 7.0.10.24 with HDRI support.
+- Updated ffmpeg to 4.3.
+- Updated pingo to 0.99 rc3 (02) x64 version.
 - Updated to mutool 1.17.
 - Updated Ghostscript to 9.52.
 - Updated to cppcheck 2.00.
