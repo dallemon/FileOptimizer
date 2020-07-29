@@ -10,7 +10,7 @@ Unicode true
 !define APP_COMPANY	"Javier Gutiérrez Chamorro (Guti)"
 !define APP_COPYRIGHT	"© Copyright 2012-2020 by Javier Gutiérrez Chamorro (Guti)"
 !define APP_WEB		"http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer"
-!define APP_VERSION 	"14.2.0.0"
+!define APP_VERSION 	"14.3.0.0"
 
 
 ; -------------------------------------------------------------------------------------------------
@@ -128,6 +128,7 @@ Section "Files"
 	CreateDirectory "$SMPROGRAMS\${APP_NAME}";
 	${If} ${RunningX64}
 		File ..\Win32\Release\*64.exe
+		File ..\Win32\Release\WebView2Loader.dll
 		SetOutPath $INSTDIR\Plugins64
 		File /r ..\Win32\Release\Plugins64\*.*
 		SetOutPath $INSTDIR
