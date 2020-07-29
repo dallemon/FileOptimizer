@@ -18,6 +18,7 @@ del Win32\Release\*.po
 copy Languages\*.po Win32\Release\
 copy Win32\Release\FileOptimizer.exe Win32\Release\FileOptimizer32.exe
 copy Win64\Release\FileOptimizer.exe Win32\Release\FileOptimizer64.exe
+copy Win64\Debug\WebView2Loader.dll Win32\Release\WebView2Loader.dll
 del /f /q Win32\Release\FileOptimizer.exe
 xcopy /e /s Win32\Debug\Plugins32\*.* Win32\Release\Plugins32\*.*
 xcopy /e /s Win64\Debug\Plugins64\*.* Win32\Release\Plugins64\*.*
@@ -40,7 +41,7 @@ Win32\Debug\Plugins32\petrim .\Win32\Release\*.* /r
 cd Win32\Release
 rem "\Archivos de programa\7-Zip\7z" a -mm=Deflate -mx=9 -mfb=258 -mpass=15 -mmt=off -tzip ..\..\FileOptimizerFull.zip FileOptimizer32.exe FileOptimizer64.exe FileOptimizer.chm Plugins32\*.* Plugins64\*.*
 \FICHEROS\UTIL\UPX -9 --best --lzma --ultra-brute --crp-ms=999999 "\Archivos de programa\7-Zip\*.sfx"
-"\Archivos de programa\7-Zip\7z" a -t7z -mx=9 -mfb=273 -mmt=off -myx9 -m0=lzma2:d512m:fb273 -sfx7z.sfx ..\..\FileOptimizerFull.7z.exe FileOptimizer32.exe FileOptimizer64.exe FileOptimizer.chm *.po Plugins32\*.* Plugins64\*.*
+"\Archivos de programa\7-Zip\7z" a -t7z -mx=9 -mfb=273 -mmt=off -myx9 -m0=lzma2:d512m:fb273 -sfx7z.sfx ..\..\FileOptimizerFull.7z.exe FileOptimizer32.exe FileOptimizer64.exe FileOptimizer.chm WebView2Loader.dll *.po Plugins32\*.* Plugins64\*.*
 cd ..\..\Setup
 "\Archivos de programa\Borland\NSIS\MakeNSIS.exe" FileOptimizerSetup.nsi
 cd ..

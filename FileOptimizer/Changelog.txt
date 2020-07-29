@@ -174,6 +174,9 @@ ndo
 
 
 XX.XX - YYYY
+
+
+14.30 - 2020/07/29
 - Fixed status of files not being refreshed when using cache (JoeW).
 - Updated german translation (thanks Renard Voﬂ).
 - Updated SQLite to 3.32.2 x86 and x64 Visual C++ 2019 custom builds.
@@ -184,7 +187,6 @@ XX.XX - YYYY
 - Updated Ghostscript to 9.52.
 - Updated to cppcheck 2.00.
 - Upgraded to C++ Builder 10.4.0 (27.0.37889.9797).
-
 
 14.20 - 2020/03/19
 - Updated russian translation (thank you Max).
