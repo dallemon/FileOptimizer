@@ -1505,7 +1505,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			RunPlugin((unsigned int) iCount, "ImageMagick (1/2)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -compress ZIP " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			*/
 
-			if (gudtOptions.bPNGCopyMetadata)
+			//Temporary disable Leanify because it removed IPTC metadata
+			if (!gudtOptions.bPNGCopyMetadata)
 			{
 				sFlags = "";
 				//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
@@ -1519,11 +1520,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				//Temporary disable Leanify because it removed IPTC metadata
-				if (!gudtOptions.bPNGCopyMetadata)
-				{
-					RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-				}
+				RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// JPEG: Guetzli, jpeg-recompress, jhead, Leanify, ect, pingo, jpegoptim, jpegtran, mozjpegtran
@@ -1562,11 +1559,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags = "";
 			if (gudtOptions.bJPEGCopyMetadata)
 			{
-				sFlags += "--keep-exif --keep-icc-profile --jpeg-keep-all-metadata ";
+				sFlags += "--keep-exif --keep-icc --jpeg-keep-all ";
 			}
 			if (gudtOptions.bJPEGUseArithmeticEncoding)
 			{
-				sFlags += "--jpeg-arithmetic-coding ";
+				sFlags += "--jpeg-arithmetic ";
 			}		
 			//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
 			//Overwrite Leanify iterations
@@ -2093,6 +2090,27 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags += "-i " + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
+		// Tencent QQ: Leanify
+		if (PosEx(sExtensionByContent, KS_EXTENSION_TENCENTQQ) > 0)
+		{
+			if (!gudtOptions.bPNGCopyMetadata)
+			{
+				sFlags = "";
+				//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+				//Overwrite Leanify iterations
+				if (gudtOptions.iLeanifyIterations != -1)
+				{
+					iLevel = gudtOptions.iLeanifyIterations;
+				}
+				else
+				{
+					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
+				}
+				sFlags += "-i " + (String) iLevel + " ";
+				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			}
+		}
+		
 		// TGA: ImageMagick
 		if (PosEx(sExtensionByContent, KS_EXTENSION_TGA) > 0)
 		{
@@ -2275,9 +2293,10 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			//Limit ZIP no recurse to ZIP extension
 			if ((!gudtOptions.bZIPRecurse) && (PosEx(sExtensionByContent, " .zip ") > 0))
 			{
-				sFlags += "-d 1 ";
+				sFlags += "-d 0 ";
 				//sFlags += "-f ";
 			}
+			sFlags += "--zip-deflate ";
 			RunPlugin((unsigned int) iCount, "Leanify (1/6)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
