@@ -2293,7 +2293,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			//Limit ZIP no recurse to ZIP extension
 			if ((!gudtOptions.bZIPRecurse) && (PosEx(sExtensionByContent, " .zip ") > 0))
 			{
-				sFlags += "-d 0 ";
+				sFlags += "-d 1 ";
 				//sFlags += "-f ";
 			}
 			sFlags += "--zip-deflate ";
