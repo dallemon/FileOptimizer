@@ -174,7 +174,7 @@ ndo
 
 
 XX.XX - YYYY
-
+- Updated to NSIS 3.06.1.
 
 14.30 - 2020/07/29
 - Fixed status of files not being refreshed when using cache (JoeW).
