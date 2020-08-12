@@ -178,6 +178,7 @@ XX.XX - YYYY
 - Added OpenRaster (.ora) support using Leanify.
 - Updated Leanify to 0.4.3.243 daily binaries and use new shorten parameters.
 - Updated to NSIS 3.06.1.
+- Upgraded distributions to 7-Zip 20.02.
 - Some minor optimizations and code cleanup.
 
 14.30 - 2020/07/29
