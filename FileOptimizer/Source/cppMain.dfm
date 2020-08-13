@@ -218,12 +218,20 @@ object frmMain: TfrmMain
       'y, click on the right button context menu to proceed. All proces' +
       'sed files are copied to Recycle Bin, so you can easily restore t' +
       'hem. Double click an item to preview it.'
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
     Align = alClient
+    BevelEdges = []
+    BevelInner = bvNone
+    BevelOuter = bvNone
     DefaultColWidth = 512
     FixedCols = 0
     RowCount = 1
     FixedRows = 0
-    Options = [goRangeSelect, goDrawFocusSelected, goColSizing, goRowSelect, goThumbTracking, goFixedColClick, goFixedRowClick, goFixedHotTrack]
+    GridLineWidth = 0
+    Options = [goRangeSelect, goDrawFocusSelected, goColSizing, goRowSelect, goFixedColClick, goFixedHotTrack, goFixedColDefAlign, goFixedRowDefAlign]
     ParentShowHint = False
     PopupMenu = mnuFiles
     ScrollBars = ssVertical
