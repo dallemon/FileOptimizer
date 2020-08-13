@@ -404,19 +404,20 @@ void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, 
 		grdFiles->Canvas->Font->Color = clWindowText;
 	}
 
-	Rect.left -= 2;
+	Rect.left -= 4;
+	Rect.top -= 4;
 	grdFiles->Canvas->FillRect(Rect);
 	String sValue = GetCellValue(grdFiles->Cells[ACol][ARow], 0);
 
 	//Left aligned
 	if ((ACol == KI_GRID_FILE) || (ACol == KI_GRID_EXTENSION) || (ACol == KI_GRID_STATUS))
 	{
-		grdFiles->Canvas->TextRect(Rect, Rect.left + 4, Rect.top + 4, sValue);
+		grdFiles->Canvas->TextRect(Rect, Rect.left + 8, Rect.top + 8, sValue);
 	}
 	//Right aligned
 	else
 	{
-		grdFiles->Canvas->TextRect(Rect, Rect.right - Canvas->TextWidth(sValue) - 4, Rect.top + 4, sValue);
+		grdFiles->Canvas->TextRect(Rect, Rect.right - Canvas->TextWidth(sValue) - 8, Rect.top + 8, sValue);
 	}
 	grdFiles->Rows[ARow]->EndUpdate();
 }
@@ -2632,7 +2633,7 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 					}
 
 					lstRow->Add(FormatNumberThousand(lSize)); //2: Original size
-					lstRow->Add(""); //3: Optimized size
+					lstRow->Add(" "); //3: Optimized size
 					lstRow->Add(_("Pending")); //4: Status
 
 					//Check if it was already optimized
