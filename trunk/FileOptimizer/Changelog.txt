@@ -157,14 +157,14 @@ ndo
 - mutool 1.17 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc3 (02) - http://css-ig.net/pingo
+- pingo 0.99 rc3 (10) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.32.2 - http://www.sqlite.org
+- SQLite 3.33 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -176,7 +176,9 @@ ndo
 XX.XX - YYYY
 - Added Tencent QQ (.gft .rdb) support using Leanify.
 - Added OpenRaster (.ora) support using Leanify.
+- Updated SQLite to 3.33 x86 and x64 Visual C++ 2019 custom builds.
 - Updated Leanify to 0.4.3.243 daily binaries and use new shorten parameters.
+- Updated pingo to 0.99 rc3 (10) x64 version.
 - Updated to NSIS 3.06.1.
 - Upgraded distributions to 7-Zip 20.02.
 - Some minor optimizations and code cleanup.
