@@ -378,7 +378,7 @@ void __fastcall TfrmMain::FormResize(TObject *Sender)
 void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect, TGridDrawState State)
 {
 	grdFiles->Rows[ARow]->BeginUpdate();
-	
+
 	//Color even and odd rows
 	if (ARow == 0)
 	{
@@ -392,7 +392,7 @@ void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, 
 	{
 		grdFiles->Canvas->Brush->Color = clGradientActiveCaption;
 	}
-	
+
 	//Color file column and the others
 	if ((ARow > 0) && (ACol == KI_GRID_FILE))
 	{
@@ -404,20 +404,20 @@ void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, 
 		grdFiles->Canvas->Font->Color = clWindowText;
 	}
 
-	Rect.left -= 4;
-	Rect.top -= 4;
+	Rect.left -= 3;
+	Rect.top -= 3;
 	grdFiles->Canvas->FillRect(Rect);
 	String sValue = GetCellValue(grdFiles->Cells[ACol][ARow], 0);
 
 	//Left aligned
 	if ((ACol == KI_GRID_FILE) || (ACol == KI_GRID_EXTENSION) || (ACol == KI_GRID_STATUS))
 	{
-		grdFiles->Canvas->TextRect(Rect, Rect.left + 8, Rect.top + 8, sValue);
+		grdFiles->Canvas->TextRect(Rect, Rect.left + 6, Rect.top + 6, sValue);
 	}
 	//Right aligned
 	else
 	{
-		grdFiles->Canvas->TextRect(Rect, Rect.right - Canvas->TextWidth(sValue) - 8, Rect.top + 8, sValue);
+		grdFiles->Canvas->TextRect(Rect, Rect.right - Canvas->TextWidth(sValue) - 6, Rect.top + 6, sValue);
 	}
 	grdFiles->Rows[ARow]->EndUpdate();
 }
