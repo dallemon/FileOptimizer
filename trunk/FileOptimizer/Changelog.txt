@@ -176,6 +176,7 @@ ndo
 XX.XX - YYYY
 - Added Tencent QQ (.gft .rdb) support using Leanify.
 - Added OpenRaster (.ora) support using Leanify.
+- Fixed grid drawing issues in C++ Builder 10.4.
 - Updated SQLite to 3.33 x86 and x64 Visual C++ 2019 custom builds.
 - Updated Leanify to 0.4.3.243 daily binaries and use new shorten parameters.
 - Updated mozjpegtran to 4.0.1 build 20200815 x64 binaries.
@@ -183,6 +184,7 @@ XX.XX - YYYY
 - Updated to NSIS 3.06.1.
 - Upgraded distributions to 7-Zip 20.02.
 - Some minor optimizations and code cleanup.
+- Upgraded to C++ Builder 10.4.1 (27.0.38860.1461).
 
 14.30 - 2020/07/29
 - Fixed status of files not being refreshed when using cache (JoeW).
