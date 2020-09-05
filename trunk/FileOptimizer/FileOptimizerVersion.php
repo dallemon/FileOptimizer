@@ -76,7 +76,7 @@
 		'ShowToolBar' => false,
 		'HideAds' => false,
 		'TempDirectory' => '',
-		'Version' => '14.30.2566',
+		'Version' => '14.40.2577',
 		'Time' => 0,
 		'Opens' => 0,
 		'Files' => 0,
