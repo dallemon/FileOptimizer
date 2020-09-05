@@ -157,7 +157,7 @@ ndo
 - mutool 1.17 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc3 (10) - http://css-ig.net/pingo
+- pingo 0.99 rc3 (15) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -174,13 +174,16 @@ ndo
 
 
 XX.XX - YYYY
+
+
+14.40 - 2020/09/05
 - Added Tencent QQ (.gft .rdb) support using Leanify.
 - Added OpenRaster (.ora) support using Leanify.
 - Fixed grid drawing issues in C++ Builder 10.4.
 - Updated SQLite to 3.33 x86 and x64 Visual C++ 2019 custom builds.
 - Updated Leanify to 0.4.3.243 daily binaries and use new shorten parameters.
 - Updated mozjpegtran to 4.0.1 build 20200815 x64 binaries.
-- Updated pingo to 0.99 rc3 (10) x64 version.
+- Updated pingo to 0.99 rc3 (15) x64 version.
 - Updated to NSIS 3.06.1.
 - Upgraded distributions to 7-Zip 20.02.
 - Some minor optimizations and code cleanup.
