@@ -1998,17 +1998,20 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (12/16)", (sPluginsDirectory + "ECT.exe -quiet --allfilters " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
+			sFlags = "";
+			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
+			sFlags += "-s" + (String) iLevel + " ";
+
 			if (!gudtOptions.bPNGCopyMetadata)
 			{
-				sFlags = "";
-				iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
-				sFlags += "-s" + (String) iLevel + " ";
-				if (gudtOptions.bPNGAllowLossy)
-				{
-					sFlags += "-x3 -lossyfilter ";
-				}
-				RunPlugin((unsigned int) iCount, "pingo (13/16)", (sPluginsDirectory + "pingo.exe " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				sFlags += "-strip ";
 			}
+			if (gudtOptions.bPNGAllowLossy)
+			{
+				sFlags += "-x3 -lossyfilter ";
+			}
+			RunPlugin((unsigned int) iCount, "pingo (13/16)", (sPluginsDirectory + "pingo.exe " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			
 
 			sFlags = "";
 			if (gudtOptions.bPNGCopyMetadata)
@@ -2242,8 +2245,13 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags += "-s" + (String) iLevel + " ";
 			if (gudtOptions.bWEBPAllowLossy)
 			{
-				sFlags += "-auto ";
+				sFlags += "-webp ";
 			}
+			else
+			{
+				sFlags += "-webp ";
+			}
+		
 			RunPlugin((unsigned int) iCount, "pingo (1/3)", (sPluginsDirectory + "pingo.exe " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 					
 			sFlags = "";
