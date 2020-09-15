@@ -2249,7 +2249,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			}
 			else
 			{
-				sFlags += "-webp ";
+				sFlags += "-webp-lossless ";
 			}
 		
 			RunPlugin((unsigned int) iCount, "pingo (1/3)", (sPluginsDirectory + "pingo.exe " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);

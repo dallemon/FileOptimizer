@@ -142,7 +142,7 @@ ndo
 - ImageMagick 7.0.10.24 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
-- jpeg-archive 2.1.1 - https://github.com/danielgtaylor/jpeg-archive
+- jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
@@ -176,6 +176,8 @@ ndo
 XX.XX - YYYY
 - Added support for pingo when copy metadata is enabled (Devedse).
 - Added support for webp lossless with pingo.
+- Updated jpeg-archive to 2.2.0.
+- Some minor optimizations and code cleanup.
 
 
 14.40 - 2020/09/05
