@@ -154,7 +154,7 @@ ndo
 - mozjpeg 4.0.1 RC build 20200921 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
 - mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
-- mutool 1.17 - http://mupdf.com/downloads/
+- mutool 1.18 RC1 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
 - pingo 0.99 rc3 (17) - http://css-ig.net/pingo
@@ -182,6 +182,7 @@ XX.XX - YYYY
 - Updated Ghostscript to 9.53.1.
 - Updated ffmpeg to 4.3.1.
 - Updated mozjpegtran to 4.0.1 RC build 20200921 x86 and x64 binaries.
+- Updated to mutool 1.18 RC1.
 - Some minor optimizations and code cleanup.
 
 
