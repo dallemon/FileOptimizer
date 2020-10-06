@@ -183,6 +183,7 @@ XX.XX - YYYY
 - Updated ffmpeg to 4.3.1.
 - Updated mozjpegtran to 4.0.1 RC build 20200921 x86 and x64 binaries.
 - Updated to mutool 1.18 RC1.
+- Updated to cppcheck 2.2.
 - Some minor optimizations and code cleanup.
 
 
