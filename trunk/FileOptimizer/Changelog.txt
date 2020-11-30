@@ -1,4 +1,4 @@
-Add Minify support HTML5, CSS3, JS, JSON, SVG and XML #87 -Pingogeek-
+- Add Minify support SVG and XML #87 -Pingogeek-
 
 - Make CHM links open in target blank to use default browser (dado023).
 - Calculate cache hashes by content instead of paths (Alexander).
@@ -177,6 +177,7 @@ ndo
 
 XXXXX
 - Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
+- Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled.
 
 
 14.50 - 2020/11/26
