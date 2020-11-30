@@ -1,3 +1,5 @@
+Add Minify support HTML5, CSS3, JS, JSON, SVG and XML #87 -Pingogeek-
+
 - Make CHM links open in target blank to use default browser (dado023).
 - Calculate cache hashes by content instead of paths (Alexander).
 
@@ -150,6 +152,7 @@ ndo
 - libdeflate 1.2 - https://github.com/ebiggers/libdeflate
 - libwebp 1.1.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
+- Minify 2.9.10 - https://github.com/tdewolff/minify/
 - mkclean 0.8.10 - http://www.matroska.org/downloads/mkclean.html
 - mozjpeg 4.0.1 RC2 build 20200929 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
@@ -173,6 +176,7 @@ ndo
 - zRecompress 2.12 - http://nikkhokkho.sourceforge.net/static.php?page=zRecompress
 
 XXXXX
+- Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
 
 
 14.50 - 2020/11/26
