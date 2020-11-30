@@ -1224,7 +1224,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				RunPlugin((unsigned int) iCount, "CSSTidy (1/2)", (sPluginsDirectory + "csstidy.exe \"%INPUTFILE%\" --template=" + gudtOptions.acCSSTemplate + " \"\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				
-				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" --output \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// DLL: PETrim, strip, UPX
@@ -1481,7 +1481,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				RunPlugin((unsigned int) iCount, "tidy (1/3)", (sPluginsDirectory + "tidy.exe -config tidy.config -quiet -output \"%TMPOUTPUTFILE%\" \"%INPUTFILE%\" ").c_str(), sInputFile, "", 0, 0);
 				
-				RunPlugin((unsigned int) iCount, "Minify (2/3)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Minify (2/3)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" --output \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 				sFlags = "";
 				//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
@@ -1655,7 +1655,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				RunPlugin((unsigned int) iCount, "jsmin (1/2)", (sPluginsDirectory + "jsmin.bat \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				
-				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" --output \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// LUA: Leanify
@@ -2241,7 +2241,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				}
 				sFlags += "-i " + (String) iLevel + " ";
 				RunPlugin((unsigned int) iCount, "Leanify (1/2)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				
+				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" --output \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// WEBP: pingo, dwebp + cwebp, ImageWorsener
