@@ -1,5 +1,3 @@
-- Add Minify support SVG and XML #87 -Pingogeek-
-
 - Make CHM links open in target blank to use default browser (dado023).
 - Calculate cache hashes by content instead of paths (Alexander).
 
@@ -141,15 +139,15 @@ ndo
 - Ghostscript 9.53.3 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
-- ImageMagick 7.0.10.37 - http://www.imagemagick.org
+- ImageMagick 7.0.10.48 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
-- Leanify 0.4.3.243 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
-- libdeflate 1.2 - https://github.com/ebiggers/libdeflate
+- Leanify 0.4.3.244 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
+- libdeflate 1.7 - https://github.com/ebiggers/libdeflate
 - libwebp 1.1.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
 - Minify 2.9.10 - https://github.com/tdewolff/minify/
@@ -160,7 +158,7 @@ ndo
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc3 (25) - http://css-ig.net/pingo
+- pingo 0.99 rc3 (27) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -177,8 +175,11 @@ ndo
 
 XXXXX
 - Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
-- Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled.
+- Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled respectively.
 - Updated SQLite to 3.34 x86 and x64 Visual C++ 2019 custom builds.
+- Updated Leanify to 0.4.3.244.
+- Updated ImageMagick to 7.0.10.48 with HDRI support.
+- Updated libdeflate to 1.7 with HDRI support.
 - Updated to cppcheck 2.3.
 
 
@@ -203,7 +204,6 @@ XXXXX
 - Updated SQLite to 3.33 x86 and x64 Visual C++ 2019 custom builds.
 - Updated Leanify to 0.4.3.243 daily binaries and use new shorten parameters.
 - Updated mozjpegtran to 4.0.1 build 20200815 x64 binaries.
-
 - Updated pingo to 0.99 rc3 (15) x64 version.
 - Updated to NSIS 3.06.1.
 - Upgraded distributions to 7-Zip 20.02.
