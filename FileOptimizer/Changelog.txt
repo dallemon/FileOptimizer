@@ -148,7 +148,7 @@ ndo
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
 - Leanify 0.4.3.244 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.7 - https://github.com/ebiggers/libdeflate
-- libwebp 1.1.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
+- libwebp 1.2.0 RC3 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
 - Minify 2.9.10 - https://github.com/tdewolff/minify/
 - mkclean 0.8.10 - http://www.matroska.org/downloads/mkclean.html
@@ -158,14 +158,14 @@ ndo
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc4 (11) - http://css-ig.net/pingo
+- pingo 0.99 rc4 (13) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.34 - http://www.sqlite.org
+- SQLite 3.34.1 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -176,11 +176,12 @@ ndo
 XXXXX
 - Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
 - Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled respectively.
-- Updated SQLite to 3.34 x86 and x64 Visual C++ 2019 custom builds.
+- Updated SQLite to 3.34.1 x86 and x64 Visual C++ 2019 custom builds.
+- Updated libwebp to 1.2.0 RC3 x64.
+- Updated pingo to 0.99 rc4 (13) x64 version.
 - Updated Leanify to 0.4.3.244.
 - Updated ImageMagick to 7.0.10.48 with HDRI support.
 - Updated libdeflate to 1.7.
-- Updated pingo to 0.99 rc4 (11) x64 version.
 - Updated to cppcheck 2.3.
 
 
