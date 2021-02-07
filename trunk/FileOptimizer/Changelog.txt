@@ -174,6 +174,7 @@ ndo
 - zRecompress 2.12 - http://nikkhokkho.sourceforge.net/static.php?page=zRecompress
 
 XXXXX
+- Improved speed and ration with ECT by converting -9 to -90032 (Julien B. O.)
 - Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
 - Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled respectively.
 - Updated SQLite to 3.34.1 x86 and x64 Visual C++ 2019 custom builds.

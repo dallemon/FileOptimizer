@@ -1460,6 +1460,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strìp ";
 			}
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+			//Convert level 9 to level 90032 because it is faster and usually with higher savings
+			if (iLevel == 9)
+			{
+				iLevel = 90032;
+			}
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (5/8)", (sPluginsDirectory + "ECT.exe -quiet --allfilters -gzip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
@@ -1628,6 +1633,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strip ";
 			}
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+			//Convert level 9 to level 90032 because it is faster and usually with higher savings
+			if (iLevel == 9)
+			{
+				iLevel = 90032;
+			}
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (9/10)", (sPluginsDirectory + "ECT.exe -quiet --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
@@ -2001,6 +2011,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strip ";
 			}
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+			//Convert level 9 to level 90032 because it is faster and usually with higher savings
+			if (iLevel == 9)
+			{
+				iLevel = 90032;
+			}
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (12/16)", (sPluginsDirectory + "ECT.exe -quiet --allfilters " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
@@ -2322,6 +2337,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strip ";
 			}
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+			//Convert level 9 to level 90032 because it is faster and usually with higher savings
+			if (iLevel == 9)
+			{
+				iLevel = 90032;
+			}
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (2/6)", (sPluginsDirectory + "ECT.exe -quiet -zip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
