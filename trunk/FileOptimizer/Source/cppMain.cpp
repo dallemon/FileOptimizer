@@ -2966,6 +2966,12 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbFor
 
 
 	sRes = ExtractFileExt(psFilename).LowerCase();
+	//Fixe ExtractFileExt returning NULL when no extension instead of empty.
+	if (sRes.IsEmpty())
+	{
+		sRes = ".";
+	}
+
 
 	//If file extension is not known, get it by analyzing file contents
 	if ((PosEx(" " + sRes + " ", KS_EXTENSION_ALL + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") == 0) || (pbForce))
