@@ -1276,7 +1276,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (1/4)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (1/4)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			if (!IsEXESFX(sInputFile.c_str()))
 			{
@@ -1443,7 +1443,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				{
 					sFlags += "--keep-exif ";
 				}
-				RunPlugin((unsigned int) iCount, "Leanify (2/8)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (2/8)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			
 			sFlags = "";
@@ -1500,7 +1500,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "Leanify (3/3)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (3/3)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// ICO: ImageMagick, Leanify
@@ -1530,7 +1530,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// JPEG: Guetzli, jpeg-recompress, jhead, Leanify, ect, pingo, jpegoptim, jpegtran, mozjpegtran
@@ -1586,7 +1586,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (4/10)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (4/10)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			if (gudtOptions.bJPEGAllowLossy)
 			{
@@ -1685,7 +1685,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		// MIME: Leanify
@@ -1703,7 +1703,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// MKV: ffmpeg, mkclean
 		if (PosEx(sExtensionByContent, KS_EXTENSION_MKV) > 0)
@@ -1967,7 +1967,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				//Temporary disable Leanify because it removed IPTC metadata
 				if (!gudtOptions.bPNGCopyMetadata)
 				{
-					RunPlugin((unsigned int) iCount, "Leanify (8/16)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+					RunPlugin((unsigned int) iCount, "Leanify (8/16)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				}
 				
 				sFlags = "";
@@ -2087,7 +2087,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (5/5)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (5/5)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// SQLITE: sqlite
 		if (PosEx(sExtensionByContent, KS_EXTENSION_SQLITE) > 0)
@@ -2113,7 +2113,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// Tencent QQ: Leanify
 		if (PosEx(sExtensionByContent, KS_EXTENSION_TENCENTQQ) > 0)
@@ -2132,7 +2132,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (1/1)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
 		
@@ -2255,7 +2255,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 				}
 				sFlags += "-i " + (String) iLevel + " ";
-				RunPlugin((unsigned int) iCount, "Leanify (1/2)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Leanify (1/2)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				
 				RunPlugin((unsigned int) iCount, "Minify (2/2)", (sPluginsDirectory + "minify.exe \"%INPUTFILE%\" --output \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
@@ -2329,7 +2329,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				//sFlags += "-f ";
 			}
 			sFlags += "--zip-deflate ";
-			RunPlugin((unsigned int) iCount, "Leanify (1/6)", (sPluginsDirectory + "leanify.exe -q " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (1/6)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			if (!gudtOptions.bZIPCopyMetadata)
