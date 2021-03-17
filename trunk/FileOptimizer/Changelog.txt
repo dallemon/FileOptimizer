@@ -146,12 +146,12 @@ ndo
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
 - jpegtran 9b - http://jpegclub.org/jpegtran/
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
-- Leanify 0.4.3.253 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
+- Leanify 0.4.3.258 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.7 - https://github.com/ebiggers/libdeflate
 - libwebp 1.2.0 RC3 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
 - Minify 2.9.10 - https://github.com/tdewolff/minify/
-- mkclean 0.8.10 - http://www.matroska.org/downloads/mkclean.html
+- mkclean 0.9.0 - http://www.matroska.org/downloads/mkclean.html
 - mozjpeg 4.0.3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
 - mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
@@ -165,7 +165,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.35.0 - http://www.sqlite.org
+- SQLite 3.35.1 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -175,10 +175,12 @@ ndo
 
 XXXXX
 - Fixed detecting file type by contents when it has no extension.
-- Updated SQLite to 3.35.0 x86 and x64 Visual C++ 2019 custom builds.
+- Implemented new Leanify parallel mode to make optimization faster.
+- Updated SQLite to 3.35.1 x86 and x64 Visual C++ 2019 custom builds.
+- Updated mkclean to 0.9.0.
 - Updated ImageMagick to 7.0.11.3 with HDRI support.
 - Updated ffmpeg to 4.3.2.
-- Updated Leanify to 0.4.3.253.
+- Updated Leanify to 0.4.3.258.
 - Updated mozjpeg to 4.0.3 x86 and x64 binaries.
 - Upgraded to C++ Builder 10.4.2 (27.0.40680.4203).
 
