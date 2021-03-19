@@ -158,7 +158,7 @@ ndo
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc4 (13) - http://css-ig.net/pingo
+- pingo 0.99 rc4 (14) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
@@ -182,6 +182,7 @@ XXXXX
 - Updated ffmpeg to 4.3.2.
 - Updated Leanify to 0.4.3.258.
 - Updated mozjpeg to 4.0.3 x86 and x64 binaries.
+- Updated pingo to 0.99 rc4 (14) x64 version.
 - Upgraded to C++ Builder 10.4.2 (27.0.40680.4203).
 
 
