@@ -165,7 +165,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.35.1 - http://www.sqlite.org
+- SQLite 3.35.2 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -176,7 +176,7 @@ ndo
 XXXXX
 - Fixed detecting file type by contents when it has no extension.
 - Implemented new Leanify parallel mode to make optimization faster.
-- Updated SQLite to 3.35.1 x86 and x64 Visual C++ 2019 custom builds.
+- Updated SQLite to 3.35.2 x86 and x64 Visual C++ 2019 custom builds.
 - Updated mkclean to 0.9.0.
 - Updated ImageMagick to 7.0.11.3 with HDRI support.
 - Updated ffmpeg to 4.3.2.
