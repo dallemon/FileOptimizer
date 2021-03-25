@@ -129,7 +129,7 @@ String __fastcall clsLanguage::Search(String psText, THashedStringList *plstLang
 		int iLine = plstLanguage->IndexOf(sSearch);
 		if (iLine >= 0)
 		{
-			String sLine;
+			String sLine = "";
 			//Skip lines not starting with mgstr
 			do
 			{
