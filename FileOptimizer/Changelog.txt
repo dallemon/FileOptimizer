@@ -185,6 +185,7 @@ XXXXX
 - Updated mozjpeg to 4.0.3 x86 and x64 binaries.
 - Updated pingo to 0.99 rc4 (14) x64 version.
 - Upgraded to C++ Builder 10.4.2 (27.0.40680.4203).
+- Some minor optimizations and code cleanup.
 
 
 14.60 - 2021/02/09
