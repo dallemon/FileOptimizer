@@ -158,14 +158,14 @@ ndo
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc4 (14) - http://css-ig.net/pingo
+- pingo 0.99 rc4 (16) - http://css-ig.net/pingo
 - PngOptimizer 2.5 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.12.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.35.3 - http://www.sqlite.org
+- SQLite 3.35.4 - http://www.sqlite.org
 - shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -177,13 +177,13 @@ XXXXX
 - Fixed detecting file type by contents when it has no extension.
 - Implemented new Leanify parallel mode to make optimization faster.
 - Reenabled --mt-deflate ECT switch which was not available in FO 13.
-- Updated SQLite to 3.35.3 x86 and x64 Visual C++ 2019 custom builds.
+- Updated SQLite to 3.35.4 x86 and x64 Visual C++ 2019 custom builds.
 - Updated mkclean to 0.9.0.
 - Updated ImageMagick to 7.0.11.3 with HDRI support.
 - Updated ffmpeg to 4.3.2.
 - Updated Leanify to 0.4.3.258.
 - Updated mozjpeg to 4.0.3 x86 and x64 binaries.
-- Updated pingo to 0.99 rc4 (14) x64 version.
+- Updated pingo to 0.99 rc4 (16) x64 version.
 - Upgraded to C++ Builder 10.4.2 (27.0.40680.4203).
 - Updated EXE compatibility to PatchPE 1.33.
 - Some minor optimizations and code cleanup.
