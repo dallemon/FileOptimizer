@@ -62,7 +62,7 @@
 #define KS_EXTENSION_MP3	_T(" .mp3 ")
 #define KS_EXTENSION_MP4	_T(" .mp4 .3gp .3gg .3g2 .m4a .m4b .m4p .m4r .m4v .acc .avi .mpg .mpeg .vob .flv .wmv .wma .rv .ra .rm .rmvb .ram .smil .qt .mov ")
 #define KS_EXTENSION_OBJ	_T(" .obj .o .lib .a ")
-#define KS_EXTENSION_OGG	_T(" .ogg .oga .ogx ")
+#define KS_EXTENSION_OGG	_T(" .ogg .oga .ogx .ogm .spx .opus ")
 #define KS_EXTENSION_OGV	_T(" .ogg .ogv .ogx ")
 #define KS_EXTENSION_OLE	_T(" .ac .adp .apr .art .chm .chi .chq .chs .chw .db .doc .dot .fla .fpx .its .lit .max .mce .mdb .mdt .mic .mix .mpd .mpp .mpt .msc .msi .msg .msp .mst .mtw .mzz .ole .ole2 .one .opt .ost .pps .ppt .pub .puz .rfa .rft .rte .rvt .sldasm .sldprt .slddrw .sou .spo stickynotes.snt thumbs.db .vsd .vst .vss .wiz .wps .xl .xla .xlc .xlm .xls .xlw .xsf .xsn ")
 #define KS_EXTENSION_PCX	_T(" .dcx .pcc .pcx ")

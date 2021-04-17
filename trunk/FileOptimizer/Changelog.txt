@@ -174,6 +174,8 @@ ndo
 - zRecompress 2.12 - http://nikkhokkho.sourceforge.net/static.php?page=zRecompress
 
 XXXXX
+- Added OGG (.ogm .spx .opus) to the OGG tool chain (necros).
+- Fixed OGG smart detection by content (necros).
 - Updated Leanify to 0.4.3.259.
 
 
