@@ -3041,7 +3041,7 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbFor
 				sRes = ".obj";
 			}
 			//Check OGG / Check OGV
-			else if (memcmp(&acBuffer[3], "OggS", 4) == 0)
+			else if (memcmp(&acBuffer, "OggS", 4) == 0)
 			{
 				sRes = ".ogg";
 			}
