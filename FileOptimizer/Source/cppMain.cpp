@@ -3019,6 +3019,7 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbFor
 			{
 				sRes = ".mkv";
 			}
+			//ToDo: MIME
 			//Check MNG
 			else if (memcmp(acBuffer, "\x8A\x4D\x4E\x47\x0D\x0A\x1A\x0A", 8) == 0)
 			{
@@ -3086,11 +3087,12 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbFor
 			{
 				sRes = ".tga";
 			}
-			//Check TIF
+			//Check TIFF
 			else if ((memcmp(acBuffer, "\x0C\xED", 2) == 0) || (memcmp(acBuffer, "\x49\x20\x49", 3) == 0) || (memcmp(acBuffer, "\x49\x49\x2A\x00", 4) == 0) || (memcmp(acBuffer, "\x4D\x4D\x00\x2B", 4) == 0))
 			{
 				sRes = ".tif";
 			}
+			//ToDo: Tencent QQ
 			//Check WAV
 			else if (memcmp(acBuffer, "RIFF", 4) == 0)
 			{
