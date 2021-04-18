@@ -36,6 +36,7 @@
 #define KS_APP_UPDATE_PAGE		_T("/images/FileOptimizerVersion.php")
 #define KS_APP_DONATE_URL		_T("https://nikkhokkho.sourceforge.io/images/FileOptimizerDonate.html")
 #define KS_APP_ADS_URL			_T("https://nikkhokkho.sourceforge.io/images/FileOptimizerAds.php")
+#define KS_APP_UPDATE_URL		_T("https://sourceforge.net/projects/nikkhokkho/files/FileOptimizer/")
 
 /* Grid columns */
 #define KI_GRID_FILE		0
