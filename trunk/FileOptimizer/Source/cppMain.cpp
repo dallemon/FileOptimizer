@@ -2924,7 +2924,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 			sCaption.printf(_((TCHAR *) _T("%s version %s is available.\r\nDo you want to download it now?")), Application->Name.c_str(), Trim(acWide).c_str());
 			if (clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Check updates")), MB_YESNO | MB_ICONQUESTION) == ID_YES)
 			{
-				ShellExecute(Handle, _T("open"), KS_APP_URL, _T(""), _T(""), SW_SHOWNORMAL);
+				ShellExecute(Handle, _T("open"), KS_APP_UPDATE_URL, _T(""), _T(""), SW_SHOWNORMAL);
 			}
 		}
 		else if (!pbSilent)
