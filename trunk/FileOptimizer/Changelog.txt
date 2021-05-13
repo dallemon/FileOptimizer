@@ -159,7 +159,7 @@ ndo
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
 - pingo 0.99 rc4 (19) - http://css-ig.net/pingo
-- PngOptimizer 2.5 - http://psydk.org/PngOptimizer
+- PngOptimizer 2.7 beta - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.15.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
@@ -175,12 +175,16 @@ ndo
 
 XXXXX
 - Added redirection to sourceforge page to get updates (Krzysztof Janda).
+- Updated ECT -> multithreaded processing support, folder support, Ofast #95 (Paul).
+- Updated PngOptimizer x64 to 2.7 beta #95 (Paul).
+- Updated Optipng x64 to 0.7.7 #95 (Paul).
+- Updated pngwolf-zopfli x64 to 1.1.2 #95 (Paul).
 - Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
 - Fixed OGG smart detection by content (necros) #93.
 - Updated pngquant to 2.15.0.
 - Updated pingo to 0.99 rc4 (19) x64 version.
 - Updated Leanify to 0.4.3.259.
-
+- Upgraded distributions to 7-Zip 21.02.
 
 14.70 - 2021/04/13
 - Fixed detecting file type by contents when it has no extension.
