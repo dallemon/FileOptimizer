@@ -175,14 +175,15 @@ ndo
 
 XXXXX
 - Added redirection to sourceforge page to get updates (Krzysztof Janda).
+- Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
+- Fixed OGG smart detection by content (necros) #93.
 - Updated ECT -> multithreaded processing support, folder support, Ofast #95 (Paul).
 - Updated PngOptimizer x64 to 2.7 beta #95 (Paul).
 - Updated Optipng x64 to 0.7.7 #95 (Paul).
 - Updated pngwolf-zopfli x64 to 1.1.2 #95 (Paul).
-- Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
-- Fixed OGG smart detection by content (necros) #93.
+- Updated pingo to 0.99 rc5 (8) x64 version.
 - Updated pngquant to 2.15.0.
-- Updated pingo to 0.99 rc4 (19) x64 version.
+- Updated pingo to 0.99 rc5 (8) x64 version.
 - Updated Leanify to 0.4.3.260.
 - Upgraded distributions to 7-Zip 21.02.
 
