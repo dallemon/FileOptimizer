@@ -178,6 +178,7 @@ XXXXX
 - Added redirection to sourceforge page to get updates (Krzysztof Janda).
 - Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
 - Fixed OGG smart detection by content (necros) #93.
+- Fixed cache not working (Jack).
 - Updated ffmpeg to 4.4 (Stephen D Brock).
 - Updated ECT -> multithreaded processing support, folder support, Ofast #95 (Paul).
 - Updated PngOptimizer x64 to 2.7 beta #95 (Paul).
