@@ -2659,7 +2659,6 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 
 					lstRow->Add(FormatNumberThousand(lSize)); //2: Original size
 					lstRow->Add(""); //3: Optimized size
-					lstRow->Add(_("Pending")); //4: Status
 
 					//Check if it was already optimized
 					if (gudtOptions.bEnableCache)
@@ -2667,10 +2666,18 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 						String sHashValue = Hash(pacFile);
 						unsigned int iHashKey = clsUtil::Crc32(sHashValue.c_str(), (unsigned int) sHashValue.Length());
 						//In cache, show it as already optimized
-						if (_tcscmp(clsUtil::GetIni(_T("Cache"), ((String) iHashKey).c_str(), _T("")), _T("")) != 0)
+						if (_tcscmp(clsUtil::GetIni(_T("Cache"), ((String) iHashKey).c_str(), _T("")), sHashValue.c_str()) == 0)
 						{
 							lstRow->Add(_("Optimized")); //4: Status
 						}
+						else
+						{
+							lstRow->Add(_("Pending")); //4: Status
+						}
+					}
+					else
+					{
+						lstRow->Add(_("Pending")); //4: Status
 					}
 					grdFiles->Rows[(int) iRows] = lstRow;
 					delete lstRow;
