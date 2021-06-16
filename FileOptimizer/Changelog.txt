@@ -176,6 +176,7 @@ ndo
 XXXXX
 - Added italian localization. Thank you Giacomo Margarito.
 - Added redirection to sourceforge page to get updates (Krzysztof Janda).
+- Added -z switch to cwebp -activates lossless preset with given level (Paul).
 - Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
 - Fixed OGG smart detection by content (necros) #93.
 - Fixed cache not working (Jack).
@@ -207,7 +208,7 @@ XXXXX
 - Some minor optimizations and code cleanup.
 
 14.60 - 2021/02/09
-- Improved speed and ration with ECT by converting -9 to -90032 (Julien B. O.)
+- Improved speed and ratio with ECT by converting -9 to -90032 (Julien B. O.)
 - Replaced JSMin by Minify #87 (Pingogeek) for x64 tool chain.
 - Added Minify to the HTML, CSS, JS/JSON and XML tool chains when HTMLTidy, JSMin or Leanfy is enabled respectively.
 - Updated SQLite to 3.34.1 x86 and x64 Visual C++ 2019 custom builds.

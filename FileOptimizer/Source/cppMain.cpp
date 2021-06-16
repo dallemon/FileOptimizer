@@ -2269,6 +2269,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags = "";
 			iLevel = min(gudtOptions.iLevel * 5 / 9, 5) + 1;
 			sFlags += "-m " + (String) iLevel + " ";
+			sFlags += "-z " + (String) iLevel + " ";
 
 			TCHAR acTmpFileWebp[PATH_MAX];
 			_tcsncpy(acTmpFileWebp, sInputFile.c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 5);
