@@ -26,14 +26,14 @@
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const void * __fastcall clsUtil::MemMem (const void *buf, size_t buf_len, const void *byte_sequence, size_t byte_sequence_len)
 {
-	unsigned char *bf = (unsigned char *) buf;
-	unsigned char *bs = (unsigned char *) byte_sequence;
-	unsigned char *p  = bf;
+	const unsigned char *bf = (const unsigned char *) buf;
+	const unsigned char *bs = (const unsigned char *) byte_sequence;
+	const unsigned char *p  = bf;
 
 	while (byte_sequence_len <= (buf_len - (p - bf)))
 	{
 		unsigned int b = *bs & 0xFF;
-		if ((p = (unsigned char *) memchr(p, b, buf_len - (p - bf))) != nullptr)
+		if ((p = (const unsigned char *) memchr(p, b, buf_len - (p - bf))) != nullptr)
 		{
 			if ((memcmp(p, byte_sequence, byte_sequence_len)) == 0)
 			{
@@ -696,10 +696,10 @@ int __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, 
 		delete[] (TCHAR *) vData;
 		return(0);
 	}
-	int vlen = _tcsclen(ver);
+	size_t vlen = _tcsclen(ver);
 	if (ret != nullptr)
 	{
-		int clen = vlen+1;
+		size_t clen = vlen+1;
 		if (clen >= len-1)
 			clen = len-1;
 		// ie. we'll try to copy the \0 in vData, but we'll leave space

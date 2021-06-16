@@ -190,6 +190,8 @@ XXXXX
 - Updated pingo to 0.99 rc5 (8) x64 version.
 - Updated Leanify to 0.4.3.260.
 - Upgraded distributions to 7-Zip 21.02.
+- Some minor optimizations and code cleanup.
+
 
 14.70 - 2021/04/13
 - Fixed detecting file type by contents when it has no extension.
