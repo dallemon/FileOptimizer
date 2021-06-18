@@ -130,6 +130,7 @@ struct udtOptions
 	TCHAR acDisablePluginMask[512];
 	bool bBeepWhenDone;
 	bool bShutdownWhenDone;
+	bool bDisableSleep;
 	bool bAlwaysOnTop;
 	bool bAllowDuplicates;
 	bool bAllowMultipleInstances;
