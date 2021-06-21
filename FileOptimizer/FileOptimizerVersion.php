@@ -59,6 +59,7 @@
 		'DisablePluginMask' => '',
 		'BeepWhenDone' => false,
 		'ShutdownWhenDone' => false,
+		'DisableSleep' => false,
 		'AlwaysOnTop' => false,
 		'AllowDuplicates' => false,
 		'AllowMultipleInstances' => false,

@@ -143,7 +143,7 @@ void __fastcall TfrmMain::LoadOptions(void)
 	_tcsncpy(gudtOptions.acDisablePluginMask, GetOption(_T("Options"), _T("DisablePluginMask"), _T("")), (sizeof(gudtOptions.acDisablePluginMask) / sizeof(TCHAR)) - 1);
 	gudtOptions.bBeepWhenDone = GetOption(_T("Options"), _T("BeepWhenDone"), false);
 	gudtOptions.bShutdownWhenDone = GetOption(_T("Options"), _T("ShutdownWhenDone"), false);
-	gudtOptions.bDisableSleep = GetOption(_T("Options"), _T("DisableSleep"), false);
+	gudtOptions.bDisableSleep = GetOption(_T("Options"), _T("DisableSleep"), true);
 	gudtOptions.bAlwaysOnTop = GetOption(_T("Options"), _T("AlwaysOnTop"), false);
 	gudtOptions.bDebug = GetOption(_T("Options"), _T("Debug"), false);
 	gudtOptions.bShowToolBar = GetOption(_T("Options"), _T("ShowToolBar"), false);
@@ -259,7 +259,7 @@ void __fastcall TfrmMain::SaveOptions(void)
 	clsUtil::SetIni(_T("Options"), _T("DisablePluginMask"), gudtOptions.acDisablePluginMask, _T("String. Default: ''. Allow excluding execution of certain plugins. It is case insensitive, and allows more than one item to be specified by using semicolon as separator."));
 	clsUtil::SetIni(_T("Options"), _T("BeepWhenDone"), gudtOptions.bBeepWhenDone, _T("Boolean. Default: false. Beep the speaker when optimization completes."));
 	clsUtil::SetIni(_T("Options"), _T("ShutdownWhenDone"), gudtOptions.bShutdownWhenDone, _T("Boolean. Default: false. Shutdown computer when optimization completes."));
-	clsUtil::SetIni(_T("Options"), _T("DisableSleep"), gudtOptions.bDisableSleep, _T("Boolean. Default: false. Avoid system sleeping while optimization in progress."));
+	clsUtil::SetIni(_T("Options"), _T("DisableSleep"), gudtOptions.bDisableSleep, _T("Boolean. Default: true. Avoid system sleeping while optimization in progress."));
 	clsUtil::SetIni(_T("Options"), _T("AlwaysOnTop"), gudtOptions.bAlwaysOnTop, _T("Boolean. Default: false. Show main window always on top."));
 	clsUtil::SetIni(_T("Options"), _T("ShowToolBar"), gudtOptions.bShowToolBar, _T("Boolean. Default: false. Show icons toolbar on main window."));
 	clsUtil::SetIni(_T("Options"), _T("Debug"), gudtOptions.bDebug, _T("Boolean. Default: false. Enable internal debugging mode. Temporary files will not be deleted."));
