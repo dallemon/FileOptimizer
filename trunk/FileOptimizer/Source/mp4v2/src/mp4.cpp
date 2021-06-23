@@ -87,7 +87,7 @@ const char* MP4GetFilename( MP4FileHandle hFile )
 
 ///////////////////////////////////////////////////////////////////////////////
 
-MP4FileHandle MP4Read( const char* fileName )
+MP4FileHandle MP4Read( const char* fileName, ShouldParseAtomCallback cb/*=nullptr*/ )
 {
     if (!fileName)
         return MP4_INVALID_FILE_HANDLE;
@@ -99,6 +99,10 @@ MP4FileHandle MP4Read( const char* fileName )
     try
     {
         ASSERT(pFile);
+
+        if ( cb != nullptr )
+           pFile->SetShouldParseAtomCallback( cb );
+
         pFile->Read( fileName, NULL );
         return (MP4FileHandle)pFile;
     }
@@ -860,18 +864,11 @@ MP4FileHandle MP4ReadProvider( const char* fileName, const MP4FileProvider* file
 //
     mp4v2_ismacrypParams *MP4DefaultISMACrypParams(mp4v2_ismacrypParams *ptr)
     {
-        try
-        {
-            if (ptr == NULL) {
-                ptr = (mp4v2_ismacrypParams *)MP4Malloc(sizeof(mp4v2_ismacrypParams));
-            }
-            memset(ptr, 0, sizeof(*ptr));
-            return ptr;
-        }
-
-        catch (...) {
-            return MP4_INVALID_TRACK_ID;
-        }
+         if (ptr == NULL) {
+             ptr = (mp4v2_ismacrypParams *)MP4Malloc(sizeof(mp4v2_ismacrypParams));
+         }
+         memset(ptr, 0, sizeof(*ptr));
+         return ptr;
     }
 
 
@@ -2653,13 +2650,39 @@ MP4FileHandle MP4ReadProvider( const char* fileName, const MP4FileProvider* file
         MP4FileHandle hFile, MP4TrackId trackId)
     {
         if (MP4_IS_VALID_FILE_HANDLE(hFile)) {
+            // H.264 MP4s will typically have width & height stored in
+            // the mdia.minf.stbl.stsd.avc1 atom. For MOVs, it varies.
+            // For H.264 MOVs from Apple devices, it is the same as H.264
+            // MP4. For PNG MOVs, mdia.minf.stbl.stsd.png contain the
+            // width and height. For ProRes MOVs, there are various atoms
+            // that I don't think are publicly documented,
+            // mdia.minf.stbl.stsd.apcn for example. So when we don't
+            // find the width/height where we expect, we'll just go with
+            // what's in the tkhd atom.
             try {
                 return ((MP4File*)hFile)->GetTrackIntegerProperty(trackId,
                         "mdia.minf.stbl.stsd.*.width");
             }
             catch( Exception* x ) {
                 mp4v2::impl::log.errorf(*x);
+                bool missingProperty = ( x->what.substr( 0, 16 ) == "no such property" );
                 delete x;
+                if ( missingProperty )
+                {
+                   try
+                   {
+                      return ( (MP4File*)hFile )->GetTrackFloatProperty( trackId, "tkhd.width" );
+                   }
+                   catch ( Exception *xx )
+                   {
+                      mp4v2::impl::log.errorf( *xx );
+                      delete xx;
+                   }
+                   catch ( ... )
+                   {
+                      mp4v2::impl::log.errorf( "%s: failed", __FUNCTION__ );
+                   }
+                }
             }
             catch( ... ) {
                 mp4v2::impl::log.errorf( "%s: failed", __FUNCTION__ );
@@ -2678,7 +2701,26 @@ MP4FileHandle MP4ReadProvider( const char* fileName, const MP4FileProvider* file
             }
             catch( Exception* x ) {
                 mp4v2::impl::log.errorf(*x);
+                bool missingProperty = ( x->what.substr( 0, 16 ) == "no such property" );
                 delete x;
+
+                // See notes above in MP4GetTrackVideoWidth()
+                if ( missingProperty )
+                {
+                   try
+                   {
+                      return ( (MP4File*)hFile )->GetTrackFloatProperty( trackId, "tkhd.height" );
+                   }
+                   catch ( Exception *xx )
+                   {
+                      mp4v2::impl::log.errorf( *xx );
+                      delete xx;
+                   }
+                   catch ( ... )
+                   {
+                      mp4v2::impl::log.errorf( "%s: failed", __FUNCTION__ );
+                   }
+                }
             }
             catch( ... ) {
                 mp4v2::impl::log.errorf( "%s: failed", __FUNCTION__ );
