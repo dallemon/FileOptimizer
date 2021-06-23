@@ -125,7 +125,7 @@ ndo
 - AdvanceCOMP 2.10 - https://github.com/amadvance/advancecomp
 - APNG Optimizer 1.4 - http://sourceforge.net/projects/apng/
 - Best CFBF Optimizer Nov 1st 2019 - https://papas-best.com/cfbf_en
-- Coherent PDF Command Line Tools (cpdfsqueeze) 2.3 - http://community.coherentpdf.com
+- Coherent PDF Command Line Tools (cpdf) 2.4 - http://community.coherentpdf.com
 - CSSTidy 1.3 - http://csstidy.sourceforge.net/download.php
 - DeflOpt 2.07 - http://www.walbeehm.com/download/
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
@@ -139,7 +139,7 @@ ndo
 - Ghostscript 9.54.0 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
-- ImageMagick 7.0.11.3 - http://www.imagemagick.org
+- ImageMagick 7.1.0.1 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
@@ -148,25 +148,25 @@ ndo
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
 - Leanify 0.4.3.260 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.7 - https://github.com/ebiggers/libdeflate
-- libwebp 1.2.0 RC3 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
+- libwebp 1.2.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
-- Minify 2.9.10 - https://github.com/tdewolff/minify/
+- Minify 2.9.17 - https://github.com/tdewolff/minify/
 - mkclean 0.9.0 - http://www.matroska.org/downloads/mkclean.html
 - mozjpeg 4.0.3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
-- mp4v2 4.1.0 - https://github.com/TechSmith/mp4v2
+- mp4v2 5.0.0 - https://github.com/TechSmith/mp4v2
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc4 (19) - http://css-ig.net/pingo
+- pingo 0.99 rc5 (10) - http://css-ig.net/pingo
 - PngOptimizer 2.7 beta - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.15.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.35.4 - http://www.sqlite.org
-- shntool 3.0.10 - http://www.etree.org/shnutils/shntool/
+- SQLite 3.36.0 - http://www.sqlite.org
+- shntool 3.0.10 - http://shnutils.freeshell.org/shntool/
 - Tidy 5.6.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
 - UPX 3.96 - https://upx.github.io
@@ -181,12 +181,19 @@ XXXXX
 - Added OGG (.ogm .spx .opus) to the OGG tool chain (necros) #93.
 - Fixed OGG smart detection by content (necros) #93.
 - Fixed cache not working (Jack).
+- Reverted back cpdfsqueeze to cpdf as in 14.10 because cpdfsqueeze has not been updated since 2 years ago.
+- Updated mp4v2 x86 and x64 to 5.0.0 Visual C++ 2019 custom builds.
+- Updated SQLite to 3.36.0 x86 and x64 Visual C++ 2019 custom builds.
+- Updated cpdf to 2.4.
+- Updated ImageMagick to 7.1.0.1 with HDRI support.
+- Updated libwebp to 1.2.0 x64.
+- Updated to Minify 2.9.17 x64.
+- Updated pingo to 0.99 rc5 (10) x64 version.
 - Updated ffmpeg to 4.4 (Stephen D Brock).
 - Updated ECT -> multithreaded processing support, folder support, Ofast #95 (Paul).
 - Updated PngOptimizer x64 to 2.7 beta #95 (Paul).
 - Updated Optipng x64 to 0.7.7 #95 (Paul).
 - Updated pngwolf-zopfli x64 to 1.1.2 #95 (Paul).
-- Updated pingo to 0.99 rc5 (8) x64 version.
 - Updated pngquant to 2.15.0.
 - Updated pingo to 0.99 rc5 (8) x64 version.
 - Updated Leanify to 0.4.3.260.
