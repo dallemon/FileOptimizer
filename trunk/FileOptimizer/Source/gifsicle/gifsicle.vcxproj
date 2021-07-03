@@ -70,19 +70,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);C:\PROYECTOS\FileOptimizer\Source\gifsicle\src;C:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
+    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);D:\PROYECTOS\FileOptimizer\Source\gifsicle\src;D:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);C:\PROYECTOS\FileOptimizer\Source\gifsicle\src;C:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
+    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);D:\PROYECTOS\FileOptimizer\Source\gifsicle\src;D:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);C:\PROYECTOS\FileOptimizer\Source\gifsicle\src;C:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
+    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);D:\PROYECTOS\FileOptimizer\Source\gifsicle\src;D:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);C:\PROYECTOS\FileOptimizer\Source\gifsicle\src;C:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
+    <IncludePath>$(IncludePath);$(UniversalCRT_IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);D:\PROYECTOS\FileOptimizer\Source\gifsicle\src;D:\PROYECTOS\FileOptimizer\Source\gifsicle\include;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -1,6 +1,6 @@
 /* -*- mode: c; c-basic-offset: 2 -*- */
 /* gifwrite.c - Functions to write GIFs.
-   Copyright (C) 1997-2019 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1997-2021 Eddie Kohler, ekohler@gmail.com
    This file is part of the LCDF GIF library.
 
    The LCDF GIF library is free software. It is distributed under the GNU
@@ -210,6 +210,8 @@ typedef struct gfc_rgbdiff {signed short r, g, b;} gfc_rgbdiff;
 /* Difference (MSE) between given color indexes + dithering error */
 static inline unsigned int color_diff(Gif_Color a, Gif_Color b, int a_transparent, int b_transparent, gfc_rgbdiff dither)
 {
+  unsigned int dith, undith;
+
   /* if one is transparent and the other is not, then return maximum difference */
   /* TODO: figure out what color is in the canvas under the transparent pixel and match against that */
   if (a_transparent != b_transparent) return 1<<25;
@@ -218,11 +220,11 @@ static inline unsigned int color_diff(Gif_Color a, Gif_Color b, int a_transparen
   if (a_transparent) return 0;
 
   /* squared error with or without dithering. */
-  unsigned int dith = (a.gfc_red-b.gfc_red+dither.r)*(a.gfc_red-b.gfc_red+dither.r)
+  dith = (a.gfc_red-b.gfc_red+dither.r)*(a.gfc_red-b.gfc_red+dither.r)
   + (a.gfc_green-b.gfc_green+dither.g)*(a.gfc_green-b.gfc_green+dither.g)
   + (a.gfc_blue-b.gfc_blue+dither.b)*(a.gfc_blue-b.gfc_blue+dither.b);
 
-  unsigned int undith = (a.gfc_red-b.gfc_red+dither.r/2)*(a.gfc_red-b.gfc_red+dither.r/2)
+  undith = (a.gfc_red-b.gfc_red+dither.r/2)*(a.gfc_red-b.gfc_red+dither.r/2)
   + (a.gfc_green-b.gfc_green+dither.g/2)*(a.gfc_green-b.gfc_green+dither.g/2)
   + (a.gfc_blue-b.gfc_blue+dither.b/2)*(a.gfc_blue-b.gfc_blue+dither.b/2);
 
@@ -333,12 +335,13 @@ static struct selected_node
 gfc_lookup_lossy(Gif_CodeTable *gfc, const Gif_Colormap *gfcm, Gif_Image *gfi,
   unsigned pos, Gif_Node *node, unsigned long base_diff, gfc_rgbdiff dither, const unsigned int max_diff)
 {
-  unsigned image_endpos = gfi->width * gfi->height;
+  const unsigned image_endpos = gfi->width * gfi->height;
 
   struct selected_node best_t = {node, pos, base_diff};
+  uint8_t suffix;
   if (pos >= image_endpos) return best_t;
 
-  uint8_t suffix = gif_pixel_at_pos(gfi, pos);
+  suffix = gif_pixel_at_pos(gfi, pos);
   assert(!node || (node >= gfc->nodes && node < gfc->nodes + NODES_SIZE));
   assert(suffix < gfc->clear_code);
   if (!node) {
@@ -416,7 +419,7 @@ write_compressed_data(Gif_Stream *gfs, Gif_Image *gfi,
   unsigned pos;
   unsigned clear_bufpos, clear_pos;
   unsigned line_endpos;
-  unsigned image_endpos;
+  const unsigned image_endpos = gfi->height * gfi->width;
   const uint8_t *imageline;
 
   unsigned run = 0;
@@ -429,7 +432,7 @@ write_compressed_data(Gif_Stream *gfs, Gif_Image *gfi,
   Gif_Code next_code = 0;
   Gif_Code output_code;
   uint8_t suffix;
-  Gif_Colormap *gfcm;
+  Gif_Colormap *gfcm = gfi->local ? gfi->local : gfs->global;
 
   int cur_code_bits;
 
@@ -450,13 +453,8 @@ write_compressed_data(Gif_Stream *gfs, Gif_Image *gfi,
      below. */
 
   pos = clear_pos = clear_bufpos = 0;
-  if (grr->gcinfo.loss) {
-    image_endpos = gfi->height * gfi->width;
-    gfcm = (gfi->local ? gfi->local : gfs->global);
-  } else {
-    line_endpos = gfi->width;
-    imageline = gif_imageline(gfi, pos);
-  }
+  line_endpos = gfi->width;
+  imageline = gif_imageline(gfi, pos);
 
   while (1) {
 
@@ -621,7 +619,7 @@ write_compressed_data(Gif_Stream *gfs, Gif_Image *gfi,
           int do_clear = grr->gcinfo.flags & GIF_WRITE_EAGER_CLEAR;
 
           if (!do_clear) {
-            unsigned pixels_left = gfi->width * gfi->height - pos;
+            unsigned pixels_left = image_endpos - pos;
             if (pixels_left) {
               /* Always clear if run_ewma gets small relative to
                  min_code_bits. Otherwise, clear if #images/run is smaller
