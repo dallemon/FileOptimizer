@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 2 -*- */
 /* gifsicle.c - gifsicle's main loop.
-   Copyright (C) 1997-2019 Eddie Kohler, ekohler@gmail.com
+   Copyright (C) 1997-2021 Eddie Kohler, ekohler@gmail.com
    This file is part of gifsicle.
 
    Gifsicle is free software. It is distributed under the GNU Public License,
@@ -620,6 +620,8 @@ open_giffile(const char *name)
     }
 #endif
 #if defined(_MSDOS) || defined(_WIN32)
+	#include <io.h>
+	#include <fcntl.h>
     _setmode(_fileno(stdin), _O_BINARY);
 #elif defined(__DJGPP__)
     setmode(fileno(stdin), O_BINARY);
@@ -1454,7 +1456,7 @@ main(int argc, char *argv[])
      32-bit Windows and Makefile.w64 for 64-bit Windows. */
   static_assert(sizeof(unsigned int) == SIZEOF_UNSIGNED_INT, "unsigned int has the wrong size.");
   static_assert(sizeof(unsigned long) == SIZEOF_UNSIGNED_LONG, "unsigned long has the wrong size.");
-  static_assert(sizeof(void*) == SIZEOF_VOID_P, "void* has the wrong size.");
+  //static_assert(sizeof(void*) == SIZEOF_VOID_P, "void* has the wrong size.");
 
   clp = Clp_NewParser(argc, (const char * const *)argv, sizeof(options) / sizeof(options[0]), options);
 
@@ -2125,7 +2127,7 @@ main(int argc, char *argv[])
 #else
       printf("LCDF Gifsicle %s\n", VERSION);
 #endif
-      printf("Copyright (C) 1997-2019 Eddie Kohler\n\
+      printf("Copyright (C) 1997-2021 Eddie Kohler\n\
 This is free software; see the source for copying conditions.\n\
 There is NO warranty, not even for merchantability or fitness for a\n\
 particular purpose.\n");
