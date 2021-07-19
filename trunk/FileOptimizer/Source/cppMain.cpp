@@ -308,14 +308,11 @@ void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 		{
 			*_tcsrchr(acPluginsDirectory, '\\') = NULL;
 		}
-		if (clsUtil::IsWindows64())
-		{
+		#if defined(_WIN64)
 			_tcscat(acPluginsDirectory, _T("\\Plugins64\\"));
-		}
-		else
-		{
+		#else
 			_tcscat(acPluginsDirectory, _T("\\Plugins32\\"));
-		}
+        #endif
 
 		bool bRunning = false;
 		HANDLE hFindFile = FindFirstFile((((String) acPluginsDirectory) + "*.exe").c_str(), &udtFindFileData);
@@ -781,14 +778,11 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 	{
 		*_tcsrchr(acTmpFile, '\\') = NULL;
 	}
-	if (clsUtil::IsWindows64())
-	{
+	#if defined(_WIN64)
 		_tcscat(acTmpFile, _T("\\Plugins64\\"));
-	}
-	else
-	{
+	#else
 		_tcscat(acTmpFile, _T("\\Plugins32\\"));
-	}
+    #endif
 	sPluginsDirectory = clsUtil::GetShortName((String) acTmpFile);
 	SetCurrentDirectory(sPluginsDirectory.c_str());
 
@@ -1836,14 +1830,11 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					_tcsncpy(acTmpFilePdf, clsUtil::GetShortName(acTmpFilePdf).c_str(), (sizeof(acTmpFilePdf) / sizeof(TCHAR)) - 1);
 
 					//RunPlugin((unsigned int) iCount, "Ghostcript", (sPluginsDirectory + "cwebp.exe -mt -quiet -lossless " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
-					if (clsUtil::IsWindows64())
-					{
+					#if defined(_WIN64)
 						RunPlugin((unsigned int) iCount, "Ghostcript (2/3)", (sPluginsDirectory + "gswin64c.exe " + sFlags + "-sOutputFile=\"" + acTmpFilePdf + "\" \"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-					}
-					else
-					{
+					#else
 						RunPlugin((unsigned int) iCount, "Ghostcript", (sPluginsDirectory + "gswin32c.exe " + sFlags + "-sOutputFile=\"" + acTmpFilePdf + "\" \"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-					}
+                	#endif
 					//If there is size reduction check it is not so high to detect corrupted encrypted PDF
 					if (clsUtil::SizeFile(acTmpFilePdf) < clsUtil::SizeFile(sInputFile.c_str()))
 					{
@@ -2373,16 +2364,13 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			//Very slow, use it only in high compression profiles
 			if (gudtOptions.iLevel > 7)
 			{
-				if (clsUtil::IsWindows64())
-				{
+				#if defined(_WIN64)
 					RunPlugin((unsigned int) iCount, "m7zRepacker (1/1)", (sPluginsDirectory + "m7zrepacker.exe -m1 -d1024 -mem2048 \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-				}
-				else
-				{
+				#else
 					RunPlugin((unsigned int) iCount, "m7zRepacker (1/1)", (sPluginsDirectory + "m7zrepacker.exe -m1 -d128 -mem512 \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-				}
+                #endif
 			}
-		}		
+		}
 		// MISC: ImageMagick
 		if (PosEx(sExtensionByContent, KS_EXTENSION_MISC) > 0)
 		{
