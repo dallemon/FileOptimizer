@@ -175,6 +175,8 @@ ndo
 
 
 XXXXXXXXX
+- Added .CAB and SFXCAB file detection by contents.
+- Added skipping of SFX CAB EXE installers (JoeW).
 - Do not run 64 bit plugins with FO 32 bit, even if under Win64.
 - Updated gifsicle to 1.93 (custom build).
 - Updated to cppcheck 2.5.

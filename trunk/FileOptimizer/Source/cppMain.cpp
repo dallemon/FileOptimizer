@@ -3115,6 +3115,11 @@ String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbFor
 			{
 				sRes = ".zip";
 			}
+			//Check CAB
+			else if (memcmp(acBuffer, "MSCF", 4) == 0)
+			{
+				sRes = ".cab";
+			}			
 			//Check 7z
 			else if (memcmp(acBuffer, "\x37\x7A\xBC\xAF\x27\x1C", 6) == 0)
 			{
@@ -3367,7 +3372,7 @@ bool __fastcall TfrmMain::IsEXESFX(const TCHAR *pacFile)
 	unsigned char *acBuffer;
 
 	
-	unsigned int iSize = 256 * 1024;
+	unsigned int iSize = 1 * 1024 * 1024;
 	acBuffer = new unsigned char[iSize];
 	if (acBuffer)
 	{
@@ -3408,6 +3413,11 @@ bool __fastcall TfrmMain::IsEXESFX(const TCHAR *pacFile)
 			}
 			//Check if it is a 7-ZIP SFX
 			else if (clsUtil::MemMem((const void *) acBuffer, iSize, (const void *) "\x37\x7A\xBC\xAF\x27\x1C", 6) != NULL)
+			{
+				bRes = true;
+			}
+			//Check if it is a SFXCAB
+			else if (clsUtil::MemMem((const void *) acBuffer, iSize, (const void *) "MSCF", 4) != NULL)
 			{
 				bRes = true;
 			}
