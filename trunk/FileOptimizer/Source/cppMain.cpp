@@ -1270,22 +1270,22 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		// EXE: Leanify, PETrim, strip, UPX
 		if (PosEx(sExtensionByContent, KS_EXTENSION_EXE) > 0)
 		{
-			sFlags = "";
-			//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
-			//Overwrite Leanify iterations
-			if (gudtOptions.iLeanifyIterations != -1)
-			{
-				iLevel = gudtOptions.iLeanifyIterations;
-			}
-			else
-			{
-				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
-			}
-			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (1/4)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-
 			if (!IsEXESFX(sInputFile.c_str()))
 			{
+				sFlags = "";
+				//iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
+				//Overwrite Leanify iterations
+				if (gudtOptions.iLeanifyIterations != -1)
+				{
+					iLevel = gudtOptions.iLeanifyIterations;
+				}
+				else
+				{
+					iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
+				}
+				sFlags += "-i " + (String) iLevel + " ";
+				RunPlugin((unsigned int) iCount, "Leanify (1/4)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+
 				if (!gudtOptions.bEXEDisablePETrim)
 				{
 					RunPlugin((unsigned int) iCount, "PETrim (2/4)", (sPluginsDirectory + "petrim.exe /StripFixups:Y \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
