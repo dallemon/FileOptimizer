@@ -148,7 +148,7 @@ ndo
 - jsmin 2019-10-30 - http://www.crockford.com/javascript/jsmin.html
 - Leanify 0.4.3.260 - https://github.com/JayXon/Leanify (https://ci.appveyor.com/project/JayXon/leanify)
 - libdeflate 1.7 - https://github.com/ebiggers/libdeflate
-- libwebp 1.2.0 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
+- libwebp 1.2.1 RC2 - https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
 - m7zRepacker 1.0.32.319 - https://encode.su/threads/1201-m7zRepacker
 - Minify 2.9.17 - https://github.com/tdewolff/minify/
 - mkclean 0.9.0 - http://www.matroska.org/downloads/mkclean.html
@@ -167,7 +167,7 @@ ndo
 - rehuff - http://wiki.xiph.org/Rehuff
 - SQLite 3.36.0 - http://www.sqlite.org
 - shntool 3.0.10 - http://shnutils.freeshell.org/shntool/
-- Tidy 5.6.0 - http://www.html-tidy.org
+- Tidy 5.8.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
 - UPX 3.96 - https://upx.github.io
 - ZLib 1.2.8 - http://www.zlib.net
@@ -178,6 +178,8 @@ XXXXXXXXX
 - Added .CAB and SFXCAB file detection by contents.
 - Added skipping of SFX CAB EXE installers (JoeW).
 - Do not run 64 bit plugins with FO 32 bit, even if under Win64.
+- Updaded Tidy to 5.8.0 x64.
+- Updated libwebp to 1.2.1 RC2 x64.
 - Updated gifsicle to 1.93 (custom build).
 - Updated to cppcheck 2.5.
 
