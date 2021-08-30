@@ -158,7 +158,7 @@ ndo
 - mutool 1.18 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 0.99 rc5 (10) - http://css-ig.net/pingo
+- pingo 0.99.5 - http://css-ig.net/pingo
 - PngOptimizer 2.7 beta - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.15.0 - http://www.pngquant.org
@@ -178,10 +178,12 @@ XXXXXXXXX
 - Added .CAB and SFXCAB file detection by contents.
 - Added skipping of SFX CAB EXE installers (JoeW).
 - Do not run 64 bit plugins with FO 32 bit, even if under Win64.
+- Updated pingo to 0.99.5 x64 version.
 - Updaded Tidy to 5.8.0 x64.
 - Updated libwebp to 1.2.1 RC2 x64.
 - Updated gifsicle to 1.93 (custom build).
 - Updated to cppcheck 2.5.
+- Updated to NSIS 3.07.
 
 
 15.00 - 2021/06/23
