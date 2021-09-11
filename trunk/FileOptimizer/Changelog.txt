@@ -182,8 +182,10 @@ XXXXXXXXX
 - Updaded Tidy to 5.8.0 x64.
 - Updated libwebp to 1.2.1 RC2 x64.
 - Updated gifsicle to 1.93 (custom build).
+- Upgraded to C++ Builder 11 (Alexandria).
 - Updated to cppcheck 2.5.
 - Updated to NSIS 3.07.
+- Some minor optimizations and code cleanup.
 
 
 15.00 - 2021/06/23
