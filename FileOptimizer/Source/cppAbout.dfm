@@ -16,15 +16,14 @@ object frmAbout: TfrmAbout
   Font.Style = []
   GlassFrame.Enabled = True
   KeyPreview = True
-  OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
   DesignSize = (
     458
     443)
-  PixelsPerInch = 96
   TextHeight = 13
   object imgAbout: TImage
     Left = 0
@@ -330,6 +329,5 @@ object frmAbout: TfrmAbout
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0
-    Zoom = 100
   end
 end

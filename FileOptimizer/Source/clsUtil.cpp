@@ -81,14 +81,14 @@ HRESULT CALLBACK clsUtil::TaskDialogCallbackProc(HWND phWnd, UINT uNotification,
 int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pacTitle, unsigned int piType, unsigned int piTimeout)
 {
 	int iButton = 0;
-	Winapi::Commctrl::TASKDIALOGCONFIG udtFlags = {};
+	TASKDIALOGCONFIG udtFlags = {};
 
 
 	//ToDo: Cache loaded functions from DLL
 	HMODULE hComCtl32 = LoadLibrary(_T("COMCTL32.DLL"));
 	if (hComCtl32)
 	{
-		typedef int (WINAPI TaskDialogType)(const Winapi::Commctrl::TASKDIALOGCONFIG *pTaskConfig, int *pnButton, int *pnRadioButton, bool *pfVerificationFlagChecked);
+		typedef int (WINAPI TaskDialogType)(const TASKDIALOGCONFIG *pTaskConfig, int *pnButton, int *pnRadioButton, bool *pfVerificationFlagChecked);
 		TaskDialogType *TaskDialogIndirect = (TaskDialogType *) GetProcAddress(hComCtl32, "TaskDialogIndirect");
 		if (TaskDialogIndirect)
 		{
@@ -98,7 +98,7 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 			if (piTimeout != 0)
 			{
 				udtFlags.dwFlags |= TDF_CALLBACK_TIMER | TDF_SHOW_PROGRESS_BAR;
-				udtFlags.pfCallback = (Winapi::Commctrl::PFTASKDIALOGCALLBACK) clsUtil::TaskDialogCallbackProc;
+				udtFlags.pfCallback = (PFTASKDIALOGCALLBACK) clsUtil::TaskDialogCallbackProc;
 				miTaskDialogTimeout = piTimeout;
 			}
 
