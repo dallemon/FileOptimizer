@@ -175,6 +175,8 @@ ndo
 
 
 XXXXXXXXX
+- Try to make executables compatible with Windows XP.
+- Upgraded distributions to 7-Zip 21.03.
 
 
 15.10 - 2021/09/11
