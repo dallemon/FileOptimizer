@@ -16,17 +16,16 @@ object frmMain: TfrmMain
   GlassFrame.Enabled = True
   KeyPreview = True
   Menu = mnuMain
-  OldCreateOrder = False
   Position = poDefault
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   OnResize = FormResize
+  PixelsPerInch = 96
   DesignSize = (
     699
     415)
-  PixelsPerInch = 96
   TextHeight = 13
   object lblCopyright: TLabel
     AlignWithMargins = True
