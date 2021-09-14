@@ -131,7 +131,7 @@ void __fastcall TfrmMain::LoadOptions(void)
 	gudtOptions.bDoNotCreateBackups = GetOption(_T("Options"), _T("DoNotCreateBackups"), false);
 	_tcsncpy(gudtOptions.acIncludeMask, GetOption(_T("Options"), _T("IncludeMask"), _T("")), (sizeof(gudtOptions.acIncludeMask) / sizeof(TCHAR)) - 1);
 	_tcsncpy(gudtOptions.acExcludeMask, GetOption(_T("Options"), _T("ExcludeMask"), _T("")), (sizeof(gudtOptions.acExcludeMask) / sizeof(TCHAR)) - 1);
-	_tcsncpy(gudtOptions.acDonator, GetOption(_T("Options"), _T("Donator"), _T("")), (sizeof(gudtOptions.acDonator) / sizeof(TCHAR)) -1 );
+	_tcsncpy(gudtOptions.acDonator, GetOption(_T("Options"), _T("Donator"), _T("")), (sizeof(gudtOptions.acDonator) / sizeof(TCHAR)) - 1);
 	StrTrim(gudtOptions.acDonator, _T(" %\a\b\f\n\r\t\v\\\'\"\?"));
 	_tcsncpy(gudtOptions.acDonation, GetOption(_T("Options"), _T("Donation"), _T("")), (sizeof(gudtOptions.acDonation) / sizeof(TCHAR)) - 1);
 	//Invalid donator, reset fields
@@ -2914,7 +2914,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 		}
 		else
 		{
-            gudtOptions.acDonator[0] = NULL;
+			gudtOptions.acDonator[0] = NULL;
             gudtOptions.acDonation[0] = NULL;
             if ((gudtOptions.iStatOpens > 10) && (clsUtil::Random(0, 50) == 5))
 			{
