@@ -176,6 +176,9 @@ ndo
 
 XXXXXXXXX
 - Try to make executables compatible with Windows XP.
+- Improved DPI support in Windows 10 or later.
+- Updated to cppcheck 2.6.
+- Updated to NSIS 3.08.
 - Upgraded distributions to 7-Zip 21.03.
 
 
