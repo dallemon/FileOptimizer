@@ -155,7 +155,7 @@ ndo
 - mozjpeg 4.0.3 - https://github.com/garyzyg/mozjpeg-windows/
 - MP3packer 2.04 - http://omion.dyndns.org/mp3packer/mp3packer.html
 - mp4v2 5.0.0 - https://github.com/TechSmith/mp4v2
-- mutool 1.18 - http://mupdf.com/downloads/
+- mutool 1.19 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
 - pingo 0.99.5 - http://css-ig.net/pingo
@@ -177,6 +177,7 @@ ndo
 XXXXXXXXX
 - Try to make executables compatible with Windows XP.
 - Improved DPI support in Windows 10 or later.
+- Updated to mutool 1.19.
 - Updated to cppcheck 2.6.
 - Updated to NSIS 3.08.
 - Upgraded distributions to 7-Zip 21.03.
