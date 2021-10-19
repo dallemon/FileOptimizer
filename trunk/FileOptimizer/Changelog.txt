@@ -136,7 +136,7 @@ ndo
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
 - Gifsicle 1.93 - http://www.lcdf.org/gifsicle/
-- Ghostscript 9.54.0 - http://www.ghostscript.com
+- Ghostscript 9.55.0 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli 1.0.1 - https://github.com/google/guetzli
 - ImageMagick 7.1.0.1 - http://www.imagemagick.org
@@ -177,6 +177,7 @@ ndo
 XXXXXXXXX
 - Try to make executables compatible with Windows XP.
 - Improved DPI support in Windows 10 or later.
+- Updated Ghostscript to 9.55.0.
 - Updated to mutool 1.19.
 - Updated to cppcheck 2.6.
 - Updated to NSIS 3.08.
