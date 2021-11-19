@@ -180,9 +180,10 @@ XXXXXXXXX
 - Updated Ghostscript to 9.55.0.
 - Updated ffmpeg to 4.4.1.
 - Updated to mutool 1.19.
+- Upgraded to C++ Builder 11 Update 1.
 - Updated to cppcheck 2.6.
 - Updated to NSIS 3.08.
-- Upgraded distributions to 7-Zip 21.03.
+- Upgraded distributions to 7-Zip 21.04.
 
 
 15.10 - 2021/09/11
