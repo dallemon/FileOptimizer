@@ -176,6 +176,7 @@ ndo
 
 XXXXXXXXX
 - Try to make executables compatible with Windows XP.
+- Some code tweaks (thanks Jean-Marc Dupuis).
 - Improved DPI support in Windows 10 or later.
 - Updated Ghostscript to 9.55.0.
 - Updated ffmpeg to 4.4.1.

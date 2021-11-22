@@ -285,8 +285,7 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 \\pard\\sa200\\sl276\\slmult1\\f1\\lang10\\par\
 }";
 
-	TMemoryStream *oMememoryStream;
-	oMememoryStream = new TMemoryStream();
+	TMemoryStream* oMememoryStream = new TMemoryStream();
 	if (oMememoryStream)
 	{
 		oMememoryStream->Write(acRtf, sizeof(acRtf) - 1);
