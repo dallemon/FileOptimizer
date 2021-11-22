@@ -294,7 +294,7 @@ private: // User declarations
 		// add message handler for WM_DROPFILES
 		VCL_MESSAGE_HANDLER(WM_DROPFILES, TWMDropFiles, WMDropFiles)
 	END_MESSAGE_MAP(TComponent)
-	String __fastcall GetExtensionByContent (String psFilename, bool pbForce = false);
+	String __fastcall GetExtensionByContent (const String psFilename, bool pbForce = false);
 	String __inline FormatNumberThousand (unsigned long long plNumber);
 	String __inline FormatNumberThousandUnit (unsigned long long plNumber);
 	unsigned long long __inline ParseNumberThousand (String psNumber);
@@ -302,7 +302,7 @@ private: // User declarations
 	unsigned long __fastcall RunProcess(const TCHAR *pacProcess, TCHAR *pacOutput, unsigned int piOutputLen, bool pbWait);
 	void __fastcall WMDropFiles(const TWMDropFiles &udtMessage);
 	void __fastcall AddFilesInitializeExist(void);
-	bool __fastcall AddFilesExist(String psFile);
+	bool __fastcall AddFilesExist(const String psFile);
 	void __fastcall AddFiles(const TCHAR *pacFile);
 	void __fastcall CheckForUpdates(bool pbSilent = true);
 	void __fastcall CheckForUpdatesOld(bool pbSilent = true);
@@ -310,9 +310,9 @@ private: // User declarations
 	bool __fastcall IsEXESFX(const TCHAR *pacFile);
 	bool __fastcall IsEXEManagedNet(const TCHAR *pacFile);
 	bool __fastcall IsPDFLayered(const TCHAR *pacFile);
-	String __fastcall Hash(String psFilename);
+	String __fastcall Hash(const String psFilename);
 	String __inline GetCellValue(String psValue, unsigned int piPos);
-	String __inline SetCellFileValue(String psValue);
+	String __inline SetCellFileValue(const String psValue);
 	void __fastcall OptimizeProgressThread(struct udtOptimizeProgress pudtOptimizeProgress);
 	void __fastcall OptimizeProgressVCL(void);
 	void __fastcall actOptimizeFor(TObject *Sender, int AIndex);

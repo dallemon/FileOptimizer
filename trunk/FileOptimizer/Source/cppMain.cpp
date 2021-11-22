@@ -2572,7 +2572,7 @@ void __fastcall TfrmMain::AddFilesInitializeExist(void)
 
 
 // ---------------------------------------------------------------------------
-bool __fastcall TfrmMain::AddFilesExist(String psFile)
+bool __fastcall TfrmMain::AddFilesExist(const String psFile)
 {
 	bool bRes = false;
 
@@ -2955,7 +2955,7 @@ void __fastcall TfrmMain::CheckForUpdates(bool pbSilent)
 
 
 //---------------------------------------------------------------------------
-String __fastcall TfrmMain::GetExtensionByContent (String psFilename, bool pbForce)
+String __fastcall TfrmMain::GetExtensionByContent (const String psFilename, bool pbForce)
 {
 	String sRes;
 	unsigned char acBuffer[512 * 2];
@@ -3775,7 +3775,7 @@ void __fastcall TfrmMain::RefreshStatus(bool pbUpdateStatusBar, unsigned int piC
 
 
 //---------------------------------------------------------------------------
-String __fastcall TfrmMain::Hash(String psFilename)
+String __fastcall TfrmMain::Hash(const String psFilename)
 {
 	unsigned long long lSize;
 	FILETIME udtFileCreated, udtFileAccessed, udtFileModified;	
@@ -3804,7 +3804,7 @@ String __inline TfrmMain::GetCellValue(String psValue, unsigned int piPos)
 
 
 //---------------------------------------------------------------------------
-String __inline TfrmMain::SetCellFileValue(String psValue)
+String __inline TfrmMain::SetCellFileValue(const String psValue)
 {
 	String sRes = "";
 
