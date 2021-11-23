@@ -161,7 +161,7 @@ ndo
 - pingo 0.99.5 - http://css-ig.net/pingo
 - PngOptimizer 2.7 beta - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
-- pngquant 2.15.0 - http://www.pngquant.org
+- pngquant 2.17.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
@@ -178,6 +178,7 @@ XXXXXXXXX
 - Try to make executables compatible with Windows XP.
 - Some code tweaks (thanks Jean-Marc Dupuis).
 - Improved DPI support in Windows 10 or later.
+- Updated pngquant to 2.17.0.
 - Updated Ghostscript to 9.55.0.
 - Updated ffmpeg to 4.4.1.
 - Updated to mutool 1.19.
