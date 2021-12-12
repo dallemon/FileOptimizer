@@ -187,6 +187,7 @@ XXXXXXXXX
 - Updated to cppcheck 2.6.
 - Updated to NSIS 3.08.
 - Upgraded distributions to 7-Zip 21.04.
+- Some minor optimizations and code cleanup.
 
 
 15.10 - 2021/09/11
