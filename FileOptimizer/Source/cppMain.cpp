@@ -1617,10 +1617,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "-arithmetic ";
 			}
-			else
-			{
-				sFlags += "-optimize ";
-			}
 			if (gudtOptions.bJPEGCopyMetadata)
 			{
 				sFlags += "-copy all ";
@@ -2168,10 +2164,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			if (gudtOptions.bTIFFCopyMetadata)
 			{
 				sFlags += "-arithmetic ";
-			}
-			else
-			{
-				sFlags += "-optimize ";
 			}
 			if (gudtOptions.bTIFFCopyMetadata)
 			{
