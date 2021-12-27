@@ -175,6 +175,8 @@ ndo
 
 
 XXXXXXXXX
+
+15.20 - 2021/12/27
 - Try to make executables compatible with Windows XP.
 - Some code tweaks (thanks Jean-Marc Dupuis).
 - Improved DPI support in Windows 10 or later.
@@ -188,7 +190,6 @@ XXXXXXXXX
 - Updated to NSIS 3.08.
 - Upgraded distributions to 7-Zip 21.04.
 - Some minor optimizations and code cleanup.
-
 
 15.10 - 2021/09/11
 - Added .CAB and SFXCAB file detection by contents.
