@@ -175,7 +175,9 @@ ndo
 
 
 XXXXXXXXX
+- Fixed wrong PNGOptimized version (Edward Truong https://sourceforge.net/p/nikkhokkho/discussion/fileoptimizer/thread/02b2fe8882/)
 - Updated pingo to 1.00 a5 x64 version.
+- Upgraded distributions to 7-Zip 21.07.
 
 
 15.20 - 2021/12/27
