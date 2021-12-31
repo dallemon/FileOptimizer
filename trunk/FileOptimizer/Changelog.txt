@@ -165,7 +165,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.36.0 - http://www.sqlite.org
+- SQLite 3.37.1 - http://www.sqlite.org
 - shntool 3.0.10 - http://shnutils.freeshell.org/shntool/
 - Tidy 5.8.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -175,6 +175,8 @@ ndo
 
 
 XXXXXXXXX
+- Updated SQLite to 3.37.1 x86 and x64 Visual C++ 2022 custom builds.
+
 
 15.30 - 2021/12/28
 - Fixed wrong PNGOptimized version (Edward Truong https://sourceforge.net/p/nikkhokkho/discussion/fileoptimizer/thread/02b2fe8882/)
