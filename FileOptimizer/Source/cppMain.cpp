@@ -1544,7 +1544,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		{
 			if ((gudtOptions.bJPEGAllowLossy) && (!gudtOptions.bJPEGCopyMetadata))
 			{
-				RunPlugin((unsigned int) iCount, "Guetzli (1/10)", (sPluginsDirectory + "guetzli.exe --c --quality 90 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Guetzli (1/10)", (sPluginsDirectory + "guetzli.exe --auto --quality 90 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			
 			if (gudtOptions.bJPEGAllowLossy)
