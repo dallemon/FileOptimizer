@@ -175,6 +175,7 @@ ndo
 
 
 XXXXXXXXX
+- Fixed some compiler warnings (Jean-Marc Dupuis).
 - Switched from regular Guetzli to guetzli-cuda-opencl because it has a recent build and with --c it is faster (#107).
 - Execute Guetzli with GPU acceletation if available to Guetzli (Alexey Pavlov).
 - Updated SQLite to 3.37.2 x86 and x64 Visual C++ 2022 custom builds.

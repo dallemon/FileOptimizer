@@ -55,6 +55,7 @@ const void * __fastcall clsUtil::MemMem (const void *buf, size_t buf_len, const 
 
 static unsigned int miTaskDialogTimeout = 0;
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#pragma argsused
 HRESULT CALLBACK clsUtil::TaskDialogCallbackProc(HWND phWnd, UINT uNotification, WPARAM wParam, LPARAM lParam, LONG_PTR dwRefData)
 {
 	HRESULT hResult = S_OK;
@@ -163,15 +164,15 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 				udtFlags.pszMainIcon = nullptr;
 			}
 
-			udtFlags.pszWindowTitle = (TCHAR *) pacTitle;
+			udtFlags.pszWindowTitle = (const TCHAR *) pacTitle;
 			if (_tcslen(pacText) < 256)
 			{
-				udtFlags.pszMainInstruction = (TCHAR *) pacText;
+				udtFlags.pszMainInstruction = (const TCHAR *) pacText;
 			}
 			else
 			{
-				udtFlags.pszMainInstruction = (TCHAR *) pacTitle;
-				udtFlags.pszContent = (TCHAR *) pacText;
+				udtFlags.pszMainInstruction = (const TCHAR *) pacTitle;
+				udtFlags.pszContent = (const TCHAR *) pacText;
 			}
 			(*TaskDialogIndirect)(&udtFlags, &iButton, nullptr, nullptr);
 		}
@@ -701,11 +702,15 @@ int __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, 
 	{
 		size_t clen = vlen+1;
 		if (clen >= len-1)
+		{
 			clen = len-1;
+        }
 		// ie. we'll try to copy the \0 in vData, but we'll leave space
 		// for the thing.
 		for (int i = 0; i < clen; i++)
+		{
 			ret[i] = ver[i];
+        }
 		ret[len-1] = 0;
 	}
 	delete[] (TCHAR *) vData;
@@ -1390,7 +1395,7 @@ bool __fastcall clsUtil::SetTaskListProgress(unsigned int piCompleted, unsigned 
 unsigned int __fastcall clsUtil::GetWindowsVersion(void)
 {
 	static unsigned int iWindowsVersion = NULL;
-	
+
 
 	//Get true Windows version, even for non manifested applications under Windows 8.1 or later
 	if (iWindowsVersion == NULL)
