@@ -565,7 +565,7 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 		{
 			iFlags = INTERNET_DEFAULT_HTTPS_PORT;
 		}
-		HINTERNET hConnect = InternetConnect(hInternet, pacServer, iFlags, nullptr, nullptr, INTERNET_SERVICE_HTTP, 0, 1);
+		HINTERNET hConnect = InternetConnect(hInternet, pacServer, iFlags, nullptr, nullptr, INTERNET_SERVICE_HTTP, 0, 0);
 		if (hConnect)
 		{
 			iFlags = INTERNET_FLAG_RELOAD | INTERNET_FLAG_IGNORE_CERT_CN_INVALID | INTERNET_FLAG_IGNORE_CERT_DATE_INVALID | INTERNET_FLAG_NO_CACHE_WRITE | INTERNET_FLAG_NO_UI;
@@ -707,7 +707,7 @@ int __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, 
         }
 		// ie. we'll try to copy the \0 in vData, but we'll leave space
 		// for the thing.
-		for (int i = 0; i < clen; i++)
+		for (size_t i = 0; i < clen; i++)
 		{
 			ret[i] = ver[i];
         }
