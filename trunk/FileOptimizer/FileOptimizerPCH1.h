@@ -57,8 +57,7 @@
 #pragma hdrstop
 
 
-#ifndef nullptr
+#if (!defined(__clang__) && !defined(nullptr))
     #define nullptr NULL
 #endif
 
-//#endif

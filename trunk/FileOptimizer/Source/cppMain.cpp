@@ -63,6 +63,7 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
 
 
 // ---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 {
 	clsUtil::SaveForm(this);

@@ -27,6 +27,7 @@ __fastcall TfrmAbout::~TfrmAbout()
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 {
 	TCHAR acName[256];
@@ -297,6 +298,7 @@ Includes icons by icons8.com <{{\\field{\\*\\fldinst{HYPERLINK \"https://www.ico
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 {
 	TCanvas *oCanvas;
@@ -342,7 +344,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 	}
 
 	//Draw lines
-	for (unsigned int iLine = 0; iLine < ClientHeight; iLine++)
+	for (unsigned int iLine = 0; iLine < (unsigned int) ClientHeight; iLine++)
 	{
 		//int iRnd = clsUtil::Random(0, 1);
 		unsigned int iRnd = (unsigned int) random(2);
@@ -357,7 +359,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 			oCanvas->Pen->Color = clYellow;
 		}
 
-		if ((iLine < 32) || (iLine > (ClientHeight - 32)))
+		if ((iLine < 32) || (iLine > (unsigned int) (ClientHeight - 32)))
 		{
 			oCanvas->MoveTo(0, (int) iLine);
 			oCanvas->LineTo(imgEaster->Width, (int) iLine);
@@ -376,6 +378,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 {
 	if (imgEaster)
@@ -399,6 +402,7 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::imgAboutDblClick(TObject *Sender)
 {
 	EasterTimer(nullptr);
@@ -408,6 +412,7 @@ void __fastcall TfrmAbout::imgAboutDblClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::butCloseClick(TObject *Sender)
 {
 	Hide();
@@ -417,6 +422,7 @@ void __fastcall TfrmAbout::butCloseClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::lblCopyrightClick(TObject *Sender)
 {
 	ShellExecute(Handle, _T("open"), KS_APP_URL, _T(""), _T(""), SW_SHOWNORMAL);
@@ -424,6 +430,7 @@ void __fastcall TfrmAbout::lblCopyrightClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::FormKeyPress(TObject *Sender, System::WideChar &Key)
 {
 	//VCL does not handle default/cancel in the close button because of the focus on the memo, so let's simulate
@@ -438,6 +445,7 @@ void __fastcall TfrmAbout::FormKeyPress(TObject *Sender, System::WideChar &Key)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmAbout::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	clsUtil::SaveForm(this);

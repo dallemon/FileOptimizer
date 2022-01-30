@@ -6,8 +6,8 @@
 #include "clsLanguage.h"
 
 
-static THashedStringList *mlstLanguage = NULL;   //Could not use THashedStringList because they are limited to a length of 256 chars
-static THashedStringList *mlst1033 = NULL;
+static THashedStringList *mlstLanguage = nullptr;   //Could not use THashedStringList because they are limited to a length of 256 chars
+static THashedStringList *mlst1033 = nullptr;
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ void __fastcall clsLanguage::Load(unsigned int piLanguage, bool pbForce)
 	if ((pbForce) && (mlstLanguage))
 	{
 		delete mlstLanguage;
-        mlstLanguage = NULL;
+        mlstLanguage = nullptr;
 	}
 	
 	//If not yet loaded	
@@ -66,7 +66,7 @@ void __fastcall clsLanguage::Load(unsigned int piLanguage, bool pbForce)
 	}
 
 	//Need to load language?
-	if ((!mlst1033) && (StrStrI(GetCommandLine(), _T("/SAVELANGUAGE")) != NULL))
+	if ((!mlst1033) && (StrStrI(GetCommandLine(), _T("/SAVELANGUAGE")) != nullptr))
 	{
 		mlst1033 = new THashedStringList();
 		mlst1033->CaseSensitive = true;

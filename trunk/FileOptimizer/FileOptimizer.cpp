@@ -15,6 +15,7 @@ USEFORM("Source\cppAbout.cpp", frmAbout);
 USEFORM("Source\cppMain.cpp", frmMain);
 USEFORM("Source\cppOptions.cpp", frmOptions);
 //---------------------------------------------------------------------------
+#pragma argsused
 int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacCmdLine, int piShow)
 {
 	HANDLE hMutex = nullptr;
