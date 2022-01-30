@@ -30,7 +30,7 @@ const void * __fastcall clsUtil::MemMem (const void *buf, size_t buf_len, const 
 	const unsigned char *bs = (const unsigned char *) byte_sequence;
 	const unsigned char *p  = bf;
 
-	while (byte_sequence_len <= (buf_len - (p - bf)))
+	while (byte_sequence_len <= (size_t) (buf_len - (p - bf)))
 	{
 		unsigned int b = *bs & 0xFF;
 		if ((p = (const unsigned char *) memchr(p, b, buf_len - (p - bf))) != nullptr)
