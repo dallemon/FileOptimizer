@@ -27,6 +27,7 @@ __fastcall TfrmOptions::~TfrmOptions()
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::FormCreate(TObject *Sender)
 {
 	clsUtil::LoadForm(this);
@@ -263,6 +264,7 @@ void __fastcall TfrmOptions::FormCreate(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::butOKClick(TObject *Sender)
 {
 	if ((txtDonator->Text.Length() < 1) && (chkHideAds->Checked) && (chkHideAds->Enabled))
@@ -441,6 +443,7 @@ void __fastcall TfrmOptions::butOKClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::chkCSSEnableTidyClick(TObject *Sender)
 {
 	cboCSSTemplate->Enabled = chkCSSEnableTidy->Checked;
@@ -449,6 +452,7 @@ void __fastcall TfrmOptions::chkCSSEnableTidyClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::chkMiscDisableClick(TObject *Sender)
 {
 	chkMiscCopyMetadata->Enabled = !chkMiscDisable->Checked;
@@ -457,6 +461,7 @@ void __fastcall TfrmOptions::chkMiscDisableClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::cboPDFProfileChange(TObject *Sender)
 {
 	spnPDFCustomDPI->Enabled = (cboPDFProfile->ItemIndex == 5);
@@ -464,6 +469,7 @@ void __fastcall TfrmOptions::cboPDFProfileChange(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::butCancelClick(TObject *Sender)
 {
 	Close();
@@ -472,6 +478,7 @@ void __fastcall TfrmOptions::butCancelClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::butRestoreDefaultsClick(TObject *Sender)
 {
 	Hide();
@@ -490,6 +497,7 @@ void __fastcall TfrmOptions::butRestoreDefaultsClick(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmOptions::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	clsUtil::SaveForm(this);

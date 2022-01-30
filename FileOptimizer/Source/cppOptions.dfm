@@ -16,14 +16,13 @@ object frmOptions: TfrmOptions
   Font.Style = []
   GlassFrame.Enabled = True
   KeyPreview = True
-  OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  PixelsPerInch = 96
   DesignSize = (
     592
     395)
-  PixelsPerInch = 96
   TextHeight = 13
   object shpDialogBackground: TShape
     Left = 0

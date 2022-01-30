@@ -295,6 +295,7 @@ void __fastcall TfrmMain::SaveOptions(void)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 {
 	WIN32_FIND_DATA udtFindFileData;
@@ -348,6 +349,7 @@ void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::FormResize(TObject *Sender)
 {
 	static unsigned int iOldWidth = 0;
@@ -375,6 +377,7 @@ void __fastcall TfrmMain::FormResize(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect, TGridDrawState State)
 {
 	grdFiles->Rows[ARow]->BeginUpdate();
@@ -424,6 +427,7 @@ void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, 
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::grdFilesFixedCellClick(TObject *Sender, int ACol, int ARow)
 {
 	unsigned int iRows = (unsigned int) grdFiles->RowCount;
@@ -510,6 +514,7 @@ void __fastcall TfrmMain::grdFilesFixedCellClick(TObject *Sender, int ACol, int 
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::grdFilesMouseMove(TObject *Sender, TShiftState Shift, int X, int Y)
 {
 	int iRow, iCol;
@@ -616,6 +621,7 @@ void __fastcall TfrmMain::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Sh
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actAddExecute(TObject *Sender)
 {
 	//Add files
@@ -639,6 +645,7 @@ void __fastcall TfrmMain::actAddExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actAddFolderExecute(TObject *Sender)
 {
 	String sDirectory = "";
@@ -661,6 +668,7 @@ void __fastcall TfrmMain::actAddFolderExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actRemoveExecute(TObject *Sender)
 {
 	int iSelectedRow1 = grdFiles->Selection.Top;
@@ -682,6 +690,7 @@ void __fastcall TfrmMain::actRemoveExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actClearExecute(TObject *Sender)
 {
 	SendMessage(grdFiles->Handle, WM_SETREDRAW, 0, 0);
@@ -701,6 +710,7 @@ void __fastcall TfrmMain::actClearExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actHelpExecute(TObject *Sender)
 {
 	ShellExecute(Handle, _T("open"), Application->HelpFile.c_str(), _T(""), _T(""), SW_SHOWNORMAL);
@@ -709,6 +719,7 @@ void __fastcall TfrmMain::actHelpExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actOpenExecute(TObject *Sender)
 {
 	unsigned int iRow = (unsigned int) grdFiles->Row;
@@ -724,6 +735,7 @@ void __fastcall TfrmMain::actOpenExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actOpenFolderExecute(TObject *Sender)
 {
 	unsigned int iRow = (unsigned int) grdFiles->Row;
@@ -840,7 +852,7 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 	//Required indirection
 	String sCaption;
 	TCHAR acTime[64];
-	StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) iEndTicks - iStartTicks, sizeof(acTime) - 1);
+	StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned int) (iEndTicks - iStartTicks), sizeof(acTime) - 1);
 
 	if (Visible)
 	{
@@ -882,6 +894,7 @@ void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actStopExecute(TObject *Sender)
 {
 	gbStop = true;
@@ -890,6 +903,7 @@ void __fastcall TfrmMain::actStopExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actOptionsExecute(TObject *Sender)
 {
 	frmOptions = new TfrmOptions(Application);
@@ -912,6 +926,7 @@ void __fastcall TfrmMain::actOptionsExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actAboutExecute(TObject *Sender)
 {
 	frmAbout = new TfrmAbout(Application);
@@ -934,6 +949,7 @@ void __fastcall TfrmMain::actAboutExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actExitExecute(TObject *Sender)
 {
 	gbStop = true;
@@ -945,6 +961,7 @@ void __fastcall TfrmMain::actExitExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 {
 	String sExtension;
@@ -1005,7 +1022,7 @@ void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 	sText.cat_printf(_((TCHAR *) _T("\nUser since %s %s")), Application->Name.c_str(), gudtOptions.acVersion);
 
 
-	StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) gudtOptions.lStatTime * 1000, sizeof(acTime) - 1);
+	StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned int) (gudtOptions.lStatTime * 1000), sizeof(acTime) - 1);
 	sText.cat_printf(_((TCHAR *) _T("\n\nUSAGE STATISTICS\n"
 		"- Time: %s\n"
 		"- Opens: %s\n"
@@ -1024,6 +1041,7 @@ void __fastcall TfrmMain::actInformationExecute(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actDonateExecute(TObject *Sender)
 {
 	ShellExecute(Handle, _T("open"), KS_APP_DONATE_URL, _T(""), _T(""), SW_SHOWMAXIMIZED);
@@ -1098,6 +1116,7 @@ void __fastcall TfrmMain::actOptimizeForThread(TObject *Sender, int AIndex, TPar
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 {
 	int iCount = AIndex;
@@ -2416,7 +2435,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		
 		iEndTicks = GetTickCount();
 		TCHAR acTime[64];
-		StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned long long) iEndTicks - iStartTicks, sizeof(acTime) - 1);
+		StrFromTimeInterval(acTime, (sizeof(acTime) / sizeof(TCHAR)) - 1, (unsigned int) (iEndTicks - iStartTicks), sizeof(acTime) - 1);
 		
 		sCaption.printf(_((TCHAR *) _T("Done (%3u%%) in %s")), iPercentBytes, acTime);
 		grdFiles->Cells[KI_GRID_STATUS][iCount] = sCaption;
@@ -2441,6 +2460,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::tmrMainTimer(TObject *Sender)
 {
 	//Elapsed time
@@ -2501,6 +2521,7 @@ void __fastcall TfrmMain::tmrMainTimer(TObject *Sender)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::lblCopyrightClick(TObject *Sender)
 {
 	ShellExecute(Handle, _T("open"), KS_APP_URL, _T(""), _T(""), SW_SHOWNORMAL);
@@ -3573,6 +3594,7 @@ void __fastcall TfrmMain::UpdateAds(void)
 
 
 //---------------------------------------------------------------------------
+#pragma argsused
 void __fastcall TfrmMain::webAdsTitleChange(TObject *ASender, const WideString Text)
 {
 	static String sLastOpenedUrl = "";
