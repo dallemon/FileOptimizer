@@ -1435,16 +1435,17 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			}
 			RunPlugin((unsigned int) iCount, "gifsicle (2/2)", (sPluginsDirectory + "gifsicle.exe -w -j --no-conserve-memory -o \"%TMPOUTPUTFILE%\" " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
-			
+			/*
 			if (!gudtOptions.bGIFCopyMetadata)
 			{
 				sFlags = "";
-				/*if (gudtOptions.iLevel >= 8)
+				if (gudtOptions.iLevel >= 8)
 				{
 					sFlags += "-p ";
-				}*/
-				//RunPlugin((unsigned int) iCount, "flexiGIF (4/4)", (sPluginsDirectory + "flexiGIF.exe -q " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				}
+				RunPlugin((unsigned int) iCount, "flexiGIF (4/4)", (sPluginsDirectory + "flexiGIF.exe -q " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
+            */
 		}
 		// GZ: Libdeflate, Leanify, ect, advdef, zRecompress, deflopt, defluff, deflopt
 		if (PosEx(sExtensionByContent, KS_EXTENSION_GZ) > 0)
