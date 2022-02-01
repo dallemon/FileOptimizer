@@ -1563,6 +1563,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		// JPEG: Guetzli, jpeg-recompress, jhead, Leanify, ect, pingo, jpegoptim, jpegtran, mozjpegtran
 		if (PosEx(sExtensionByContent, KS_EXTENSION_JPG) > 0)
 		{
+			bool bIsJPEGCMYK = IsJPEGCMYK(sInputFile.c_str());
 			if ((gudtOptions.bJPEGAllowLossy) && (!gudtOptions.bJPEGCopyMetadata))
 			{
 				RunPlugin((unsigned int) iCount, "Guetzli (1/10)", (sPluginsDirectory + "guetzli.exe --auto --quality 90 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
@@ -1581,18 +1582,20 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				}
 				RunPlugin((unsigned int) iCount, "jpeg-recompress (2/10)", (sPluginsDirectory + "jpeg-recompress.exe --method smallfry --quality high --min 60 --subsample disable --quiet " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
-			
-			sFlags = "";
-			if (gudtOptions.bJPEGCopyMetadata)
+			//jhead is corrupting CMYK JPEG images
+			if (!bIsJPEGCMYK)
 			{
-				sFlags += "-zt ";
+				sFlags = "";
+				if (gudtOptions.bJPEGCopyMetadata)
+				{
+					sFlags += "-zt ";
+				}
+				else
+				{
+					sFlags += "-purejpg -di -dx -dt -zt ";
+				}
+				RunPlugin((unsigned int) iCount, "jhead (3/10)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
-			else
-			{
-				sFlags += "-purejpg -di -dx -dt -zt ";
-			}
-			RunPlugin((unsigned int) iCount, "jhead (3/10)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			
 			sFlags = "";
 			if (gudtOptions.bJPEGCopyMetadata)
 			{
@@ -2157,17 +2160,22 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		// TIFF: jhead, ImageMagick, jpegoptim, jpegtran, mozjpegtran
 		if (PosEx(sExtensionByContent, KS_EXTENSION_TIFF) > 0)
 		{
-			sFlags = "";
-			if (gudtOptions.bTIFFCopyMetadata)
-			{
-				sFlags += "-zt ";
-			}
-			else
-			{
-				sFlags += "-purejpg -di -dx -dt -zt ";
-			}	
-			RunPlugin((unsigned int) iCount, "jhead (1/5)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			bool bIsJPEGCMYK = IsJPEGCMYK(sInputFile.c_str());
 
+			//jhead is corrupting CMYK JPEG images
+			if (!bIsJPEGCMYK)
+			{
+				sFlags = "";
+				if (gudtOptions.bTIFFCopyMetadata)
+				{
+					sFlags += "-zt ";
+				}
+				else
+				{
+					sFlags += "-purejpg -di -dx -dt -zt ";
+				}	
+				RunPlugin((unsigned int) iCount, "jhead (1/5)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			}
 			// ImageMagick does not keep metadata on TIFF images so disable it
 			if (!gudtOptions.bTIFFCopyMetadata)
 			{
@@ -3530,6 +3538,33 @@ bool __fastcall TfrmMain::IsPDFLayered(const TCHAR *pacFile)
 	}
 	return (bRes);
 }
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bool __fastcall TfrmMain::IsJPEGCMYK(const TCHAR *pacFile)
+{
+	bool bRes = false;
+	unsigned char *acBuffer;
+
+	
+	unsigned int iSize = 512 * 1024;
+	acBuffer = new unsigned char[iSize];
+	if (acBuffer)
+	{
+		clsUtil::ReadFile(pacFile, acBuffer, &iSize);
+		//Look for SOF (Start Of Frame - SOF0 or SOF2) section in header
+		unsigned char *pSOF = (unsigned char *) clsUtil::MemMem(acBuffer, iSize, "\xFF\xC0", 2);
+		if (pSOF)
+		{
+			// FF C2 is progressive encoding while FF C0 is standard encoding
+			pSOF = (unsigned char *) clsUtil::MemMem(pSOF, iSize - (pSOF - acBuffer), "\xFF\xC2", 2);
+			bRes = (pSOF[9] == 4);
+		}
+		delete[] acBuffer;
+	}
+	return (bRes);
+}
+
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
