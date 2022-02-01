@@ -181,6 +181,7 @@ XXXXXXXXX
 - Execute Guetzli with GPU acceletation if available to Guetzli (Alexey Pavlov).
 - Avoid JPEG CMYK corruption by excluding jhead in those types.
 - Properly execute rehuff_theora instead of removed rehuff in OGG files.
+- Enabled pingo support for JPEG images when copy metadata is enabled.
 - Updated pingo to 1.00 a8 x64 version.
 - Updated SQLite to 3.37.2 x86 and x64 Visual C++ 2022 custom builds.
 - Updated libwebp to 1.2.2 RC2 x64.
