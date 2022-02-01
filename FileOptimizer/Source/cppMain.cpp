@@ -1667,21 +1667,22 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (9/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
+			sFlags = "";
+			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
+			sFlags += "-s" + (String) iLevel + " ";
+			if (iLevel >= 8)
+			{
+				sFlags += "-table=6 ";
+			}
+			if (gudtOptions.bJPEGAllowLossy)
+			{
+				sFlags += "-x3 -lossy ";
+			}
 			if (!gudtOptions.bJPEGCopyMetadata)
 			{
-				sFlags = "";
-				iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
-				sFlags += "-s" + (String) iLevel + " ";
-				if (iLevel >= 8)
-				{
-					sFlags += "-table=6 ";
-				}
-				if (gudtOptions.bJPEGAllowLossy)
-				{
-					sFlags += "-x3 -lossy ";
-				}
-				RunPlugin((unsigned int) iCount, "pingo (10/10)", (sPluginsDirectory + "pingo.exe -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				sFlags += "-strip ";
 			}
+			RunPlugin((unsigned int) iCount, "pingo (10/10)", (sPluginsDirectory + "pingo.exe -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// JS: jsmin, minify
 		if ((PosEx(sExtensionByContent, KS_EXTENSION_JS) > 0) || (PosEx(sExtensionByContent, " " + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") > 0))
