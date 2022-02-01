@@ -1779,10 +1779,10 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		{
 			RunPlugin((unsigned int) iCount, "strip (1/1)", (sPluginsDirectory + "strip.exe --strip-all -o \"%TMPOUTPUTFILE%\" \"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
-		// OGG: rehuff
+		// OGG: rehuff_theora
 		if (PosEx(sExtensionByContent, KS_EXTENSION_OGG) > 0)
 		{
-			RunPlugin((unsigned int) iCount, "rehuff (1/1)", (sPluginsDirectory + "rehuff.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "rehuff_theora (1/1)", (sPluginsDirectory + "rehuff_theora.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// OGV: ffmpeg, rehuff_theora
 		if (PosEx(sExtensionByContent, KS_EXTENSION_OGV) > 0)
