@@ -310,6 +310,7 @@ private: // User declarations
 	bool __fastcall IsEXESFX(const TCHAR *pacFile);
 	bool __fastcall IsEXEManagedNet(const TCHAR *pacFile);
 	bool __fastcall IsPDFLayered(const TCHAR *pacFile);
+	bool __fastcall IsJPEGCMYK(const TCHAR *pacFile);
 	String __fastcall Hash(const String psFilename);
 	String __inline GetCellValue(String psValue, unsigned int piPos);
 	String __inline SetCellFileValue(const String psValue);
