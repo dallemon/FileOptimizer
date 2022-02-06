@@ -131,7 +131,7 @@ ndo
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
 - Document Press Version 6.01 - http://encode.su/threads/336-Document-Press-6-01
 - ECT 0.8.3 - https://github.com/fhanau/Efficient-Compression-Tool
-- ffmpeg 4.4.1 - http://ffmpeg.zeranoe.com/builds/
+- ffmpeg 5.0 - http://ffmpeg.zeranoe.com/builds/
 - FLAC 1.3.2 - https://xiph.org/flac/
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
@@ -139,7 +139,7 @@ ndo
 - Ghostscript 9.55.0 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli cuda-opencl 1.0.1 - https://github.com/ianhuang-777/guetzli-cuda-opencl
-- ImageMagick 7.1.0.1 - http://www.imagemagick.org
+- ImageMagick 7.1.0-23 - http://www.imagemagick.org
 - ImageWorsener 1.3.3 - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
@@ -185,6 +185,8 @@ XXXXXXXXX
 - Updated pingo to 1.00 a8 x64 version.
 - Updated SQLite to 3.37.2 x86 and x64 Visual C++ 2022 custom builds.
 - Updated cpdf to 2.5.1.
+- Updated ffmpeg to 5.0.
+- Updated ImageMagick to 7.1.0.23 with HDRI support.
 - Updated libwebp to 1.2.2 RC2 x64.
 - Updated to cppcheck 2.7.
 
