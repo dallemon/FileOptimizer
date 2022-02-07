@@ -175,6 +175,9 @@ ndo
 
 
 XXXXXXXXX
+
+
+15.40 - 2022/02/07
 - Added detection of CMYK JPEG images.
 - Fixed some compiler warnings (Jean-Marc Dupuis).
 - Switched from regular Guetzli to guetzli-cuda-opencl because it has a recent build and with --c it is faster (#107).
@@ -193,7 +196,6 @@ XXXXXXXXX
 - Updated to Minify 2.10.0 x64.
 - Updated libwebp to 1.2.2 RC2 x64.
 - Updated to cppcheck 2.7.
-
 
 15.30 - 2021/12/28
 - Fixed wrong PNGOptimized version (Edward Truong https://sourceforge.net/p/nikkhokkho/discussion/fileoptimizer/thread/02b2fe8882/)
