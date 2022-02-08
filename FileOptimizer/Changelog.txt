@@ -175,6 +175,7 @@ ndo
 
 
 XXXXXXXXX
+- Fixed crash in some JPEG due to new CMYK detection code (#108).
 
 
 15.40 - 2022/02/07
