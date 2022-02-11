@@ -1493,7 +1493,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = 90032;
 			}
 			sFlags += "-" + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "ECT (5/8)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --allfilters -gzip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ECT (5/8)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters -gzip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			if (gudtOptions.bGZCopyMetadata)
@@ -1665,7 +1665,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = 90032;
 			}
 			sFlags += "-" + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "ECT (9/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ECT (9/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
@@ -2029,7 +2029,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = 90032;
 			}
 			sFlags += "-" + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "ECT (12/16)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --allfilters " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ECT (12/16)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
@@ -2357,7 +2357,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = 90032;
 			}
 			sFlags += "-" + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "ECT (2/6)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate -zip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ECT (2/6)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file -zip " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			//AdvZip strips header on ZIP files
 			if (!bIsEXESFX)
