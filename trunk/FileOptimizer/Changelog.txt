@@ -158,7 +158,7 @@ ndo
 - mutool 1.19 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - http://pecompact.com/pesuite.php
-- pingo 1.00.a8 - http://css-ig.net/pingo
+- pingo 1.00.a10 - http://css-ig.net/pingo
 - PngOptimizer 2.7 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.17.0 - http://www.pngquant.org
@@ -175,6 +175,8 @@ ndo
 
 
 XXXXXXXXX
+- Improved ECT execution by adding --mt-file (multithreading file).
+- Updated pingo to 1.00 a10 x64 version.
 
 
 15.50 - 2022/02/09
