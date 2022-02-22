@@ -176,6 +176,7 @@ ndo
 
 XXXXXXXXX
 - Fixed empty messagebox when closing FO.
+- Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
 - Improved ECT execution by adding --mt-file (multithreading file).
 - Updated pingo to 1.00 a11 x64 version.
 - Updated ImageMagick to 7.1.0.25 with HDRI support.
