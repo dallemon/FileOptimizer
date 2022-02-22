@@ -1677,9 +1677,9 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "-x3 -lossy ";
 			}
-			if (!gudtOptions.bJPEGCopyMetadata)
+			if (gudtOptions.bJPEGCopyMetadata)
 			{
-				sFlags += "-strip ";
+				sFlags += "-nostrip ";
 			}
 			RunPlugin((unsigned int) iCount, "pingo (10/10)", (sPluginsDirectory + "pingo.exe -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
@@ -2034,9 +2034,9 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8);
 			sFlags += "-s" + (String) iLevel + " ";
 
-			if (!gudtOptions.bPNGCopyMetadata)
+			if (gudtOptions.bPNGCopyMetadata)
 			{
-				sFlags += "-strip ";
+				sFlags += "-nostrip ";
 			}
 			if (gudtOptions.bPNGAllowLossy)
 			{
