@@ -165,7 +165,7 @@ ndo
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.37.2 - http://www.sqlite.org
+- SQLite 3.38 - http://www.sqlite.org
 - shntool 3.0.10 - http://shnutils.freeshell.org/shntool/
 - Tidy 5.8.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -178,6 +178,7 @@ XXXXXXXXX
 - Fixed empty messagebox when closing FO.
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
 - Improved ECT execution by adding --mt-file (multithreading file).
+- Updated SQLite to 3.38 x86 and x64 Visual C++ 2022 custom builds.
 - Updated pingo to 1.00 a11 x64 version.
 - Updated ImageMagick to 7.1.0.25 with HDRI support.
 - Updated libwebp to 1.2.2 x64.
