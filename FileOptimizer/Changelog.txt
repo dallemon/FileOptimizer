@@ -175,6 +175,7 @@ ndo
 
 
 XXXXXXXXX
+- Fixed missing VCRUNTIME140_1.dll that was needed by optipng (Devedse) #112.
 - Fixed empty messagebox when closing FO.
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
 - Improved ECT execution by adding --mt-file (multithreading file).
