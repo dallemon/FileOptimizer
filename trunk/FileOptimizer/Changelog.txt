@@ -175,6 +175,7 @@ ndo
 
 
 XXXXXXXXX
+- Fixed automatically disabling BeepWhenDone when launched via commandline to allow a proper exit.
 - Fixed missing VCRUNTIME140_1.dll that was needed by optipng (Devedse) #112.
 - Fixed empty messagebox when closing FO.
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
