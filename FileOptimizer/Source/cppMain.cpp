@@ -2516,6 +2516,7 @@ void __fastcall TfrmMain::tmrMainTimer(TObject *Sender)
 				}
 				if (bAdded)
 				{
+					gudtOptions.bBeepWhenDone = false;  //Disable Beep when done to allow closing automatically
 					grdFiles->Enabled = true;
 					RefreshStatus();
 					Screen->Cursor = crDefault;
@@ -2620,7 +2621,7 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 	WIN32_FILE_ATTRIBUTE_DATA udtFileAttribute;
 
 
-	if (GetFileAttributesEx(pacFile, GetFileExInfoStandard, (void*) &udtFileAttribute))
+	if (GetFileAttributesEx(pacFile, GetFileExInfoStandard, (void *) &udtFileAttribute))
 	{
 		//If it is a directory, recurse
 		if (udtFileAttribute.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
