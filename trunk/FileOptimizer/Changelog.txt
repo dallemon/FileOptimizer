@@ -179,6 +179,7 @@ XXXXXXXXX
 - Fixed missing VCRUNTIME140_1.dll that was needed by optipng (Devedse) #112.
 - Fixed empty messagebox when closing FO.
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
+- Optimized and updated pingo settings.
 - Improved ECT execution by adding --mt-file (multithreading file).
 - Updated SQLite to 3.38.1 x86 and x64 Visual C++ 2022 custom builds.
 - Updated pingo to 1.00 a14 x64 version.
