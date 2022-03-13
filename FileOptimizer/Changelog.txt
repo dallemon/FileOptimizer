@@ -158,14 +158,14 @@ ndo
 - mutool 1.19 - http://mupdf.com/downloads/
 - OptiPNG 0.7.7 - http://optipng.sourceforge.net
 - PETrim 4.00 beta - https://bitsum.com/pesuite/
-- pingo 1.00.a11 - http://css-ig.net/pingo
+- pingo 1.00.a14 - http://css-ig.net/pingo
 - PngOptimizer 2.7 - http://psydk.org/PngOptimizer
 - PNGOUT 02/13/2015 - http://advsys.net/ken/utils.htm
 - pngquant 2.17.0 - http://www.pngquant.org
 - pngrewrite 1.4.0 - http://entropymine.com/jason/pngrewrite
 - pngwolf-zopli 1.1.2 - https://github.com/jibsen/pngwolf-zopfli
 - rehuff - http://wiki.xiph.org/Rehuff
-- SQLite 3.38 - http://www.sqlite.org
+- SQLite 3.38.1 - http://www.sqlite.org
 - shntool 3.0.10 - http://shnutils.freeshell.org/shntool/
 - Tidy 5.8.0 - http://www.html-tidy.org
 - TruePNG 0.6.2.5 - http://x128.ho.ua/pngutils.html
@@ -180,8 +180,8 @@ XXXXXXXXX
 - Fixed empty messagebox when closing FO.
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
 - Improved ECT execution by adding --mt-file (multithreading file).
-- Updated SQLite to 3.38 x86 and x64 Visual C++ 2022 custom builds.
-- Updated pingo to 1.00 a11 x64 version.
+- Updated SQLite to 3.38.1 x86 and x64 Visual C++ 2022 custom builds.
+- Updated pingo to 1.00 a14 x64 version.
 - Updated ImageMagick to 7.1.0.25 with HDRI support.
 - Updated libwebp to 1.2.2 x64.
 
