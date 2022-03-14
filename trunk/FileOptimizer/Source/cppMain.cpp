@@ -1559,13 +1559,31 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
-		// JPEG: Guetzli, jpeg-recompress, jhead, Leanify, ect, pingo, jpegoptim, jpegtran, mozjpegtran
+		// JPEG: pingo, guetzli, jpeg-recompress, jhead, Leanify, ect, jpegoptim, jpegtran, mozjpegtran
 		if (PosEx(sExtensionByContent, KS_EXTENSION_JPG) > 0)
 		{
 			bool bIsJPEGCMYK = IsJPEGCMYK(sInputFile.c_str());
+			
+			sFlags = "";
+			iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
+			sFlags += "-s" + (String) iLevel + " ";
+			if (gudtOptions.bJPEGAllowLossy)
+			{
+				sFlags += "-jpgquality=95 -jpgsub ";
+			}
+			if (gudtOptions.bJPEGCopyMetadata)
+			{
+				sFlags += "-nostrip ";
+			}
+			else
+			{
+				sFlags += "-strip ";
+			}
+			RunPlugin((unsigned int) iCount, "pingo (1/10)", (sPluginsDirectory + "pingo.exe -noconversion -jpgtype=2 " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			
 			if ((gudtOptions.bJPEGAllowLossy) && (!gudtOptions.bJPEGCopyMetadata))
 			{
-				RunPlugin((unsigned int) iCount, "Guetzli (1/10)", (sPluginsDirectory + "guetzli.exe --auto --quality 90 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "Guetzli (2/10)", (sPluginsDirectory + "guetzli.exe --auto --quality 90 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			
 			if (gudtOptions.bJPEGAllowLossy)
@@ -1579,7 +1597,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				{
 					sFlags += "--accurate ";
 				}
-				RunPlugin((unsigned int) iCount, "jpeg-recompress (2/10)", (sPluginsDirectory + "jpeg-recompress.exe --method smallfry --quality high --min 60 --subsample disable --quiet " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "jpeg-recompress (3/10)", (sPluginsDirectory + "jpeg-recompress.exe --method smallfry --quality high --min 60 --subsample disable --quiet " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			//jhead is corrupting CMYK JPEG images
 			if (!bIsJPEGCMYK)
@@ -1593,7 +1611,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				{
 					sFlags += "-purejpg -di -dx -dt -zt ";
 				}
-				RunPlugin((unsigned int) iCount, "jhead (3/10)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "jhead (4/10)", (sPluginsDirectory + "jhead.exe -q -autorot " + sFlags + " \"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			sFlags = "";
 			if (gudtOptions.bJPEGCopyMetadata)
@@ -1615,7 +1633,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = ((gudtOptions.iLevel * gudtOptions.iLevel * gudtOptions.iLevel) / 25) + 1; //1, 1, 2, 3, 6, 9, 14, 21, 30
 			}
 			sFlags += "-i " + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "Leanify (4/10)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "Leanify (5/10)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			if (gudtOptions.bJPEGAllowLossy)
 			{
@@ -1625,7 +1643,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					sFlags += "-strip ";
 				}
 				//Seems to cause some loss of quality
-				RunPlugin((unsigned int) iCount, "ImageMagick (5/10)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -interlace Plane -define jpeg:optimize-coding=true " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "ImageMagick (6/10)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -interlace Plane -define jpeg:optimize-coding=true " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 
 			sFlags = "";
@@ -1633,7 +1651,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--strip-all ";
 			}
-			RunPlugin((unsigned int) iCount, "jpegoptim (6/10)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "jpegoptim (7/10)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			if (gudtOptions.bJPEGUseArithmeticEncoding)
@@ -1648,9 +1666,9 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "-copy none ";
 			}
-			RunPlugin((unsigned int) iCount, "jpegtran (7/10)", (sPluginsDirectory + "jpegtran.exe -progressive -optimize " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "jpegtran (8/10)", (sPluginsDirectory + "jpegtran.exe -progressive -optimize " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
-			RunPlugin((unsigned int) iCount, "mozjpegtran (8/10)", (sPluginsDirectory + "mozjpegtran.exe -outfile \"%TMPOUTPUTFILE%\" -progressive -optimize -perfect " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "mozjpegtran (9/10)", (sPluginsDirectory + "mozjpegtran.exe -outfile \"%TMPOUTPUTFILE%\" -progressive -optimize -perfect " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			
 			sFlags = "";
 			if (!gudtOptions.bJPEGCopyMetadata)
@@ -1664,24 +1682,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				iLevel = 90032;
 			}
 			sFlags += "-" + (String) iLevel + " ";
-			RunPlugin((unsigned int) iCount, "ECT (9/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-
-			sFlags = "";
-			iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
-			sFlags += "-s" + (String) iLevel + " ";
-			if (gudtOptions.bJPEGAllowLossy)
-			{
-				sFlags += "-jpgquality=95 -jpgsub ";
-			}
-			if (gudtOptions.bJPEGCopyMetadata)
-			{
-				sFlags += "-nostrip ";
-			}
-			else
-			{
-				sFlags += "-strip ";
-			}
-			RunPlugin((unsigned int) iCount, "pingo (10/10)", (sPluginsDirectory + "pingo.exe -noconversion -jpgtype=2 " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ECT (10/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// JS: jsmin, minify
 		if ((PosEx(sExtensionByContent, KS_EXTENSION_JS) > 0) || (PosEx(sExtensionByContent, " " + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") > 0))
