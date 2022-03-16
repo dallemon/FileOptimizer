@@ -122,7 +122,7 @@ ndo
 
 
 
-- AdvanceCOMP 2.10 - https://github.com/amadvance/advancecomp
+- AdvanceCOMP 2.16 - https://github.com/amadvance/advancecomp
 - APNG Optimizer 1.4 - http://sourceforge.net/projects/apng/
 - Best CFBF Optimizer Nov 1st 2019 - https://papas-best.com/cfbf_en
 - Coherent PDF Command Line Tools (cpdf) 2.5.1 - http://community.coherentpdf.com
@@ -182,6 +182,7 @@ XXXXXXXXX
 - Fixed pingo inverted logic that per default removes metadata (Devedse) #110.
 - Optimized and updated pingo settings.
 - Improved ECT execution by adding --mt-file (multithreading file).
+- Updated AdvanceCOMP to 2.16 (custom built by snow).
 - Updated SQLite to 3.38.1 x86 and x64 Visual C++ 2022 custom builds.
 - Updated pingo to 1.00 a14 x64 version.
 - Updated ImageMagick to 7.1.0.25 with HDRI support.
