@@ -657,7 +657,7 @@ const TCHAR * __fastcall clsUtil::ExeVersion(const TCHAR *pacFile)
 
 
 //---------------------------------------------------------------------------
-int __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, TCHAR *ret, int len)
+size_t __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *info, TCHAR *ret, size_t len)
 {
 	DWORD hVersion;
 	DWORD vis = GetFileVersionInfoSize(fn, &hVersion);

@@ -58,7 +58,7 @@ class clsUtil
 		static bool __fastcall DownloadFilePost(const TCHAR *pacServer, const TCHAR *pacPage, const char *pacParameters, void *pvData, unsigned int piSize, bool pbHttps = false);
 		static bool __fastcall CopyFile(const TCHAR *pacSource, const TCHAR *pacDestination);
 		static const TCHAR * __fastcall ExeVersion(const TCHAR *pacFile);
-		static int __fastcall GetFileVersionField(const TCHAR *fn, const TCHAR *info, TCHAR *ret, int len);
+		static size_t __fastcall GetFileVersionField(const TCHAR *fn, const TCHAR *info, TCHAR *ret, size_t len);
 		static const TCHAR * __fastcall GetIniPath(bool pbAllUsers = false);
 		static const TCHAR * __fastcall GetIni(const TCHAR *pacSection, const TCHAR *pacKey, const TCHAR *pacDefault);
 		static int __fastcall GetIni(const TCHAR *pacSection, const TCHAR *pacKey, int piDefault = 0);
