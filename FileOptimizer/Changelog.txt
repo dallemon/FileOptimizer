@@ -187,6 +187,8 @@ XXXXXXXXX
 - Updated pingo to 1.00 a14 x64 version.
 - Updated ImageMagick to 7.1.0.25 with HDRI support.
 - Updated libwebp to 1.2.2 x64.
+- Upgraded to C++ Builder 11.1 (Alexandria).
+- Some minor optimizations and code cleanup.
 
 
 15.50 - 2022/02/09

@@ -20,7 +20,6 @@ object frmAbout: TfrmAbout
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
-  PixelsPerInch = 96
   DesignSize = (
     458
     443)
