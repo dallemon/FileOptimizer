@@ -314,7 +314,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		//ToDo: We should handle window resizing or prevent it while in easter egg
 		BorderStyle = bsSingle;
 		BorderIcons = BorderIcons << biMaximize;
-	
+
 		//Initialize
 		imgEaster = new TImage(this);
 		tmrEaster = new TTimer(this);
@@ -338,6 +338,7 @@ void __fastcall TfrmAbout::EasterTimer(TObject *Sender)
 		TCHAR acName[256];
 		clsUtil::GetFileVersionField(Application->ExeName.c_str(), (const TCHAR *) _T("LegalCopyright"), acName, (sizeof(acName) / sizeof(TCHAR)) - 1);
 		oCanvas->TextOut(32, 64, "Bytes:   " + (String) acName);
+		Application->ProcessMessages();
 	}
 	else
 	{
@@ -391,13 +392,14 @@ void __fastcall TfrmAbout::EasterClick(TObject *Sender)
 	{
 		delete tmrEaster;
 		tmrEaster = nullptr;
-    }
+	}
 
 	//ToDo: Should not be needed
 	butClose->Show();
 	mmoLicense->Show();
 	BorderStyle = bsSizeable;
 	BorderIcons = BorderIcons >> biMaximize;
+    Application->ProcessMessages();
 }
 
 
