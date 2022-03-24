@@ -175,7 +175,10 @@ ndo
 
 
 XXXXXXXXX
-- Moved pingo at top of JPEG toolchain for better results (Dm Kh) #113.
+
+
+15.60 (2022/03/24)
+- Improved optimization ratio thanks to moving Pingo at top of JPEG toolchain for better results (Dm Kh) #113.
 - Fixed automatically disabling BeepWhenDone when launched via commandline to allow a proper exit.
 - Fixed missing VCRUNTIME140_1.dll that was needed by optipng (Devedse) #112.
 - Fixed empty messagebox when closing FO.
