@@ -1,0 +1,663 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jaehyung Lee <kolanp@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"X-Generator: Poedit 2.2\n"
+
+# "Language Name: Italian - Italy"
+# "Project-Id-Version: FileOptimizer 13.50.2431"
+# "POT-Creation-Date: Feb 14 2020"
+# "MIME-Version: 1.0"
+# "Content-Type: text/plain; charset=ISO-8859-1"
+# "Content-Transfer-Encoding: 8bit"
+# "Language: it_IT"
+# "Last-Translator: Giacomo Margarito"
+# "Language-Team: Giacomo Margarito"
+# "Plural-Forms: nplurals=2; plural=(n != 1);"
+msgid "FileOptimizer"
+msgstr "FileOptimizer"
+
+msgid "&About..."
+msgstr "&프로그램 정보..."
+
+msgid "Open the about window with internal and legal information"
+msgstr "내부 및 법률 정보 창 열기"
+
+msgid "-"
+msgstr "-"
+
+msgid "Donate..."
+msgstr "기부하기..."
+
+msgid "Support the development by easily and securely money donations"
+msgstr "쉽고 안전한 후원금으로 개발 지원"
+
+msgid "&Information..."
+msgstr "&지원 파일 및 기타..."
+
+msgid "Open information window with the list of currently supported file formats"
+msgstr "현재 지원되는 파일 유형 목록 창 열기"
+
+msgid "Help topics..."
+msgstr "도움말..."
+
+msgid "Open help topics"
+msgstr "도움말 문서 열기"
+
+msgid "&Help"
+msgstr "&도움말"
+
+msgid "&Options..."
+msgstr "&옵션..."
+
+msgid "Open configuration options window"
+msgstr "구성 옵션 창 열기"
+
+msgid "&Stop"
+msgstr "&중지"
+
+msgid "Stop in-progress optimizations"
+msgstr "진행 중인 최적화 중지"
+
+msgid "&Optimize all files"
+msgstr "&모든 파일 최적화"
+
+msgid "Optimize files in the optimization list"
+msgstr "최적화 목록에 있는 파일 최적화"
+
+msgid "&Optimize"
+msgstr "&최적화"
+
+msgid "E&xit..."
+msgstr "종&료..."
+
+msgid "Exit the program"
+msgstr "프로그램 종료"
+
+msgid "Open &containing folder..."
+msgstr "포함된 폴더 열기..."
+
+msgid "Open folder containing selected item"
+msgstr "선택한 항목이 포함된 폴더 열기"
+
+msgid "&Open selected file"
+msgstr "&선택한 파일 열기"
+
+msgid "Open selected file with the associated program"
+msgstr "연결된 프로그램으로 선택한 파일 열기"
+
+msgid "&Clear all files"
+msgstr "&모든 파일 지우기"
+
+msgid "Empty all files in the optimization list"
+msgstr "최적화 목록의 모든 파일 비우기"
+
+msgid "&Remove selected files"
+msgstr "&선택한 항목 제거"
+
+msgid "Remove selected files from the optimization list"
+msgstr "최적화 목록에서 선택한 파일 제거"
+
+msgid "A&dd folder..."
+msgstr "폴더 추&가..."
+
+msgid "Add folder contents recursively from your computer to the optimization list"
+msgstr "컴퓨터의 폴더 콘텐츠를 최적화 목록에 재귀적으로 추가"
+
+msgid "&Add files..."
+msgstr "&파일 추가..."
+
+msgid "Add files from your computer to the optimization list"
+msgstr "컴퓨터의 파일을 최적화 목록에 추가"
+
+msgid "&File"
+msgstr "&파일"
+
+msgid "Â© Copyright 2012-2019 by Javier GutiÃ©rrez Chamorro (Guti)"
+msgstr "Â© 저작권 2012-2019 by Javier GutiÃ©rrez Chamorro (Guti)"
+
+msgid "https://nikkhokkho.sourceforge.io/static.php?page=FileOptimizer"
+msgstr "https://nikkhokkho.sourceforge.io/static.php?page=FileOptimizer"
+
+msgid "Drag on the list below files you want to optimize, and when ready, click on the right button context menu to proceed. All processed files are copied to Recycle Bin, so you can easily restore them. You can disable moving to Recycle Bin if you like. Double click an item to preview it."
+msgstr "최적화할 파일을 아래 목록에 드래그하고 준비가 되면 마우스 오른쪽 버튼을 사용하여 최적화 작업을 진행합니다. 처리된 모든 파일은 휴지통으로 복사되므로 쉽게 복원할 수 있습니다. 휴지통으로 이동은 옵션에서 비활성화할 수 있습니다. 항목을 더블 클릭하면 미리보기 할 수 있습니다."
+
+msgid "File"
+msgstr "파일"
+
+msgid "Extension (Type)"
+msgstr "확장자 (유형)"
+
+msgid "Original size"
+msgstr "원본 크기"
+
+msgid "Optimized size"
+msgstr "최적화 크기"
+
+msgid "Status"
+msgstr "상태"
+
+msgid "Optimization is still running. Do you want to stop and exit %s?"
+msgstr "최적화가 계속 실행 중입니다. 중지하고 %s를 종료하시겠습니까?"
+
+msgid "About"
+msgstr "정보"
+
+msgid "&Close"
+msgstr "&닫기"
+
+msgid "and %s file formats among many others."
+msgstr "및 %s 파일 형식."
+
+# In Korean, It must be no space.
+# Do not insert a space!
+# A Space are required in English, but If inserting a space in Korean, it is a spelling error in Korean.
+msgid " is an advanced file optimizer featuring a lossless (no quality loss) file size reduction that supports: "
+msgstr "는 무손실로 파일의 용량을 줄여주는 파일 최적화 도구입니다. 지원되는 파일 유형: "
+
+msgid ""
+"\n"
+"\n"
+"DONATOR INFORMATION\n"
+msgstr ""
+"\n"
+"\n"
+"후원자 정보\n"
+
+msgid "Have not donated yet!"
+msgstr "아직 기부하지 않았습니다!"
+
+msgid ""
+"\n"
+"User since %s %s"
+msgstr ""
+"\n"
+"%s %s 이후의 사용자"
+
+msgid ""
+"\n"
+"\n"
+"USAGE STATISTICS\n"
+"- Time: %s\n"
+"- Opens: %s\n"
+"- Files: %s\n"
+"- Total: %s\n"
+"- Saved: %s\n"
+msgstr ""
+"\n"
+"\n"
+"사용 통계\n"
+"- 시간: %s\n"
+"- 열기: %s\n"
+"- 파일: %s\n"
+"- 전체: %s\n"
+"- 저장: %s\n"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Options"
+msgstr "옵션"
+
+msgid "&Cancel"
+msgstr "&취소"
+
+msgid "Discard any changes made to options."
+msgstr "옵션의 모든 변경 사항을 취소합니다."
+
+msgid "&OK"
+msgstr "&확인"
+
+msgid "Accept and apply all changes made to options."
+msgstr "옵션의 모든 변경 사항을 수락하고 적용합니다."
+
+msgid "&Restore defaults"
+msgstr "&기본값 복원"
+
+msgid "Restore all options to its factory settings values."
+msgstr "모든 옵션을 초기값으로 복원합니다."
+
+msgid "&Recurse"
+msgstr "&복구"
+
+msgid "Enable optimization inside archives (recursive optimization)."
+msgstr "아카이브 내부 최적화 활성화 (재귀 최적화)."
+
+msgid "&Copy metadata"
+msgstr "&메타데이터 복사"
+
+msgid "Copy file metadata. Else strip all unneeded information."
+msgstr "파일 메타데이터 복사. 아니면 불필요한 정보를 모두 제거합니다."
+
+msgid "&ZIP"
+msgstr "&압축"
+
+msgid "&Enable Leanify"
+msgstr "&Leanify 활성화"
+
+msgid "Enable Leanify. Results in smaller files, but can happen they are not editable anymore."
+msgstr "Leanify 활성화. 파일은 작아지지만 편집할 수 없게 될 수 있습니다."
+
+msgid "&XML"
+msgstr "&XML"
+
+msgid "&TIFF"
+msgstr "&TIFF"
+
+msgid "&TGA"
+msgstr "&TGA"
+
+msgid "&Allow lossy optimizations"
+msgstr "&손실 최적화 허용"
+
+# In Korean, the "." symbol is required at the end of the sentence.
+# Do not remove "." symbol!
+msgid "Allowing lossy optimizations will get higher files reduction at the cost of some quality loss, even if visually unnoticeable or not"
+msgstr "손실 최적화를 허용하면 시각적으로 감지되지 않는 수준에서 어느 정도의 품질 저하를 감수하고 파일 크기를 보다 더 많이 줄일 수 있습니다."
+
+msgid "&PNG"
+msgstr "&PNG"
+
+msgid "&Skip layered"
+msgstr "&레이어 건너뛰기"
+
+msgid "Skip processing of PDF files containing layered objects. Results in more compatible files with higher size."
+msgstr "레이어 개체가 포함된 PDF 파일의 처리를 건너뜁니다. 크기가 큰 파일의 호환성이 향상됩니다."
+
+# In Korean, the "." symbol is required at the end of the sentence.
+# Do not remove "." symbol!
+msgid "When custom profile is chosen, it allows you to specify a custom DPI for downsampling images"
+msgstr "사용자 지정 프로필을 선택하면 다운샘플링 이미지에 대한 사용자 지정 DPI를 지정할 수 있습니다."
+
+msgid "Compression profile, from less size, to best quality."
+msgstr "압축 프로필, 더 작은 크기, 최상의 품질."
+
+msgid "Custom"
+msgstr "사용자 지정"
+
+msgid "Prepress: 300 dpi and color preserve"
+msgstr "프리프레스: 300 dpi 및 색상 보존"
+
+msgid "Printer: 300 dpi"
+msgstr "프린터: 300 dpi"
+
+msgid "Ebook: 150 dpi"
+msgstr "전자책: 150 dpi"
+
+msgid "Screen: 72 dpi"
+msgstr "화면: 72 dpi"
+
+msgid "None: No downsampling (Default)"
+msgstr "없음: 다운샘플링 없음 (기본값)"
+
+msgid "&Custom DPI"
+msgstr "&사용자 DPI"
+
+msgid "&Profile"
+msgstr "&프로필"
+
+msgid "&PDF"
+msgstr "&PDF"
+
+msgid "&PCX"
+msgstr "&PCX"
+
+msgid "&MP4"
+msgstr "&MP4"
+
+msgid "&MP3"
+msgstr "&MP3"
+
+msgid "&Disable"
+msgstr "&비활성화"
+
+msgid "Disable processing of other file types. This could imply lossing some edit capabilities such as PSD/PSB where text layers will be rasterized."
+msgstr "다른 파일 형식의 처리를 비활성화합니다. 이것은 텍스트 레이어가 래스터화될 PSD/PSB와 같은 일부 편집 기능을 상실함을 의미할 수 있습니다."
+
+msgid "&Miscellaneous"
+msgstr "&기타"
+
+msgid "&LUA"
+msgstr "&LUA"
+
+msgid "Add extra extensions to be threated as JS/JSON."
+msgstr "JS/JSON으로 처리할 추가 확장을 추가합니다."
+
+msgid "&Enable JSMin"
+msgstr "&JSMin 활성화"
+
+# No error. Don't edit this.
+msgid "Enable jsmin. Results in smaller files, but can happen they are not editable anymore."
+msgstr "jsmin 활성화. 파일은 작아지지만 편집할 수 없게 될 수 있습니다."
+
+msgid "&Additional Extensions"
+msgstr "&추가 확장"
+
+msgid "&JS"
+msgstr "&JS"
+
+msgid "&Use arithmetic encoding"
+msgstr "&산술 인코딩"
+
+msgid "Arithmetic encoding gives additional saving reductions, but is incompatible with most programs."
+msgstr "산술 인코딩은 추가적인 감소 효과를 제공하지만 대부분의 프로그램과 호환되지 않습니다."
+
+msgid "&JPEG"
+msgstr "&JPEG"
+
+msgid "&Enable Tidy"
+msgstr "&Tidy 활성화"
+
+# In Korean, the "." symbol is required at the end of the sentence.
+# Do not remove "." symbol!
+msgid "Enable Tidy. Results in smaller files, but can happen they are not editable anymore. Note that this applies to both SVG and HTML file types"
+msgstr "Tidy 활성화. 파일은 작아지지만 편집할 수 없게 될 수 있습니다. 이것은 SVG 및 HTML 파일 형식 모두에 적용됩니다."
+
+msgid "&HTML"
+msgstr "&HTML"
+
+msgid "&GZ"
+msgstr "&GZ"
+
+msgid "&GIF"
+msgstr "&GIF"
+
+msgid "&Enable UPX"
+msgstr "&UPX 활성화"
+
+msgid "Enable UPX executable compression. When enabled, UPX will be used, resulting EXE and DLL size reduction at the cost of runtime decompression."
+msgstr "UPX 실행 파일 압축 활성화. 활성화하면 런타임 압축 해제를 대신하여 UPX가 사용되므로 EXE와 DLL의 크기가 줄어듭니다."
+
+msgid "&Disable PETrim"
+msgstr "&PETrim 비활성화"
+
+msgid "Disable PETrim. When enabled, PETrim will not be used, resulting in less EXE corruption at the cost of larger file size."
+msgstr "PETrim 비활성화. 활성화하면 PETrim이 사용되지 않으므로 파일 크기가 커지는 대신에 EXE 손상이 줄어듭니다."
+
+msgid "&EXE"
+msgstr "&EXE"
+
+msgid "Compression template, from safer and worse compression, to highest compression"
+msgstr "압축 템플릿, 더 안전 및 더 나쁜 압축, 최고의 압축"
+
+msgid "Highest"
+msgstr "최고"
+
+msgid "High"
+msgstr "높음"
+
+msgid "Low (Default)"
+msgstr "낮음 (기본)"
+
+msgid "Enable tidy. Results in smaller files, but can happen they are not editable anymore."
+msgstr "Tidy 활성화. 파일은 작아지지만 편집할 수 없게 될 수 있습니다."
+
+msgid "&Template"
+msgstr "&템플릿"
+
+msgid "&CSS"
+msgstr "&CSS"
+
+msgid "&BMP"
+msgstr "&BMP"
+
+msgid "User interface language"
+msgstr "사용자 인터페이스 언어"
+
+msgid "&Hide ads"
+msgstr "&광고 숨기기"
+
+msgid "Hide ads from being displayed."
+msgstr "광고가 표시되지 않도록 숨깁니다."
+
+msgid "Specify the format to display filenames in the list."
+msgstr "목록에 파일 이름을 표시할 형식을 지정합니다."
+
+msgid "Drive letter + Partial (path + Filename)"
+msgstr "드라이브 문자 + 부분 (경로 + 파일 이름)"
+
+msgid "Drive letter + Partial path + Filename"
+msgstr "드라이브 문자 + 부분 + 파일 이름"
+
+msgid "Filename only"
+msgstr "파일 이름만"
+
+msgid "Full path and Filename (Default)"
+msgstr "전체 경로 및 파일 이름 (기본)"
+
+msgid "&Always on top"
+msgstr "&항상 위에 표시"
+
+msgid "Show main window always on top."
+msgstr "메인 창을 항상 맨 위에 표시합니다."
+
+msgid "&Show toolbar"
+msgstr "&도구 모음 표시"
+
+msgid "Show icons toolbar on main window"
+msgstr "메인 창에 아이콘 도구 모음 표시"
+
+# In Korean, the "." symbol is required at the end of the sentence.
+# Do not remove "." symbol!
+msgid "If you have already donated to support FileOptimizer development, enter here the email address or name you used"
+msgstr "FileOptimizer 개발을 지원하기 위해 이미 기부한 경우 여기에 사용한 이메일 주소 또는 이름을 입력하세요."
+
+msgid "&Language"
+msgstr "&언어"
+
+msgid "&Filename format"
+msgstr "&파일 이름 형식"
+
+msgid "&Donator"
+msgstr "&후원자"
+
+msgid "&Appearance"
+msgstr "&모양"
+
+msgid "&Allow multiple instances"
+msgstr "&다중 인스턴스 허용"
+
+msgid "Allow having more than one FileOptimizer instance. If not, a warning will appear."
+msgstr "둘 이상의 FileOptimizer 인스턴스를 허용합니다. 그렇지 않으면 경고가 나타납니다."
+
+msgid "&Enable cache"
+msgstr "&캐시 활성화"
+
+msgid "Enable cache of already optimized files to automatically skip them."
+msgstr "이미 최적화된 파일의 캐시를 활성화하여 자동으로 건너뜁니다."
+
+msgid "If specified, number of trial iterations in all Leanify executions will use this value. If not, iterations are calculated depending on the Optimization level."
+msgstr "지정된 경우 모든 Leanify 실행의 반복 시도 횟수가 이 값을 사용합니다. 아니면 최적화 수준에 따라 반복이 계산됩니다."
+
+msgid "&Allow duplicates"
+msgstr "&중복 허용"
+
+msgid "Allow adding same file more than once. If enabled, adding to the grid will be much faster, specially on very large grids."
+msgstr "동일한 파일을 두 번 이상 추가할 수 있습니다. 활성화하면 그리드에 추가하는 것이 훨씬 빨라지며 특히 매우 큰 그리드에서 효과적입니다."
+
+msgid "&Clear when complete"
+msgstr "&완료 시 목록 지우기"
+
+msgid "Automatically clear file list when optimization is completed."
+msgstr "최적화 완료 시 자동으로 파일 목록을 지웁니다."
+
+msgid "&Shutdown when done"
+msgstr "&완료 시 PC 종료"
+
+msgid "Shutdown computer when optimization completes."
+msgstr "최적화 완료 시 컴퓨터를 종료합니다."
+
+msgid "&Beep when done"
+msgstr "&완료 시 알림음"
+
+msgid "Beep the speaker when optimization completes."
+msgstr "최적화 완료 시 비프음을 재생합니다."
+
+msgid "Allow excluding execution of certain plugins. It is case insensitive, and allows more than one item to be specified by using semicolon as separator."
+msgstr "특정 플러그인 실행 제외 허용. 대소문자를 구분하지 않으며 세미콜론(;)을 구분자로 사용하여 여러 항목을 지정할 수 있습니다."
+
+msgid "&Leanify iterations"
+msgstr "&Leanify 반복"
+
+msgid "&Disable plugin mask"
+msgstr "&플러그인 마스크 비활성화"
+
+msgid "General &2"
+msgstr "일반 &2"
+
+msgid "If not empty specified directory will be used for temporary storage instead of system's %TEMP%."
+msgstr "비어 있지 않으면 시스템의 %TEMP% 대신 지정된 디렉터리가 임시 저장소로 사용됩니다."
+
+msgid "D&o not create backups"
+msgstr "&백업 생성 안함"
+
+msgid "When checked original files will not be backed up in the current folder as a .BAK files."
+msgstr "체크하면 원본 파일은 현재 폴더에 .BAK 파일로 백업되지 않습니다."
+
+msgid "If not empty, only files containing this mask (substring) on name or path will be included from optimization. You can use semicolon to specify more than one substring being included."
+msgstr "비어 있지 않으면 최적화에서 이름 또는 경로에 이 마스크(하위 문자열)가 포함된 파일만 포함됩니다. 세미콜론을 사용하여 포함할 여러 하위 문자열을 지정할 수 있습니다."
+
+msgid "Files containing this mask (substring) on name or path will be excluded from optimization. You can use semicolon (;) to specify more than one substring being excluded."
+msgstr "최적화에서 이름 또는 경로에 이 마스크(하위 문자열)가 포함된 파일은 제외됩니다. 세미콜론(;)을 사용하여 제외할 여러 하위 문자열을 지정할 수 있습니다."
+
+msgid "&Do not use recycle bin"
+msgstr "&휴지통 사용 안함"
+
+msgid "When checked original files will not be backed up in the system trashcan."
+msgstr "체크하면 원본 파일은 시스템 휴지통에 백업되지 않습니다."
+
+msgid "Debugging level to output on program log."
+msgstr "프로그램 로그에 출력할 디버깅 수준입니다."
+
+msgid "4: Information"
+msgstr "4: 정보"
+
+msgid "3: Warning"
+msgstr "3: 경고"
+
+msgid "2: Error"
+msgstr "2: 오류"
+
+msgid "1: Critical"
+msgstr "1: 심각"
+
+msgid "0: None (Default)"
+msgstr "0: 없음 (기본)"
+
+msgid "Automatically check for program updates."
+msgstr "자동으로 프로그램 업데이트를 확인합니다."
+
+msgid "Never"
+msgstr "안함"
+
+msgid "Automatically (Default)"
+msgstr "자동 (기본)"
+
+msgid "Ask"
+msgstr "확인"
+
+msgid "Process priority from most conservative to best performance."
+msgstr "가장 보수적인 것에서 최고의 성능으로 우선 순위를 처리합니다."
+
+msgid "Realtime"
+msgstr "실시간"
+
+msgid "Above normal"
+msgstr "보통 초과"
+
+msgid "Normal (Default)"
+msgstr "보통 (기본)"
+
+msgid "Below normal"
+msgstr "보통 미만"
+
+msgid "Idle"
+msgstr "유휴"
+
+msgid "Optimization level from best speed to best compression."
+msgstr "최고 속도에서 최고 압축까지 최적화 수준입니다."
+
+msgid "9: Best"
+msgstr "9: 최고 압축"
+
+msgid "8: Better"
+msgstr "8: 더 좋음"
+
+msgid "7: Good"
+msgstr "7: 좋음"
+
+msgid "6:"
+msgstr "6:"
+
+msgid "5: Normal (Default)"
+msgstr "5: 보통 (기본)"
+
+msgid "4:"
+msgstr "4:"
+
+msgid "3:"
+msgstr "3:"
+
+msgid "2: Fast"
+msgstr "2: 빠름"
+
+msgid "1: Faster"
+msgstr "1: 더 빠름"
+
+msgid "0: Fastest"
+msgstr "0: 가장 빠름"
+
+msgid "&Keep file attributes"
+msgstr "&파일 속성 유지"
+
+msgid "Keep original readonly, system, hidden and archive attributes as well as creation and modification timestamps."
+msgstr "원본 읽기전용, 시스템, 숨김 및 아카이브 속성은 물론 생성 및 수정 타임스탬프를 유지합니다."
+
+msgid "&Temp directory"
+msgstr "&임시 디렉터리"
+
+msgid "&Include mask"
+msgstr "&포함 마스크"
+
+msgid "&Exclude mask"
+msgstr "&제외 마스크"
+
+msgid "&Log level"
+msgstr "&로그 수준"
+
+msgid "&Check for updates"
+msgstr "&업데이트 확인"
+
+msgid "&Process priority"
+msgstr "&프로세스 우선 순위"
+
+msgid "&Optimization level"
+msgstr "&최적화 수준"
+
+msgid "General &1"
+msgstr "일반 &1"
+
+msgid "Configure the appearance and behaviour of FileOptimizer"
+msgstr "FileOptimizer의 모양 및 동작 구성"
+
+msgid "General program options affecting all extensions (1/2)"
+msgstr "모든 확장에 영향을 주는 일반 프로그램 옵션 (1/2)"
+
+msgid "General program options affecting all extensions (2/2)"
+msgstr "모든 확장에 영향을 주는 일반 프로그램 옵션 (2/2)"
+
+msgid "Extensions affected: "
+msgstr "영향을 받는 확장: "
+
+msgid "Automatic: System default"
+msgstr "자동: 시스템 기본"
+
+msgid "3082: English - United States (Built-in)"
+msgstr "1042: Korean - 한국어"

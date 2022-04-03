@@ -1,3 +1,5 @@
+Revertir https://sourceforge.net/p/nikkhokkho/discussion/fileoptimizer/thread/f13458e232/?limit=25
+
 - Make CHM links open in target blank to use default browser (dado023).
 - Calculate cache hashes by content instead of paths (Alexander).
 
@@ -175,6 +177,7 @@ ndo
 
 
 XXXXXXXXX
+- Added Korean translation. Thank you Jaehyung Lee.
 - Updated SQLite to 3.38.2 x86 and x64 Visual C++ 2022 custom builds.
 
 
