@@ -1240,7 +1240,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			}
 			RunPlugin((unsigned int) iCount, "ImageMagick (1/2)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -compress RLE " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
-			RunPlugin((unsigned int) iCount, "ImageWorsener (2/2)", (sPluginsDirectory + "imagew.exe -noresize -zipcmprlevel 9 -outfmt bmp -compress \"rle\" \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ImageWorsener (2/2)", (sPluginsDirectory + "imagew.exe -opt bmp:version=auto -noresize -zipcmprlevel 9 -outfmt bmp -compress \"rle\" \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
 		// CSS: CSSTidy, Minify
 		if (PosEx(sExtensionByContent, KS_EXTENSION_CSS) > 0)
