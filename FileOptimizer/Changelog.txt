@@ -142,7 +142,7 @@ ndo
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli cuda-opencl 1.0.1 - https://github.com/doterax/guetzli-cuda-opencl
 - ImageMagick 7.1.0.25 - http://www.imagemagick.org
-- ImageWorsener 1.3.4 - http://entropymine.com/imageworsener
+- ImageWorsener 1.3.4 test - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
 - jpegoptim 1.4.6 - http://www.kokkonen.net/tjko/projects.html
@@ -177,6 +177,8 @@ ndo
 
 
 XXXXXXXXX
+- Fixed issue with BMP transparencies with Image Worsener by adding -opt bmp:version=auto (Devedse) #111
+- Updated ImageW to 1.3.4 test.
 - Added Korean translation. Thank you Jaehyung Lee.
 - Updated SQLite to 3.38.2 x86 and x64 Visual C++ 2022 custom builds.
 
