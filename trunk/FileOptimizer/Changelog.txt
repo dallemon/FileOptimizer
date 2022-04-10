@@ -181,6 +181,7 @@ XXXXXXXXX
 - Updated ImageW to 1.3.4 test.
 - Added Korean translation. Thank you Jaehyung Lee.
 - Updated SQLite to 3.38.2 x86 and x64 Visual C++ 2022 custom builds.
+- Updated EXE compatibility to PatchPE 1.34.
 
 
 15.60 (2022/03/24)
