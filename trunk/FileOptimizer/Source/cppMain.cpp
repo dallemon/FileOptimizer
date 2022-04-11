@@ -1821,7 +1821,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			//Skip Ghostcript on PDF with layers, or if no downsampling is selected, because GS always downsample images.
 			if ((!bIsPDFLayered) || (!gudtOptions.bPDFSkipLayered) || (_tcscmp(gudtOptions.acPDFProfile, _T("none")) == 0))
 			{		
-				RunPlugin((unsigned int) iCount, "mutool (1/3)", (sPluginsDirectory + "mutool.exe clean -ggg -z \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				//RunPlugin((unsigned int) iCount, "mutool (1/3)", (sPluginsDirectory + "mutool.exe clean -gggg -z \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				RunPlugin((unsigned int) iCount, "mutool (1/3)", (sPluginsDirectory + "mutool.exe clean -g -z \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 				
 				//Do not use Ghoscript for Adobe Illustrator (AI) files
 				if (!EndsText(".ai", sInputFile))
