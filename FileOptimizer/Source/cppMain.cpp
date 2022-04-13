@@ -2312,11 +2312,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
 					sFlags += "-z " + (String) iLevel + " -lossless ";
 				}
-				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
-				if (clsUtil::SizeFile(acTmpFileWebp) < clsUtil::SizeFile(sInputFile.c_str()))
-				{
-					clsUtil::CopyFile(acTmpFileWebp, sInputFile.c_str());
-				}
+				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 			if (!gudtOptions.bDebug)
 			{
