@@ -1851,7 +1851,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					_tcscat(acTmpFilePdf, _T(".pdf"));
 					_tcsncpy(acTmpFilePdf, clsUtil::GetShortName(acTmpFilePdf).c_str(), (sizeof(acTmpFilePdf) / sizeof(TCHAR)) - 1);
 
-					//RunPlugin((unsigned int) iCount, "Ghostcript", (sPluginsDirectory + "cwebp.exe -mt -quiet -lossless " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
 					#if defined(_WIN64)
 						RunPlugin((unsigned int) iCount, "Ghostcript (2/3)", (sPluginsDirectory + "gswin64c.exe " + sFlags + "-sOutputFile=\"" + acTmpFilePdf + "\" \"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 					#else
@@ -1999,8 +1998,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				if (!bIsPNG9Patch)
 				{
 					RunPlugin((unsigned int) iCount, "pngrewrite (10/16)", (sPluginsDirectory + "pngrewrite.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-
-					//iError = RunPlugin((unsigned int) iCount, "ImageWorsener", (sPluginsDirectory + "imagew.exe -noresize -zipcmprlevel 9 \"" + grdFiles->Cells[0][iCount] + "\" \"" + acTmpFile + "\"").c_str(), acPluginsDirectory, acTmpFile);
 
 					sFlags = "";
 					//iLevel = min(gudtOptions.iLevel * 7 / 9, 7) + 1;
@@ -2292,32 +2289,20 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-webp-lossless ";
 			}
 		
-			RunPlugin((unsigned int) iCount, "pingo (1/3)", (sPluginsDirectory + "pingo.exe -noconversion " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "pingo (1/2)", (sPluginsDirectory + "pingo.exe -noconversion " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 					
-			TCHAR acTmpFileWebp[PATH_MAX];
-			_tcsncpy(acTmpFileWebp, sInputFile.c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 5);
-			_tcscat(acTmpFileWebp, _T(".png"));
-			_tcsncpy(acTmpFileWebp, clsUtil::GetShortName(acTmpFileWebp).c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 1);
-
-			if (RunPlugin((unsigned int) iCount, "dwebp (2/3)", (sPluginsDirectory + "dwebp.exe -mt -quiet \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0) == 0)
+			sFlags = "";
+			if (gudtOptions.bWEBPAllowLossy)
 			{
-				sFlags = "";
-				if (gudtOptions.bWEBPAllowLossy)
-				{
-					iLevel = min(gudtOptions.iLevel * 6 / 9, 6);
-					sFlags += "-m " + (String) iLevel + " ";
-				}
-				else
-				{
-					iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
-					sFlags += "-z " + (String) iLevel + " -lossless ";
-				}
-				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+				iLevel = min(gudtOptions.iLevel * 6 / 9, 6);
+				sFlags += "-m " + (String) iLevel + " ";
 			}
-			if (!gudtOptions.bDebug)
+			else
 			{
-				clsUtil::DeleteFile(acTmpFileWebp);
+				iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
+				sFlags += "-z " + (String) iLevel + " -lossless ";
 			}
+			RunPlugin((unsigned int) iCount, "cwebp (2/2)", (sPluginsDirectory + "cwebp.exe -mt -quiet " + sFlags + "\"%INPUTFILE%\" -o \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			//RunPlugin((unsigned int) iCount, "ImageWorsener", (sPluginsDirectory + "imagew.exe -noresize -zipcmprlevel 9 \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}

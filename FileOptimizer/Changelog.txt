@@ -177,6 +177,7 @@ ndo
 
 
 XXXXXXXXX
+- Speededup WEBP compression because dwebp is not needed anymore.
 - Improved WEBP lossless compression ratio.
 - Improved WEBP losy compression ratio by adding cwebp to the webp tool chain.
 - Fixed issue with BMP transparencies with Image Worsener by adding -opt bmp:version=auto (Devedse) #111.
