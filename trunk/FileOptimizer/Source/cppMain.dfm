@@ -22,7 +22,6 @@ object frmMain: TfrmMain
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   OnResize = FormResize
-  PixelsPerInch = 96
   DesignSize = (
     699
     415)
