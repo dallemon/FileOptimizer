@@ -2294,19 +2294,25 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		
 			RunPlugin((unsigned int) iCount, "pingo (1/3)", (sPluginsDirectory + "pingo.exe -noconversion " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 					
-			sFlags = "";
-			iLevel = min(gudtOptions.iLevel * 5 / 9, 5) + 1;
-			sFlags += "-m " + (String) iLevel + " ";
-			sFlags += "-z " + (String) iLevel + " ";
-
 			TCHAR acTmpFileWebp[PATH_MAX];
 			_tcsncpy(acTmpFileWebp, sInputFile.c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 5);
 			_tcscat(acTmpFileWebp, _T(".png"));
 			_tcsncpy(acTmpFileWebp, clsUtil::GetShortName(acTmpFileWebp).c_str(), (sizeof(acTmpFileWebp) / sizeof(TCHAR)) - 1);
 
-			if (RunPlugin((unsigned int) iCount, "dwebp (2/3)", (sPluginsDirectory + "dwebp.exe -mt \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0) == 0)
+			if (RunPlugin((unsigned int) iCount, "dwebp (2/3)", (sPluginsDirectory + "dwebp.exe -mt -quiet \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0) == 0)
 			{
-				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet -lossless " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
+				sFlags = "";
+				if (gudtOptions.bWEBPAllowLossy)
+				{
+					iLevel = min(gudtOptions.iLevel * 6 / 9, 6);
+					sFlags += "-m " + (String) iLevel + " ";
+				}
+				else
+				{
+					iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
+					sFlags += "-z " + (String) iLevel + " -lossless ";
+				}
+				RunPlugin((unsigned int) iCount, "cwebp (3/3)", (sPluginsDirectory + "cwebp.exe -mt -quiet " + sFlags + "\"" + acTmpFileWebp + "\" -o \"%INPUTFILE%\" -o \"" + acTmpFileWebp + "\"").c_str(), sInputFile, "", 0, 0);
 				if (clsUtil::SizeFile(acTmpFileWebp) < clsUtil::SizeFile(sInputFile.c_str()))
 				{
 					clsUtil::CopyFile(acTmpFileWebp, sInputFile.c_str());
