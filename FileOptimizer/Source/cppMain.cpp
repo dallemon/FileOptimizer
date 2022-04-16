@@ -1235,7 +1235,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		{
 			sFlags = "";
 			RunPlugin((unsigned int) iCount, "ImageMagick (1/1)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -define heic:speed=1 " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-		}		
+		}
+		// BMP: ImageMagick, ImageWorsener
 		if (PosEx(sExtensionByContent, KS_EXTENSION_BMP) > 0)
 		{
 			sFlags = "";
@@ -1414,7 +1415,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				RunPlugin((unsigned int) iCount, "FLACOut (4/4)", (sPluginsDirectory + "flacout.exe /q /y \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
-		// GIF: ImageMagick, gifsicle, flexiGIF
+		// GIF: ImageMagick, gifsicle
 		if (PosEx(sExtensionByContent, KS_EXTENSION_GIF) > 0)
 		{
 			sFlags = "";
@@ -1438,18 +1439,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "--lossy=85 ";
 			}
 			RunPlugin((unsigned int) iCount, "gifsicle (2/2)", (sPluginsDirectory + "gifsicle.exe -w -j --no-conserve-memory -o \"%TMPOUTPUTFILE%\" " + sFlags + "\"%INPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-
-			/*
-			if (!gudtOptions.bGIFCopyMetadata)
-			{
-				sFlags = "";
-				if (gudtOptions.iLevel >= 8)
-				{
-					sFlags += "-p ";
-				}
-				RunPlugin((unsigned int) iCount, "flexiGIF (4/4)", (sPluginsDirectory + "flexiGIF.exe -q " + sFlags + "\"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			}
-            */
 		}
 		// GZ: Libdeflate, Leanify, ect, advdef, zRecompress, deflopt, defluff, deflopt
 		if (PosEx(sExtensionByContent, KS_EXTENSION_GZ) > 0)
@@ -3006,7 +2995,6 @@ String __fastcall TfrmMain::GetExtensionByContent (const String psFilename, bool
 		{
 			//ToDo: Optimize to use regular comparisons instead of memcmp for short comparisons.
 			//Check AVIF
-			//Check FLAC
 			if (memcmp(&acBuffer[4], "ftypavif", 8) == 0)
 			{
 				sRes = ".avif";
