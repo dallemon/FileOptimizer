@@ -133,15 +133,15 @@ ndo
 - defluff 0.3.2 - http://j-o.users.sourceforge.net
 - Document Press Version 6.01 - http://encode.su/threads/336-Document-Press-6-01
 - ECT 0.8.3 - https://github.com/fhanau/Efficient-Compression-Tool
-- ffmpeg 5.0 - http://ffmpeg.zeranoe.com/builds/
+- ffmpeg 5.0.1 - http://ffmpeg.zeranoe.com/builds/
 - FLAC 1.3.2 - https://xiph.org/flac/
 - FLACOUT 07/03/2014 - http://advsys.net/ken/utils.htm
 - Flasm 1.62 - http://flasm.sourceforge.net
 - Gifsicle 1.93 - http://www.lcdf.org/gifsicle/
-- Ghostscript 9.55.0 - http://www.ghostscript.com
+- Ghostscript 9.56.1 - http://www.ghostscript.com
 - GNU Strip 2.32 - https://sourceforge.net/projects/mingw-w64/
 - Guetzli cuda-opencl 1.0.1 - https://github.com/doterax/guetzli-cuda-opencl
-- ImageMagick 7.1.0.25 - http://www.imagemagick.org
+- ImageMagick 7.1.0.29 - http://www.imagemagick.org
 - ImageWorsener 1.3.4 test - http://entropymine.com/imageworsener
 - jhead 3.04 - http://www.sentex.net/~mwandel/jhead/
 - jpeg-archive 2.2.0 - https://github.com/danielgtaylor/jpeg-archive
@@ -177,11 +177,15 @@ ndo
 
 
 XXXXXXXXX
-- Speededup WEBP compression because dwebp is not needed anymore.
+- Added support to AVIF images using ImageMagick.
+- Speedup WEBP compression because dwebp is not needed anymore.
 - Improved WEBP lossless compression ratio.
 - Improved WEBP losy compression ratio by adding cwebp to the webp tool chain.
 - Fixed issue with BMP transparencies with Image Worsener by adding -opt bmp:version=auto (Devedse) #111.
 - Reduced mutool optimization aggresivity from -gggg to -g in order to increase compatibility (Jacobov Landau) #116.
+- Updated Ghostscript to 9.56.1.
+- Updated ffmpeg to 5.0.1.
+- Updated ImageMagick to 7.1.0.29 with HDRI support.
 - Updated ImageW to 1.3.4 test.
 - Added Korean translation. Thank you Jaehyung Lee.
 - Updated SQLite to 3.38.2 x86 and x64 Visual C++ 2022 custom builds.
