@@ -1229,8 +1229,13 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 
 		int iLevel;
 		//Each extension can correspond to more than one engine, so use if instead of else if
-		// BMP: ImageMagick, ImageWorsener
+		// AVIF: ImageMagick
 		String sExtensionByContent = " " + GetExtensionByContent(sInputFile) + " ";
+		if (PosEx(sExtensionByContent, KS_EXTENSION_AVIF) > 0)
+		{
+			sFlags = "";
+			RunPlugin((unsigned int) iCount, "ImageMagick (1/1)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -define heic:speed=1 " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+		}		
 		if (PosEx(sExtensionByContent, KS_EXTENSION_BMP) > 0)
 		{
 			sFlags = "";
@@ -3000,9 +3005,14 @@ String __fastcall TfrmMain::GetExtensionByContent (const String psFilename, bool
 		if (clsUtil::ReadFile(psFilename.c_str(), acBuffer, &iSize))
 		{
 			//ToDo: Optimize to use regular comparisons instead of memcmp for short comparisons.
-
+			//Check AVIF
+			//Check FLAC
+			if (memcmp(&acBuffer[4], "ftypavif", 8) == 0)
+			{
+				sRes = ".avif";
+			}
 			//Check BMP
-			if ((memcmp(acBuffer, "BM", 2) == 0) || (memcmp(acBuffer, "BA", 2) == 0) || (memcmp(acBuffer, "CI", 2) == 0) || (memcmp(acBuffer, "CP", 2) == 0) || (memcmp(acBuffer, "IC", 2) == 0) || (memcmp(acBuffer, "PT", 2) == 0))
+			else if ((memcmp(acBuffer, "BM", 2) == 0) || (memcmp(acBuffer, "BA", 2) == 0) || (memcmp(acBuffer, "CI", 2) == 0) || (memcmp(acBuffer, "CP", 2) == 0) || (memcmp(acBuffer, "IC", 2) == 0) || (memcmp(acBuffer, "PT", 2) == 0))
 			{
 				sRes = ".bmp";
 			}
