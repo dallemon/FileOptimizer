@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>FileOptimizer.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
     </PropertyGroup>
@@ -61,9 +61,9 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_MajorVer>15</VerInfo_MajorVer>
-        <VerInfo_MinorVer>6</VerInfo_MinorVer>
-        <VerInfo_Build>2693</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Javier Gutiérrez Chamorro (Guti);FileDescription=Lossless file size optimizer;FileVersion=15.6.0.2693;InternalName=FileOptimizer;LegalCopyright=© Copyright 2012-2022 by Javier Gutiérrez Chamorro (Guti);LegalTrademarks=© Copyright 2012-2022 by Javier Gutiérrez Chamorro (Guti);OriginalFilename=FileOptimizer.exe;ProductName=FileOptimizer;ProductVersion=15.6.0.0;Comments=Get more info at http://www.javiergutierrezchamorro.com</VerInfo_Keys>
+        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <VerInfo_Build>2705</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Javier Gutiérrez Chamorro (Guti);FileDescription=Lossless file size optimizer;FileVersion=15.7.0.2705;InternalName=FileOptimizer;LegalCopyright=© Copyright 2012-2022 by Javier Gutiérrez Chamorro (Guti);LegalTrademarks=© Copyright 2012-2022 by Javier Gutiérrez Chamorro (Guti);OriginalFilename=FileOptimizer.exe;ProductName=FileOptimizer;ProductVersion=15.7.0.0;Comments=Get more info at http://www.javiergutierrezchamorro.com</VerInfo_Keys>
         <BCC_PCHCache>true</BCC_PCHCache>
         <AppEnableHighDPI>true</AppEnableHighDPI>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
