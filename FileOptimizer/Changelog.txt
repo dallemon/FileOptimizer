@@ -177,6 +177,9 @@ ndo
 
 
 XXXXXXXXX
+
+
+15.70 - 2022/04/20
 - Added support to AVIF images using ImageMagick.
 - Speedup WEBP compression because dwebp is not needed anymore.
 - Improved WEBP lossless compression ratio.
@@ -191,8 +194,7 @@ XXXXXXXXX
 - Updated SQLite to 3.38.2 x86 and x64 Visual C++ 2022 custom builds.
 - Updated EXE compatibility to PatchPE 1.35.
 
-
-15.60 (2022/03/24)
+15.60 - 2022/03/24
 - Improved optimization ratio thanks to moving Pingo at top of JPEG toolchain for better results (Dm Kh) #113.
 - Fixed automatically disabling BeepWhenDone when launched via commandline to allow a proper exit.
 - Fixed missing VCRUNTIME140_1.dll that was needed by optipng (Devedse) #112.
