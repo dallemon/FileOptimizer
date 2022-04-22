@@ -11,7 +11,7 @@ msgstr ""
 "Language: it\n"
 "X-Generator: Poedit 2.2\n"
 
-# "Language Name: Italian - Italy"
+# "Language Name: Korean - Korea"
 # "Project-Id-Version: FileOptimizer 13.50.2431"
 # "POT-Creation-Date: Feb 14 2020"
 # "MIME-Version: 1.0"
