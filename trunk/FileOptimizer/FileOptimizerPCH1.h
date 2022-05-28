@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //#ifndef FileOptimizerPCH1H
 //#define FileOptimizerPCH1H
-
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -44,6 +44,8 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
+
 
 #include <Vcl.Imaging.jpeg.hpp>
 
