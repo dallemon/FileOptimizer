@@ -1678,6 +1678,17 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			sFlags += "-" + (String) iLevel + " ";
 			RunPlugin((unsigned int) iCount, "ECT (10/10)", (sPluginsDirectory + "ECT.exe -quiet --mt-deflate --mt-file --allfilters -progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
+		
+		// JPEG XL: ImageMagick
+		if (PosEx(sExtensionByContent, KS_EXTENSION_JXL) > 0)
+		{
+			sFlags = "";
+			iLevel = min(gudtOptions.iLevel * 9 / 9, 9);
+			sFlags += "jxl:effort=" + (String) iLevel + " ";
+			RunPlugin((unsigned int) iCount, "ImageMagick (1/1)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+		}
+		
+
 		// JS: jsmin, minify
 		if ((PosEx(sExtensionByContent, KS_EXTENSION_JS) > 0) || (PosEx(sExtensionByContent, " " + ReplaceStr((String) gudtOptions.acJSAdditionalExtensions, ";", " ") + " ") > 0))
 		{
@@ -3034,6 +3045,11 @@ String __fastcall TfrmMain::GetExtensionByContent (const String psFilename, bool
 			else if (memcmp(acBuffer, "\xFF\xD8\xFF", 3) == 0)
 			{
 				sRes = ".jpg";
+			}
+			//Check JPEG XL
+			else if (memcmp(acBuffer, "\x00\x00\x00\x0C\x4A\x58\x4C\x20\x0D\x0A\x87\x0A", 12) == 0)
+			{
+				sRes = ".jxl";
 			}
 			//Check MKV
 			else if (memcmp(acBuffer, ".RTS", 4) == 0)
