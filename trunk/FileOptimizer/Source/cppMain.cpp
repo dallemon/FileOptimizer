@@ -1553,6 +1553,12 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				RunPlugin((unsigned int) iCount, "Leanify (2/2)", (sPluginsDirectory + "leanify.exe -q -p " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			}
 		}
+		// JPEG 2000: ImageMagick
+		if (PosEx(sExtensionByContent, KS_EXTENSION_JP2) > 0)
+		{
+			sFlags = "";
+			RunPlugin((unsigned int) iCount, "ImageMagick (1/1)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -quality 0 " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+		}
 		// JPEG: pingo, guetzli, jpeg-recompress, jhead, Leanify, ect, jpegoptim, jpegtran, mozjpegtran
 		if (PosEx(sExtensionByContent, KS_EXTENSION_JPG) > 0)
 		{
@@ -3040,6 +3046,11 @@ String __fastcall TfrmMain::GetExtensionByContent (const String psFilename, bool
 			else if (memcmp(acBuffer, "\x00\x00\x01\x00", 4) == 0)
 			{
 				sRes = ".ico";
+			}
+			//Check JPEG 2000
+			else if (memcmp(&acBuffer[4], "jP", 2) == 0)
+			{
+				sRes = ".jp2";
 			}
 			//Check JPEG
 			else if (memcmp(acBuffer, "\xFF\xD8\xFF", 3) == 0)
