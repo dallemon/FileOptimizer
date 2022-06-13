@@ -113,6 +113,7 @@ int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacC
 			}
 		}
 
+
 		if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != nullptr)
 		{
 			Application->ShowMainForm = false;

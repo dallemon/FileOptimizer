@@ -2498,36 +2498,33 @@ void __fastcall TfrmMain::tmrMainTimer(TObject *Sender)
 	{
 		tmrMain->Interval = 30000;
 
-        //Fix Win32 debugger
-		#if (!defined( _DEBUG) || defined(_WIN64))
-			if (_argc > 1)
+		if (_argc > 1)
+		{
+			Screen->Cursor = crAppStart;
+			grdFiles->Enabled = false;  //Prevent grid modifications while adding files
+			//Show();	//Required because some themes do not automatically refresh
+			Application->ProcessMessages();
+			AddFilesInitializeExist();
+			bool bAdded = false;
+			for (unsigned int iCount = 1; iCount < (unsigned int) _argc; iCount++)
 			{
-				Screen->Cursor = crAppStart;
-				grdFiles->Enabled = false;  //Prevent grid modifications while adding files
-				Show();	//Required because some themes do not automatically refresh
-				Application->ProcessMessages();
-				AddFilesInitializeExist();
-				bool bAdded = false;
-				for (unsigned int iCount = 1; iCount < (unsigned int) _argc; iCount++)
+				//Skip options starting with /
+				if (_targv[iCount][0] != '/')
 				{
-					//Skip options starting with /
-					if (_targv[iCount][0] != '/')
-					{
-						AddFiles(_targv[iCount]);
-						bAdded = true;
-					}
-				}
-				if (bAdded)
-				{
-					gudtOptions.bBeepWhenDone = false;  //Disable Beep when done to allow closing automatically
-					grdFiles->Enabled = true;
-					RefreshStatus();
-					Screen->Cursor = crDefault;
-					actOptimizeExecute(Sender);
-					actExitExecute(Sender);
+					AddFiles(_targv[iCount]);
+					bAdded = true;
 				}
 			}
-        #endif
+			if (bAdded)
+			{
+				gudtOptions.bBeepWhenDone = false;  //Disable Beep when done to allow closing automatically
+				grdFiles->Enabled = true;
+				RefreshStatus();
+				Screen->Cursor = crDefault;
+				actOptimizeExecute(Sender);
+				actExitExecute(Sender);
+			}
+		}
 	}
 }
 
@@ -3737,7 +3734,7 @@ void __fastcall TfrmMain::RefreshStatus(bool pbUpdateStatusBar, unsigned int piC
 	//LockWindowUpdate(Handle);
 
 	//ProcessMessages is required before changing DragAcceptFiles
-	if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != NULL)
+	if (StrStrI(GetCommandLine(), _T("/NOWINDOW")) != nullptr)
 	{
 		Hide();
 	}
