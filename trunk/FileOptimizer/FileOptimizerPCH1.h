@@ -56,10 +56,9 @@
 #include <VersionHelpers.h>
 #include <tlhelp32.h>
 
-#pragma hdrstop
-
 
 #if (!defined(__clang__) && !defined(nullptr))
     #define nullptr NULL
 #endif
 
+#pragma hdrstop

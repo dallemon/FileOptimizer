@@ -7,8 +7,9 @@
         <MainSource>FileOptimizer.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
+        <CC_Suffix Condition="'$(CC_Suffix)'==''">c</CC_Suffix>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -138,10 +139,12 @@
         <BCC_AllCodeguardOptions>true</BCC_AllCodeguardOptions>
         <LinkPackageStatics>vcledge.lib</LinkPackageStatics>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <LinkPackageImports>rtl.bpi;vcl.bpi;vclactnband.bpi;vclx.bpi;vclimg.bpi;VclSmp.bpi;vclie.bpi;vcledge.bpi</LinkPackageImports>
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
+        <Debugger_RunParams>/NOWINDOW</Debugger_RunParams>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_MinimumEnumSize>4</DCC_MinimumEnumSize>
