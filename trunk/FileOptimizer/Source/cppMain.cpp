@@ -1651,6 +1651,10 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--strip-all ";
 			}
+			if (gudtOptions.bJPEGUseArithmeticEncoding)
+			{
+				sFlags += "--with-arith ";
+			}					
 			RunPlugin((unsigned int) iCount, "jpegoptim (7/10)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
@@ -2200,6 +2204,10 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--strip-all ";
 			}
+			if (gudtOptions.bJPEGUseArithmeticEncoding)
+			{
+				sFlags += "--with-arith ";
+			}					
 			RunPlugin((unsigned int) iCount, "jpegoptim (3/5)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
