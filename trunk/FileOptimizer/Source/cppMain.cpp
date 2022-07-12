@@ -2836,7 +2836,10 @@ int __fastcall TfrmMain::RunPlugin(unsigned int piCurrent, String psStatus, Stri
 				lSizeNew = clsUtil::SizeFile(sTmpOutputFile.c_str());
 				if ((lSizeNew >= 8) && (lSizeNew < lSize))
 				{
-					clsUtil::CopyFile(sTmpOutputFile.c_str(), sInputFile.c_str());
+					if (!clsUtil::CopyFile(sTmpOutputFile.c_str(), sInputFile.c_str()))
+					{
+						iError = -9998;
+					}
 				}
 			}
 			else if ((PosEx("%OUTPUTFILE%", psCommandLine) == 0) && (PosEx("%TMPOUTPUTFILE%", psCommandLine) == 0))
@@ -2845,6 +2848,10 @@ int __fastcall TfrmMain::RunPlugin(unsigned int piCurrent, String psStatus, Stri
 				if ((lSizeNew >= 8) && (lSizeNew < lSize))
 				{
 					clsUtil::CopyFile(sTmpInputFile.c_str(), sInputFile.c_str());
+					if (!clsUtil::CopyFile(sTmpInputFile.c_str(), sInputFile.c_str()))
+					{
+						iError = -9997;
+					}
 					//sInputFile = sTmpOutputFile;
 				}
 			}

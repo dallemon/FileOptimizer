@@ -1,5 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
+ 3.52. 12/07/2022. FileOptimizer. Improved CopyFile and DeleteFile.
  3.51. 13/10/2018. FileOptimizer. Added RenameFile
  3.50. 15/12/2017. FileOptimizer. Added DeleteFile, GetShortName. Do most operations internally using them
  3.47. 22/11/2017. FileOptimizer. Added EscapeIniValue, UnescapeIniValue, EscapeIniKey, UnescapeIniKey.
@@ -608,9 +609,6 @@ bool __fastcall clsUtil::DownloadFilePost(const TCHAR *pacServer, const TCHAR *p
 bool __fastcall clsUtil::CopyFile(const TCHAR *pacSource, const TCHAR *pacDestination)
 {
 	bool bRes;
-
-	//Try to delete file if existing before overwriting
-	DeleteFile(pacDestination);
 
 	//Try copying file with faster no buffering only available in Windows XP
 	bRes = (CopyFileEx(GetShortName((String) pacSource).c_str(), GetShortName((String) pacDestination).c_str(), nullptr, nullptr, nullptr, COPY_FILE_ALLOW_DECRYPTED_DESTINATION | COPY_FILE_NO_BUFFERING) != 0);
