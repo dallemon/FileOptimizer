@@ -1655,7 +1655,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--with-arith ";
 			}					
-			RunPlugin((unsigned int) iCount, "jpegoptim (7/10)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "jpegoptim (7/10)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive --nofix " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			if (gudtOptions.bJPEGUseArithmeticEncoding)
@@ -1798,7 +1798,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		// OGG: optivorbis, rehuff_theora
 		if (PosEx(sExtensionByContent, KS_EXTENSION_OGG) > 0)
 		{
-			RunPlugin((unsigned int) iCount, "OptiVorbis (1/2)", (sPluginsDirectory + "optivorbis.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "OptiVorbis (1/2)", (sPluginsDirectory + "optivorbis.exe --vendor_string_action empty --comment_fields_action delete \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			
 			RunPlugin((unsigned int) iCount, "rehuff_theora (2/2)", (sPluginsDirectory + "rehuff_theora.exe \"%INPUTFILE%\" \"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 		}
@@ -2210,7 +2210,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "--with-arith ";
 			}					
-			RunPlugin((unsigned int) iCount, "jpegoptim (3/5)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "jpegoptim (3/5)", (sPluginsDirectory + "jpegoptim.exe -o -q --all-progressive --nofix " + sFlags + "\"%TMPINPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 
 			sFlags = "";
 			if (gudtOptions.bTIFFCopyMetadata)
