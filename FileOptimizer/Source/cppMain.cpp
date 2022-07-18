@@ -1424,7 +1424,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 				sFlags += "-strip ";
 			}
 			//RunPlugin((unsigned int) iCount, "ImageMagick", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -layers optimize -compress LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
-			RunPlugin((unsigned int) iCount, "ImageMagick (1/2)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -set dispose background -layers optimize -compress -loop 0 LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
+			RunPlugin((unsigned int) iCount, "ImageMagick (1/2)", (sPluginsDirectory + "magick.exe convert \"%INPUTFILE%\" -quiet -set dispose background -layers optimize -compress LZW " + sFlags + "\"%TMPOUTPUTFILE%\"").c_str(), sInputFile, "", 0, 0);
 			
 			sFlags = "";
 			//iLevel = min(gudtOptions.iLevel * 3 / 9, 3);
