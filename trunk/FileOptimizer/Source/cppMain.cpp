@@ -3632,21 +3632,18 @@ void __fastcall TfrmMain::UpdateAds(void)
 		}
 		else
 		{
-			webAds->Navigate(sUrl);
-			/*
-			if (webAds->ActiveEngine == TWebBrowser::TActiveEngine::Edge)
-			{
-				webAds->Navigate(sUrl);
-			}
-			else
+			if (webAds->ActiveEngine == TWebBrowser::TActiveEngine::IE)
 			{
 				OleVariant oFlags = Shdocvw::navNoHistory | Shdocvw::navNoReadFromCache | Shdocvw::navNoWriteToCache | Shdocvw::navNewWindowsManaged | Shdocvw::navTrustedForActiveX;
 				webAds->Navigate(sUrl, oFlags);
 			}
-            */
-			//Trim memory working set
-			SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
+			else
+			{
+				webAds->Navigate(sUrl);
+			}
 		}
+		//Trim memory working set
+		SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
 	}
 	else
 	{
