@@ -1197,18 +1197,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 	//Check file still exists and is not to be excluded
 	if ((clsUtil::ExistsFile(sInputFile.c_str())) && (!bExcluded))
 	{
-		if (!gudtOptions.bDoNotUseRecycleBin)
-		{
-			grdFiles->Cells[KI_GRID_STATUS][iCount] = _("Copying to Recyclebin...");
-			clsUtil::CopyToRecycleBin(sInputFile.c_str());
-		}
-
-		if (!gudtOptions.bDoNotCreateBackups)
-		{
-			grdFiles->Cells[KI_GRID_STATUS][iCount] = _("Creating backup...");
-			CopyFile(sInputFile.c_str(), (sInputFile + ".bak").c_str(), false);
-		}
-
 		unsigned int iFileAttributes = INVALID_FILE_ATTRIBUTES;
 		if (gudtOptions.bKeepAttributes)
 		{
@@ -1225,7 +1213,18 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			iFileAttributes = GetFileAttributes(clsUtil::GetShortName(sInputFile).c_str());
 		}
 		SetFileAttributes(clsUtil::GetShortName(sInputFile).c_str(), FILE_ATTRIBUTE_NORMAL);
+	
+		if (!gudtOptions.bDoNotUseRecycleBin)
+		{
+			grdFiles->Cells[KI_GRID_STATUS][iCount] = _("Copying to Recyclebin...");
+			clsUtil::CopyToRecycleBin(sInputFile.c_str());
+		}
 
+		if (!gudtOptions.bDoNotCreateBackups)
+		{
+			grdFiles->Cells[KI_GRID_STATUS][iCount] = _("Creating backup...");
+			CopyFile(sInputFile.c_str(), (sInputFile + ".bak").c_str(), false);
+		}
 
 		int iLevel;
 		//Each extension can correspond to more than one engine, so use if instead of else if
