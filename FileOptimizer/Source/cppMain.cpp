@@ -2362,6 +2362,10 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			{
 				sFlags += "-strip ";
 			}
+			if ((!gudtOptions.bZIPRecurse) && (PosEx(sExtensionByContent, " .zip ") > 0))
+			{
+				sFlags += "--disable-png --disable-jpg ";
+			}
 			iLevel = min(gudtOptions.iLevel * 8 / 9, 8) + 1;
 			//Convert level 9 to level 90032 because it is faster and usually with higher savings
 			if (iLevel == 9)
