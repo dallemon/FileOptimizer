@@ -1201,7 +1201,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 		if (gudtOptions.bKeepAttributes)
 		{
 			//If get timestamp fails, set to null
-			if (!clsUtil::GetFileTimestamp(sInputFile.c_str(), &udtFileCreated, &udtFileAccessed, &udtFileModified))
+			if (!clsUtil::GetFileTimestamp(clsUtil::GetShortName(sInputFile).c_str(), &udtFileCreated, &udtFileAccessed, &udtFileModified))
 			{
 				udtFileCreated.dwLowDateTime = 0;
 				udtFileCreated.dwHighDateTime = 0;
@@ -1212,7 +1212,6 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			}
 			iFileAttributes = GetFileAttributes(clsUtil::GetShortName(sInputFile).c_str());
 		}
-		SetFileAttributes(clsUtil::GetShortName(sInputFile).c_str(), FILE_ATTRIBUTE_NORMAL);
 	
 		if (!gudtOptions.bDoNotUseRecycleBin)
 		{
@@ -1225,6 +1224,8 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			grdFiles->Cells[KI_GRID_STATUS][iCount] = _("Creating backup...");
 			CopyFile(sInputFile.c_str(), (sInputFile + ".bak").c_str(), false);
 		}
+
+		SetFileAttributes(clsUtil::GetShortName(sInputFile).c_str(), FILE_ATTRIBUTE_NORMAL);
 
 		int iLevel;
 		//Each extension can correspond to more than one engine, so use if instead of else if
@@ -2427,7 +2428,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 			//Restore timestamp if we were able to get it
 			if ((udtFileCreated.dwLowDateTime != 0) && (udtFileCreated.dwHighDateTime != 0))
 			{
-				clsUtil::SetFileTimestamp(sInputFile.c_str(), &udtFileCreated, &udtFileAccessed, &udtFileModified);
+				clsUtil::SetFileTimestamp(clsUtil::GetShortName(sInputFile).c_str(), &udtFileCreated, &udtFileAccessed, &udtFileModified);
 			}
 			if (iFileAttributes != INVALID_FILE_ATTRIBUTES)
 			{
