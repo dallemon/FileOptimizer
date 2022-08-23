@@ -1,5 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
+ 3.53. 22/08/2022. FileOptimizer. Added IsWine.
  3.52. 12/07/2022. FileOptimizer. Improved CopyFile and DeleteFile.
  3.51. 13/10/2018. FileOptimizer. Added RenameFile
  3.50. 15/12/2017. FileOptimizer. Added DeleteFile, GetShortName. Do most operations internally using them
@@ -1442,6 +1443,26 @@ bool __fastcall clsUtil::IsWindows64(void)
 	return (iWindowsArchitecture == PROCESSOR_ARCHITECTURE_AMD64);
 }
 
+
+
+// ---------------------------------------------------------------------------
+bool __fastcall clsUtil::IsWine(void)
+{
+	static bool bIsWine = NULL;
+
+
+	if (bIsWine == NULL)
+	{
+		HMODULE hNtDll = LoadLibrary(_T("NTDLL.DLL"));
+		if (hNtDll)
+		{
+			void *wine_get_version = (void *) GetProcAddress(hNtDll, "wine_get_version");
+			bIsWine = (wine_get_version != nullptr);
+			FreeLibrary(hNtDll);
+		}
+	}
+	return (bIsWine);
+}
 
 
 // ---------------------------------------------------------------------------
