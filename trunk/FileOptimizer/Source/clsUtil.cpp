@@ -88,7 +88,7 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 
 
 	//ToDo: Cache loaded functions from DLL
-	HMODULE hComCtl32 = LoadLibrary(_T("COMCTL32.DLL"));
+	HMODULE hComCtl32 = LoadLibraryEx(_T("COMCTL32.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 	if (hComCtl32)
 	{
 		typedef int (WINAPI TaskDialogType)(const TASKDIALOGCONFIG *pTaskConfig, int *pnButton, int *pnRadioButton, bool *pfVerificationFlagChecked);
@@ -190,7 +190,7 @@ int __fastcall clsUtil::MsgBox(HWND phWnd, const TCHAR *pacText, const TCHAR *pa
 		}
 		else
 		{
-			HMODULE hUser32 = LoadLibrary(_T("USER32.DLL"));
+			HMODULE hUser32 = LoadLibraryEx(_T("USER32.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 			if (hUser32)
 			{
 				typedef int (__stdcall *MSGBOXWAPI)(IN HWND hWnd, IN LPCWSTR lpText, IN LPCWSTR lpCaption, IN UINT uType, IN WORD wLanguageId, IN DWORD dwMilliseconds);
@@ -1399,7 +1399,7 @@ unsigned int __fastcall clsUtil::GetWindowsVersion(void)
 	//Get true Windows version, even for non manifested applications under Windows 8.1 or later
 	if (iWindowsVersion == NULL)
 	{
-		HMODULE hNtDll = LoadLibrary(_T("NTDLL.DLL"));
+		HMODULE hNtDll = LoadLibraryEx(_T("NTDLL.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 		if (hNtDll)
 		{
 			typedef NTSTATUS (WINAPI RtlGetVersionType)(RTL_OSVERSIONINFOW *pudtRtlVersionInfo);
@@ -1453,7 +1453,7 @@ bool __fastcall clsUtil::IsWine(void)
 
 	if (bIsWine == NULL)
 	{
-		HMODULE hNtDll = LoadLibrary(_T("NTDLL.DLL"));
+		HMODULE hNtDll = LoadLibraryEx(_T("NTDLL.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 		if (hNtDll)
 		{
 			void *wine_get_version = (void *) GetProcAddress(hNtDll, "wine_get_version");
