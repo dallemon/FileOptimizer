@@ -26,7 +26,7 @@ void __fastcall clsLanguage::Load(unsigned int piLanguage, bool pbForce)
 		mlstLanguage->CaseSensitive = true;
 		mlstLanguage->Duplicates = System::Classes::dupAccept;
 
-		TCHAR acPath[PATH_MAX] = _T("");
+		TCHAR acPath[PATH_MAX + 1] = _T("");
 		if (piLanguage != 0)
 		{
 			//Try to load locale
