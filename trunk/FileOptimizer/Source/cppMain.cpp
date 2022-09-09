@@ -149,11 +149,13 @@ void __fastcall TfrmMain::LoadOptions(void)
 	gudtOptions.bDebug = GetOption(_T("Options"), _T("Debug"), false);
 	gudtOptions.bShowToolBar = GetOption(_T("Options"), _T("ShowToolBar"), false);
 
-    //Show ads
+    //Show ads require Windows Vista or later because of the need for IE11 or Edge
 	if (clsUtil::GetWindowsVersion() >= 600)
 	{
+		//Set Edge compatibility to IE 11.01
 		clsUtil::SetRegistry(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_BROWSER_EMULATION"), ExtractFileName(Application->ExeName).c_str(), 11001U);
-
+		
+		//Set Edge profile folder to system temporary path
 		if (GetTempPath((sizeof(acPath) / sizeof(TCHAR)) - 1, acPath))
 		{
 			SetEnvironmentVariable(_T("WEBVIEW2_USER_DATA_FOLDER"), acPath);
@@ -167,13 +169,13 @@ void __fastcall TfrmMain::LoadOptions(void)
 			sCaption.printf(_((TCHAR *) _T("This is the first time you run %s.\n\nDo you want to support its development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.\n\nYou can change this option at any time from the Options menu.")), Application->Name.c_str());
 			gudtOptions.bHideAds = !(clsUtil::MsgBox(Handle, sCaption.c_str(), _((TCHAR *) _T("Support")), MB_YESNO | MB_ICONQUESTION) == ID_YES);
 		}
-		//Disable ads in XP
 		else
 		{
 			//ToDo: Potential crash when hideads=false on closing
 			gudtOptions.bHideAds = GetOption(_T("Options"), _T("HideAds"), false);
 		}
 	}
+	//Disable ads in XP
 	else
 	{
 		gudtOptions.bHideAds = true;

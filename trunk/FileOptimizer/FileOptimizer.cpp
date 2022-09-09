@@ -65,7 +65,7 @@ int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacC
 
 		#if !defined(_WIN64)
 			// Disable file system redirection on Win64 environments
-			HMODULE hKernel32 = LoadLibrary(_T("KERNEL32.DLL"));
+			HMODULE hKernel32 = LoadLibraryEx(_T("KERNEL32.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 			if (hKernel32)
 			{
 				typedef BOOL (WINAPI Wow64DisableWow64FsRedirectionType)(PVOID *);
@@ -80,7 +80,7 @@ int WINAPI _tWinMain(HINSTANCE phInstance, HINSTANCE phPrevInstance, LPTSTR pacC
 		#endif
 
 		// Enable drag and drop between non-elevated processes and elevated ones in Vista and later
-		HMODULE hUser32 = LoadLibrary(_T("USER32.DLL"));
+		HMODULE hUser32 = LoadLibraryEx(_T("USER32.DLL"), nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
 		if (hUser32)
 		{
 			typedef BOOL (WINAPI ChangeWindowMessageFilterType)(UINT, DWORD);
