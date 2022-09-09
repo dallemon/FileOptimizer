@@ -2,11 +2,12 @@ rem \ficheros\util\upx -9 --best --lzma --overlay=strip --ultra-brute Win32\Rele
 del *.zip
 del *.7z
 del *.7z.exe
-rem del FileOptimizerFull.7z.exe
+del FileOptimizerFull.7z.exe
 del FileOptimizerSetup.exe
 del Win32\Release\FileOptimizer32.exe
 del Win32\Release\FileOptimizer64.exe
 del Win32\Release\FileOptimizer.chm
+del Win32\Release\WebView2Loader.dll
 del /f /s /q Win32\Release\Plugins32\*.*
 del /f /s /q Win32\Release\Plugins64\*.*
 del /f /s /q Win32\Release\*.ini
