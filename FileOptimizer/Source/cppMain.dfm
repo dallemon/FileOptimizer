@@ -87,6 +87,7 @@ object frmMain: TfrmMain
     TabOrder = 2
     Transparent = False
     Wrapable = False
+    ExplicitWidth = 689
     object tooFileAdd: TToolButton
       Left = 0
       Top = 0
@@ -231,6 +232,8 @@ object frmMain: TfrmMain
     OnDrawCell = grdFilesDrawCell
     OnFixedCellClick = grdFilesFixedCellClick
     OnMouseMove = grdFilesMouseMove
+    ExplicitWidth = 695
+    ExplicitHeight = 193
     ColWidths = (
       512
       512
@@ -241,13 +244,15 @@ object frmMain: TfrmMain
       24)
   end
   object pgbProgress: TProgressBar
-    Left = 545
+    Left = 546
     Top = 404
     Width = 150
     Height = 17
     Anchors = []
     Step = 1
     TabOrder = 1
+    ExplicitLeft = 542
+    ExplicitTop = 403
   end
   object webAds: TWebBrowser
     Left = 0
@@ -260,12 +265,10 @@ object frmMain: TfrmMain
     TabOrder = 4
     SelectedEngine = EdgeIfAvailable
     OnTitleChange = webAdsTitleChange
-    ExplicitTop = 308
-    ExplicitWidth = 814
     ControlData = {
       4C0000003E4800004D0900000000000000000000000000000000000000000000
       000000004C000000000000000000000001000000E0D057007335CF11AE690800
-      2B2E126203000000000000004C0000000114020000000000C000000000000046
+      2B2E12620B000000000000004C0000000114020000000000C000000000000046
       8000000000000000000000000000000000000000000000000000000000000000
       00000000000000000100000000000000000000000000000000000000}
   end
@@ -285,6 +288,8 @@ object frmMain: TfrmMain
     ParentShowHint = False
     ShowHint = True
     OnDrawPanel = stbMainDrawPanel
+    ExplicitTop = 395
+    ExplicitWidth = 695
   end
   object mnuFiles: TPopupMenu
     Images = imgMain

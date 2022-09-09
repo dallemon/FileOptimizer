@@ -35,7 +35,7 @@ __fastcall TfrmMain::~TfrmMain()
 // ---------------------------------------------------------------------------
 void __fastcall TfrmMain::FormCreate(TObject *Sender)
 {
-	TCHAR acPath[PATH_MAX];
+	TCHAR acPath[PATH_MAX + 1];
 
 
 	Caption = Application->Name;
@@ -86,7 +86,7 @@ void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 // ---------------------------------------------------------------------------
 void __fastcall TfrmMain::LoadOptions(void)
 {
-	TCHAR acPath[PATH_MAX];
+	TCHAR acPath[PATH_MAX + 1];
 
 
 	grdFiles->ColWidths[KI_GRID_FILE] = GetOption(Name.c_str(), _T("Col0Width"), grdFiles->ColWidths[KI_GRID_FILE]);
@@ -153,6 +153,11 @@ void __fastcall TfrmMain::LoadOptions(void)
 	if (clsUtil::GetWindowsVersion() >= 600)
 	{
 		clsUtil::SetRegistry(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_BROWSER_EMULATION"), ExtractFileName(Application->ExeName).c_str(), 11001U);
+
+		if (GetTempPath((sizeof(acPath) / sizeof(TCHAR)) - 1, acPath))
+		{
+			SetEnvironmentVariable(_T("WEBVIEW2_USER_DATA_FOLDER"), acPath);
+		}
 
 		//Check if ad display was not set
 		_tcsncpy(acPath, GetOption(_T("Options"), _T("HideAds"), _T("")), (sizeof(gudtOptions.acTempDirectory) / sizeof(TCHAR)) - 1);
@@ -304,7 +309,7 @@ void __fastcall TfrmMain::FormCloseQuery(TObject *Sender, bool &CanClose)
 	//Check if there are plugins still running
 	if ((!gbStop) && (!gudtOptions.bAllowMultipleInstances))
 	{
-		TCHAR acPluginsDirectory[PATH_MAX];
+		TCHAR acPluginsDirectory[PATH_MAX + 1];
 		
 		if (GetModuleFileName(NULL, acPluginsDirectory, (sizeof(acPluginsDirectory) / sizeof(TCHAR)) - 1) != 0)
 		{
@@ -777,7 +782,7 @@ static String sPluginsDirectory;
 void __fastcall TfrmMain::actOptimizeExecute(TObject *Sender)
 {
 	unsigned int iCount;
-	TCHAR acTmpFile[PATH_MAX];
+	TCHAR acTmpFile[PATH_MAX + 1];
 
 
 	gbProcess = true;
@@ -1863,7 +1868,7 @@ void __fastcall TfrmMain::actOptimizeFor(TObject *Sender, int AIndex)
 					
 					sFlags += "-dColorImageDownsampleType=/Bicubic -dGrayImageDownsampleType=/Bicubic -dMonoImageDownsampleType=/Bicubic -dOptimize=true -dConvertCMYKImagesToRGB=true -dColorConversionStrategy=/sRGB -dPrinted=false -q -dBATCH -dNOPAUSE -dSAFER -dDELAYSAFER -dNOPROMPT -sDEVICE=pdfwrite -dDetectDuplicateImages=true -dAutoRotatePages=/None -dCompatibilityLevel=1.4 ";
 					
-					TCHAR acTmpFilePdf[PATH_MAX];
+					TCHAR acTmpFilePdf[PATH_MAX + 1];
 					_tcsncpy(acTmpFilePdf, sInputFile.c_str(), (sizeof(acTmpFilePdf) / sizeof(TCHAR)) - 5);
 					_tcscat(acTmpFilePdf, _T(".pdf"));
 					_tcsncpy(acTmpFilePdf, clsUtil::GetShortName(acTmpFilePdf).c_str(), (sizeof(acTmpFilePdf) / sizeof(TCHAR)) - 1);
@@ -2568,7 +2573,7 @@ void __fastcall TfrmMain::WMDropFiles(const TWMDropFiles &udtMessage)
 			AddFilesInitializeExist();
 			for (unsigned int iCount = 0; iCount < iFiles; iCount++)
 			{
-				TCHAR acBuffer[PATH_MAX];
+				TCHAR acBuffer[PATH_MAX + 1];
 
 				if (DragQueryFile(hDrop, iCount, acBuffer, (sizeof(acBuffer) / sizeof(TCHAR)) - 1))
 				{
@@ -2733,7 +2738,7 @@ void __fastcall TfrmMain::AddFiles(const TCHAR *pacFile)
 int __fastcall TfrmMain::RunPlugin(unsigned int piCurrent, String psStatus, String psCommandLine, String psInputFile, String psOutputFile, int piErrorMin, int piErrorMax)
 {
 	String sInputFile, sOutputFile, sTmpInputFile, sTmpOutputFile, sCommandLine;
-	TCHAR acTempPath[PATH_MAX] = _T("");
+	TCHAR acTempPath[PATH_MAX + 1] = _T("");
 
 
 	if (gbStop)
@@ -3925,7 +3930,7 @@ String __inline TfrmMain::SetCellFileValue(const String psValue)
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const TCHAR * __fastcall TfrmMain::GetOptionCommandLine(void)
 {
-	static TCHAR acCommandLine[PATH_MAX] = _T("");
+	static TCHAR acCommandLine[PATH_MAX + 1] = _T("");
 
 
 	// Check if we already have it cached
@@ -3940,8 +3945,8 @@ const TCHAR * __fastcall TfrmMain::GetOptionCommandLine(void)
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const TCHAR * __fastcall TfrmMain::GetOptionArgument(const TCHAR *pacKey)
 {
-	TCHAR acArgument[PATH_MAX];
-	static TCHAR acRes[PATH_MAX];
+	TCHAR acArgument[PATH_MAX + 1];
+	static TCHAR acRes[PATH_MAX + 1];
 	TCHAR *pcStart;
 
 

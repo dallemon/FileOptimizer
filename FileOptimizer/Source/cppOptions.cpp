@@ -209,7 +209,7 @@ void __fastcall TfrmOptions::FormCreate(TObject *Sender)
 	cboLanguage->Items->Add(_("Automatic: System default"));
 	cboLanguage->Items->Add(_("3082: English - United States (Built-in)"));
 
-	TCHAR acProgramDirectory[PATH_MAX];
+	TCHAR acProgramDirectory[PATH_MAX + 1];
 	if (GetModuleFileName(NULL, acProgramDirectory, (sizeof(acProgramDirectory) / sizeof(TCHAR)) - 1) != 0)
 	{
 		*_tcsrchr(acProgramDirectory, '\\') = NULL;

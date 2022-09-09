@@ -722,8 +722,8 @@ size_t __fastcall clsUtil::GetFileVersionField(const TCHAR *fn, const TCHAR *inf
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const TCHAR * __fastcall clsUtil::GetIniPath(bool pbAllUsers)
 {
-	static TCHAR acPath[PATH_MAX] = _T("");
-	static TCHAR acPathAllUsers[PATH_MAX] = _T("");
+	static TCHAR acPath[PATH_MAX + 1] = _T("");
+	static TCHAR acPathAllUsers[PATH_MAX + 1] = _T("");
 
 
 	// Check if we already have it cached
@@ -964,7 +964,7 @@ bool __fastcall clsUtil::DeleteIni(const TCHAR *pacSection, const TCHAR *pacKey)
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const TCHAR * __fastcall clsUtil::GetRegistryPath(void)
 {
-	static TCHAR acPath[PATH_MAX] = _T("");
+	static TCHAR acPath[PATH_MAX + 1] = _T("");
 
 
 	// Check if we already have it cached
@@ -1213,7 +1213,7 @@ int __fastcall clsUtil::Random(int piMin, int piMax)
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const TCHAR * __fastcall clsUtil::GetLogPath(void)
 {
-	static TCHAR acPath[PATH_MAX] = _T("");
+	static TCHAR acPath[PATH_MAX + 1] = _T("");
 
 
 	// Check if we already have it cached
@@ -1250,7 +1250,7 @@ void __fastcall clsUtil::LogAdd(const TCHAR *pacFile, int piLine, const TCHAR *p
 {
 	if ((piDesiredLevel) > piLevel)
 	{
-		TCHAR acPath[PATH_MAX];
+		TCHAR acPath[PATH_MAX + 1];
 		TCHAR acLevel[][32] = { _T("CRITICAL"), _T("ERROR"), _T("WARNING"), _T("INFORMATION"), _T("NONE") };
 
 		_tcsncpy(acPath, GetLogPath(), (sizeof(acPath) / sizeof(TCHAR)) - 1);
@@ -1268,7 +1268,7 @@ void __fastcall clsUtil::Log(int piLevel, const TCHAR *pacValue, int piDesiredLe
 {
 	if ((piDesiredLevel) > piLevel)
 	{
-		TCHAR acPath[PATH_MAX];
+		TCHAR acPath[PATH_MAX + 1];
 		
 		_tcsncpy(acPath, GetLogPath(), (sizeof(acPath) / sizeof(TCHAR)) - 1);
 		FILE *pLog = _tfopen(acPath, _T("at"));
@@ -1327,8 +1327,8 @@ bool __fastcall clsUtil::CopyToRecycleBin(const TCHAR *pacSource)
 {
 	int iRes;
 	SHFILEOPSTRUCT udtFileOp = {};
-	TCHAR acSource[PATH_MAX] = {};
-	TCHAR acDestination[PATH_MAX] = {};
+	TCHAR acSource[PATH_MAX + 1] = {};
+	TCHAR acDestination[PATH_MAX + 1] = {};
 
 
 	Application->ProcessMessages();
@@ -1536,7 +1536,7 @@ String __fastcall clsUtil::GetShortName(String psLongName)
 
 */
 	unsigned int iRes;
-	TCHAR acShortName[PATH_MAX] = {};
+	TCHAR acShortName[PATH_MAX + 1] = {};
 
 
 	iRes = GetShortPathName(psLongName.c_str(), acShortName, (sizeof(acShortName) / sizeof(TCHAR)) - 1);
