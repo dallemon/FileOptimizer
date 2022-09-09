@@ -51,7 +51,6 @@ void __fastcall TfrmAbout::FormCreate(TObject *Sender)
 	lblCopyright->Caption = acName;
 	lblCopyright->Hint = KS_APP_URL;
 
-
 	#if ((__BORLANDC__ >= 0x0630) && (__BORLANDC__ <= 0x0639))
 		imgAbout->Hint = "Embarcadero C++ Builder XE";
 	#elif ((__BORLANDC__ >= 0x0640) && (__BORLANDC__ <= 0x0649))
