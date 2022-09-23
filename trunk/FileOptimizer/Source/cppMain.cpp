@@ -152,7 +152,7 @@ void __fastcall TfrmMain::LoadOptions(void)
     //Show ads require Windows Vista or later because of the need for IE11 or Edge
 	if (clsUtil::GetWindowsVersion() >= 600)
 	{
-		//Set Edge compatibility to IE 11.01
+		//Set IE compatibility to 11.01
 		clsUtil::SetRegistry(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl\\FEATURE_BROWSER_EMULATION"), ExtractFileName(Application->ExeName).c_str(), 11001U);
 		
 		//Set Edge profile folder to system temporary path
