@@ -267,7 +267,7 @@ void __fastcall TfrmOptions::FormCreate(TObject *Sender)
 #pragma argsused
 void __fastcall TfrmOptions::butOKClick(TObject *Sender)
 {
-	if ((txtDonator->Text.Length() < 1) && (chkHideAds->Checked) && (chkHideAds->Enabled))
+	if ((txtDonator->Text == "") && (chkHideAds->Checked) && (chkHideAds->Enabled))
 	{
 		String sCaption;
 		sCaption.printf(_((TCHAR *) _T("Do you want to contribute %s development by showing ads while it is in use?\n\nThis will encourage its future maintenance and upgrades, being highly appreciated.")), Application->Name.c_str());
