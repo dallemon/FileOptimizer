@@ -990,9 +990,27 @@ const TCHAR * __fastcall clsUtil::GetRegistry(HKEY phKey, const TCHAR *pacSubkey
 		unsigned int iSize = sizeof(acRes);
 		RegQueryValueEx(hKey, pacName, nullptr, nullptr, (BYTE *) acRes, (LPDWORD) &iSize);
 		RegCloseKey(hKey);
-    }
+	}
 	return (acRes);
 }
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+int __fastcall clsUtil::GetRegistryI(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName)
+{
+	HKEY hKey;
+	int iRes = -1;
+
+
+	if (RegOpenKeyEx(phKey, pacSubkey, NULL, KEY_QUERY_VALUE, &hKey) == ERROR_SUCCESS)
+	{
+		unsigned int iSize = sizeof(iRes);
+		RegQueryValueEx(hKey, pacName, nullptr, nullptr, (BYTE *) &iRes, (LPDWORD) &iSize);
+		RegCloseKey(hKey);
+    }
+	return (iRes);
+}
+
 
 
 

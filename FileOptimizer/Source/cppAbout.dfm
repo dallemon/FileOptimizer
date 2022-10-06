@@ -318,6 +318,8 @@ object frmAbout: TfrmAbout
     Default = True
     TabOrder = 1
     OnClick = butCloseClick
+    ExplicitLeft = 356
+    ExplicitTop = 412
   end
   object mmoLicense: TRichEdit
     Left = 8
@@ -325,8 +327,16 @@ object frmAbout: TfrmAbout
     Width = 447
     Height = 314
     Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clDefault
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0
+    ExplicitWidth = 443
+    ExplicitHeight = 313
   end
 end

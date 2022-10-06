@@ -3712,6 +3712,16 @@ void __fastcall TfrmMain::UpdateTheme(void)
 	//Prevent flickering
 	LockWindowUpdate(Handle);
 
+	int iLightTheme = clsUtil::GetRegistryI(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"), _T("AppsUseLightTheme"));
+	if (iLightTheme == 0)
+	{
+		Vcl::Themes::TStyleManager::TrySetStyle("Carbon", false);
+	}
+	else
+	{
+		Vcl::Themes::TStyleManager::TrySetStyle("Windows", false);
+	}
+
 	clsLanguage::Load((unsigned int) gudtOptions.iLanguage, true);
 	clsLanguage::TranslateForm(this);
 

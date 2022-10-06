@@ -19,7 +19,6 @@ object frmOptions: TfrmOptions
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
-  PixelsPerInch = 96
   DesignSize = (
     592
     395)

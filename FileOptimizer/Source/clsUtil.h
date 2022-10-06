@@ -77,6 +77,7 @@ class clsUtil
 		static int __fastcall Random (int piMin, int piMax);
 		static const TCHAR * __fastcall GetRegistryPath(void);
 		static const TCHAR * __fastcall GetRegistry(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName);
+        static int __fastcall GetRegistryI(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName);
 		static bool __fastcall SetRegistry(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName, const TCHAR *pacValue);
 		static bool __fastcall SetRegistry(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName, unsigned int piValue);
 		static bool __fastcall SetRegistry(HKEY phKey, const TCHAR *pacSubkey, const TCHAR *pacName, unsigned long long plValue);

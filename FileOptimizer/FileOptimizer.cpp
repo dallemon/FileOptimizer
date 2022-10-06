@@ -10,6 +10,8 @@
 
 
 //---------------------------------------------------------------------------
+#include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
 USEFORM("Source\cppMain.cpp", frmMain);
 USEFORM("Source\cppAbout.cpp", frmAbout);
 USEFORM("Source\cppOptions.cpp", frmOptions);
