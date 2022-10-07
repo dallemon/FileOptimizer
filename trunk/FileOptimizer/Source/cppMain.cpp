@@ -392,7 +392,7 @@ void __fastcall TfrmMain::grdFilesDrawCell(TObject *Sender, int ACol, int ARow, 
 	//Color even and odd rows
 	if (ARow == 0)
 	{
-		grdFiles->Canvas->Brush->Color = clBtnFace;
+		grdFiles->Canvas->Brush->Color =  clMenu;
 	}
 	else if (ARow & 1)
 	{
@@ -3715,11 +3715,11 @@ void __fastcall TfrmMain::UpdateTheme(void)
 	int iLightTheme = clsUtil::GetRegistryI(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"), _T("AppsUseLightTheme"));
 	if (iLightTheme == 0)
 	{
-		Vcl::Themes::TStyleManager::TrySetStyle("Carbon", false);
+		Vcl::Themes::TStyleManager::TrySetStyle("Windows10 Dark", false);
 	}
 	else
 	{
-		Vcl::Themes::TStyleManager::TrySetStyle("Windows", false);
+		Vcl::Themes::TStyleManager::TrySetStyle("Windows10", false);
 	}
 
 	clsLanguage::Load((unsigned int) gudtOptions.iLanguage, true);
