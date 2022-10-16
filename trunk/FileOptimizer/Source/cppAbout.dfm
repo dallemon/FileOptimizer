@@ -27,7 +27,7 @@ object frmAbout: TfrmAbout
   object imgAbout: TImage
     Left = 0
     Top = 0
-    Width = 454
+    Width = 458
     Height = 65
     Anchors = [akLeft, akTop, akRight]
     ParentShowHint = False
@@ -263,7 +263,7 @@ object frmAbout: TfrmAbout
   object lblProduct: TLabel
     Left = 8
     Top = 72
-    Width = 286
+    Width = 290
     Height = 15
     Align = alCustom
     Anchors = [akLeft, akTop, akRight]
@@ -279,7 +279,7 @@ object frmAbout: TfrmAbout
   object lblCopyright: TLabel
     Left = 8
     Top = 419
-    Width = 337
+    Width = 341
     Height = 16
     Cursor = crHandPoint
     Anchors = [akLeft, akRight, akBottom]
@@ -299,7 +299,7 @@ object frmAbout: TfrmAbout
   object lblDetail: TLabel
     Left = 259
     Top = 72
-    Width = 187
+    Width = 191
     Height = 15
     Align = alCustom
     Alignment = taRightJustify
@@ -308,7 +308,7 @@ object frmAbout: TfrmAbout
     ExplicitWidth = 192
   end
   object butClose: TButton
-    Left = 356
+    Left = 360
     Top = 413
     Width = 90
     Height = 27
@@ -322,7 +322,7 @@ object frmAbout: TfrmAbout
   object mmoLicense: TRichEdit
     Left = 8
     Top = 93
-    Width = 443
+    Width = 447
     Height = 314
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = ANSI_CHARSET
@@ -330,11 +330,6 @@ object frmAbout: TfrmAbout
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Lines.Strings = (
-      '1'
-      '2'
-      '3'
-      '4')
     ParentFont = False
     ReadOnly = True
     ScrollBars = ssVertical
