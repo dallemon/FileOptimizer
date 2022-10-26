@@ -37,6 +37,8 @@ cd Win32\Release\Plugins64\
 cd ..\..\..\
 Win64\Release\FileOptimizer .\Win32\Release
 Win32\Debug\Plugins32\petrim /stripfixups:Y .\Win32\Release\*.exe /r
+copy Win32\Debug\Plugins32\pngquant.exe Win32\Release\Plugins32 /y
+copy Win64\Debug\Plugins64\pngquant.exe Win64\Release\Plugins64 /y
 _Tools\PatchPE64.exe .\Win32\Release\FileOptimizer32.exe
 _Tools\PatchPE64.exe .\Win32\Release\FileOptimizer64.exe
 Win32\Debug\Plugins32\petrim .\Win32\Release\*.* /r
