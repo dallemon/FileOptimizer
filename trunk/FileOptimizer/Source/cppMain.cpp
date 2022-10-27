@@ -52,11 +52,25 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
 
 	UpdateTheme();
 	FormResize(Sender);
-	
+
 	SetPriorityClass(GetCurrentProcess(), (unsigned long) gudtOptions.iProcessPriority);
 
 	actClearExecute(Sender);
-
+	//Load grid contents
+	unsigned int iRows = clsUtil::GetIni(_T("grdFiles"), _T("Rows"), 0);
+	if (iRows > 0)
+	{
+		grdFiles->RowCount = iRows + 1;
+		for (unsigned int iRow = 1; iRow <= iRows; iRow++)
+		{
+			String sRow = clsUtil::GetIni(_T("grdFiles"), ((String) "Row" + iRow).c_str(), _T(""));
+			sRow = ReplaceStr(sRow, "%3D", "=");
+			sRow = ReplaceStr(sRow, "%0A", "\r");
+			sRow = ReplaceStr(sRow, "%0D", "\n");
+			grdFiles->Rows[iRow]->DelimitedText = sRow;
+		}
+		RefreshStatus();
+	}
 	//GetSystemInfo(&gudtSystemInfo);
 }
 
@@ -66,9 +80,6 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
 #pragma argsused
 void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 {
-	clsUtil::SaveForm(this);
-	clsLanguage::Save();
-	SaveOptions();
 	if (!gudtOptions.bHideAds)
 	{
 		webAds->Stop();
@@ -79,8 +90,29 @@ void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 		delete webAds;
 		webAds = nullptr;
 	}
-}
 
+	clsUtil::SaveForm(this);
+	clsLanguage::Save();
+	SaveOptions();
+
+	//Save grid contents
+	unsigned int iRows = grdFiles->RowCount - 1;
+	for (unsigned int iRow = 1; iRow <= iRows; iRow++)
+	{
+		String sRow = grdFiles->Rows[iRow]->DelimitedText;
+		sRow = ReplaceStr(sRow, "=", "%3D");
+		sRow = ReplaceStr(sRow, "\r", "%0A");
+		sRow = ReplaceStr(sRow, "\n", "%0D");
+		clsUtil::SetIni(_T("grdFiles"), ((String) "Row" + iRow).c_str(), sRow.c_str(), _T(""));
+	}
+	//Purge unused entries
+	unsigned int iOldRows = clsUtil::GetIni(_T("grdFiles"), _T("Rows"), 0);
+	for (unsigned int iRow = iRows + 1; iRow <= iOldRows; iRow++)
+	{
+		clsUtil::DeleteIni(_T("grdFiles"), ((String) "Row" + iRow).c_str());
+	}
+	clsUtil::SetIni(_T("grdFiles"), _T("Rows"), (int) iRows, _T(""));
+}
 
 
 // ---------------------------------------------------------------------------
