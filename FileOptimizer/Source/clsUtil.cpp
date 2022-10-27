@@ -1125,6 +1125,7 @@ void __fastcall clsUtil::EscapeIniValue (TCHAR *pacBuffer)
 {
 	String sBuffer = pacBuffer;
 	sBuffer = ReplaceStr(sBuffer, "=", "%3D");
+    sBuffer = ReplaceStr(sBuffer, "\r", "%0A");
 	_tcscpy(pacBuffer, sBuffer.c_str());
 }
 
@@ -1135,6 +1136,7 @@ void __fastcall clsUtil::UnescapeIniValue (TCHAR *pacBuffer)
 {
 	String sBuffer = pacBuffer;
 	sBuffer = ReplaceStr(sBuffer, "%3D", "=");
+    sBuffer = ReplaceStr(sBuffer, "%0A", "\r");
 	_tcscpy(pacBuffer, sBuffer.c_str());
 }
 
