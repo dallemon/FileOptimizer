@@ -60,7 +60,7 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
 	unsigned int iRows = clsUtil::GetIni(_T("grdFiles"), _T("Rows"), 0);
 	if (iRows > 0)
 	{
-		grdFiles->RowCount = iRows + 1;
+		grdFiles->RowCount = (unsigned int) iRows + 1;
 		for (unsigned int iRow = 1; iRow <= iRows; iRow++)
 		{
 			String sRow = clsUtil::GetIni(_T("grdFiles"), ((String) "Row" + iRow).c_str(), _T(""));
@@ -96,7 +96,7 @@ void __fastcall TfrmMain::FormDestroy(TObject *Sender)
 	SaveOptions();
 
 	//Save grid contents
-	unsigned int iRows = grdFiles->RowCount - 1;
+	unsigned int iRows = (unsigned int) grdFiles->RowCount - 1;
 	for (unsigned int iRow = 1; iRow <= iRows; iRow++)
 	{
 		String sRow = grdFiles->Rows[iRow]->DelimitedText;
@@ -654,6 +654,35 @@ void __fastcall TfrmMain::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Sh
 	else if ((Key == VK_DELETE) && (!Shift.Contains(ssCtrl)) && (!Shift.Contains(ssAlt)) && (!Shift.Contains(ssShift)))
 	{
 		actRemoveExecute(Sender);
+	}
+	//CTRL-C
+	else if ((Shift.Contains(ssCtrl)) && (Key == 'C'))
+	{
+		//ToDo
+		TClipboard *oClipBoard = Clipboard();
+		//Save grid contents
+		oClipBoard->AsText = grdFiles->Cols[0]->DelimitedText;
+	}
+	//CTRL-V
+	else if ((Shift.Contains(ssCtrl)) && (Key == 'V'))
+	{
+		//ToDo
+		TClipboard *oClipBoard = Clipboard();
+		if (oClipBoard->HasFormat(CF_TEXT))
+		{
+			actClearExecute(Sender);
+			//Load grid contents
+			grdFiles->Cols[0]->DelimitedText = oClipBoard->AsText;
+			RefreshStatus();
+		}
+	}
+	//CTRL-X
+	else if ((Shift.Contains(ssCtrl)) && (Key == 'X'))
+	{
+		TClipboard *oClipBoard = Clipboard();
+		//Save grid contents
+		oClipBoard->AsText = grdFiles->Cols[0]->DelimitedText;
+		actClearExecute(Sender);
 	}
 }
 

@@ -21,8 +21,8 @@
 #include <System.SyncObjs.hpp>
 #include <System.SysUtils.hpp>
 #include <System.Threading.hpp>
-
 #include <Vcl.Controls.hpp>
+#include <Clipbrd.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.Forms.hpp>
